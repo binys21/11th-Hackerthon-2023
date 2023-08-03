@@ -11,7 +11,7 @@ const LoginPage = () => {
     const saveAccounts = () => {
         window.localStorage.setItem("userID", id);
         window.localStorage.setItem("userPW", pw);
-        //페이지 이동 navigate 쓸 것
+        navigate("/signUp");
     };
 
     return (
@@ -56,7 +56,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #202329;
+    background: #202329;
 `;
 const Container = styled.div`
     width: 80%;
@@ -69,7 +69,7 @@ const LogoWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    width: 85%;
     .title {
         color: white;
         font-size: 13px;
@@ -109,6 +109,7 @@ const InputWrapper = styled.div`
         font-weight: 600;
         font-size: 12px;
         margin-top: 15px;
+        border-radius: 20px;
     }
     .btn_login:hover {
         background: #175df9;
