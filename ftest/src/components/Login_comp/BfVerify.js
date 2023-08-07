@@ -1,21 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
+import mainLogo from "../images_comp/mainLogo.png";
+import checkedIcon from "../images_comp/checked.png";
+
 const BfVerify = () => {
+    const [id, setID] = useState();
+    const [pw, setPW] = useState();
+    const [pw_re, setPW_re] = useState();
+
+    const handleChange = (e) => {
+        setID(e.target.value);
+    };
+    const handleChange2 = (e) => {
+        const value = e.target.value;
+        setPW(e.target.value);
+        if (value === pw_re) {
+            setPW_re("");
+        }
+    };
+    const handleChange3 = (e) => {
+        setPW_re(e.target.value);
+    };
+
     return (
         <Wrapper>
             <BfVerifyContent>
                 <LogoWrapper>
-                    {/*<img src={require("../../images/health-mark.png").default} />*/}
-                    <img src="../../images/health-mark.png" />
+                    <img src={mainLogo} />
                     <p class="title">국민들의 건강 관리 지키미, 건강지갑</p>
                 </LogoWrapper>
                 <InputWrapper>
                     <div class="input">사용하실 아이디를 입력해주세요.</div>
-                    <input placeholder="아이디 입력"></input>
+                    <input
+                        type="text"
+                        placeholder="아이디 입력"
+                        value={id}
+                        onChange={handleChange}
+                    ></input>
                     <div class="input">사용하실 비밀번호를 입력해주세요.</div>
-                    <input placeholder="비밀번호 입력"></input>
-                    <input placeholder="비밀번호 재확인"></input>
+                    <input
+                        type="password"
+                        placeholder="비밀번호 입력"
+                        value={pw}
+                        onChange={handleChange2}
+                    ></input>
+                    <span class="pw2Container">
+                        <input
+                            type="password"
+                            placeholder="비밀번호 재확인"
+                            value={pw_re}
+                            onChange={handleChange3}
+                        ></input>
+                        {pw === pw_re && pw !== "" && (
+                            <Checked src={checkedIcon} />
+                        )}
+                    </span>
                     <p class="userType">
                         해당하는 사용자 유형을 선택해 주세요.
                     </p>
@@ -56,6 +96,9 @@ const LogoWrapper = styled.div`
         color: white;
         font-size: 13px;
     }
+    img {
+        width: 135px;
+    }
     margin-bottom: 30px;
 `;
 const InputWrapper = styled.div`
@@ -80,7 +123,21 @@ const InputWrapper = styled.div`
         padding-left: 7%;
         margin-bottom: 10px;
         font-weight: 500;
-        color: #aeaeae;
+        color: black;
+        &::placeholder {
+            color: #aeaeae;
+        }
+    }
+    .pw2Container {
+        height: 40px;
+        border-style: none;
+        outline: none;
+        border-radius: 10px;
+        background-color: white;
+        display: flex;
+    }
+    .pw2Container input {
+        height: 100%;
     }
     button {
         height: 40px;
@@ -111,7 +168,12 @@ const UserTypeWrapper = styled.div`
         display: flex;
         align-items: center;
         justify-content: space-around;
-        margin: 0 5px;
+    }
+    .patient {
+        margin-right: 8px;
+    }
+    .doctor {
+        margin-left: 8px;
     }
     .patient:hover {
         background: #175df9;
@@ -119,4 +181,10 @@ const UserTypeWrapper = styled.div`
     .doctor:hover {
         background: #10c38e;
     }
+`;
+const Checked = styled.img`
+    height: 20px;
+    align-self: center;
+    justify-self: flex-end;
+    margin-left: 80px;
 `;
