@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+
+import Header from "../Header";
 
 import mainLogo from "../images_comp/mainLogo.png";
 import checkedIcon from "../images_comp/checked.png";
 
 const BfVerify = () => {
+    const navigate = useNavigate();
     const [id, setID] = useState();
     const [pw, setPW] = useState();
     const [pw_re, setPW_re] = useState();
@@ -23,9 +27,14 @@ const BfVerify = () => {
         setPW_re(e.target.value);
     };
 
+    const completeVerify = () => {
+        navigate("/afVerify");
+    };
+
     return (
         <Wrapper>
             <BfVerifyContent>
+                <Header></Header>
                 <LogoWrapper>
                     <img src={mainLogo} />
                     <p class="title">국민들의 건강 관리 지키미, 건강지갑</p>
@@ -63,7 +72,9 @@ const BfVerify = () => {
                         <span class="patient">일반 사용자</span>
                         <span class="doctor">의료인 사용자</span>
                     </UserTypeWrapper>
-                    <button class="btn_next">다음으로</button>
+                    <button class="btn_next" onClick={completeVerify}>
+                        다음으로
+                    </button>
                 </InputWrapper>
             </BfVerifyContent>
         </Wrapper>
@@ -73,12 +84,15 @@ const BfVerify = () => {
 export default BfVerify;
 
 const Wrapper = styled.div`
-    height: 800px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #202329;
+    img {
+        padding-top: 5%;
+    }
 `;
 const BfVerifyContent = styled.div`
     width: 85%;
@@ -152,6 +166,9 @@ const InputWrapper = styled.div`
     .btn_next:hover {
         background: #175df9;
     }
+    .btn_next {
+        margin-bottom: 10%;
+    }
 `;
 const UserTypeWrapper = styled.div`
     display: flex;
@@ -184,7 +201,8 @@ const UserTypeWrapper = styled.div`
 `;
 const Checked = styled.img`
     height: 20px;
-    align-self: center;
+    display: flex;
+    align-items: center;
     justify-self: flex-end;
     margin-left: 80px;
 `;
