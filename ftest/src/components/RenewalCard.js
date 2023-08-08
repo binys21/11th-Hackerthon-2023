@@ -54,6 +54,7 @@ font-weight:400
 const DocWrapper=styled.div`
 font-size:12px;
 font-weight:400
+
 `;
 const SideWrapper=styled.div`
 margin-top:14px;
