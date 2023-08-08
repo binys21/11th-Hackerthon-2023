@@ -8,6 +8,7 @@ import HistoryDetail from './pages/Patient/HistoryDetail';
 import DrugDetail from './pages/Patient/DrugDetail';
 import CategoryPage from './pages/CategoryPage';
 import SurgeryDetail from './pages/Patient/SurgeryDetail';
+import NftRenewalPage from './pages/NftRenewalPage';
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                     <Route path="/drugdetail" element={<DrugDetail/>}/>
                     <Route path="/category" element={<CategoryPage/>}/>
                     <Route path="/surgerydetail" element={<SurgeryDetail/>}/>
+                    <Route path='/nftrenewal' element={<NftRenewalPage/>}/>
                 </Routes>
             </Router>
         </>
