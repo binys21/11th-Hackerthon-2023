@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
+import Header from "../../components/Header";
+
 import mainLogo from "../images/mainLogo.png";
 
 const LoginPage = () => {
@@ -18,22 +20,20 @@ const LoginPage = () => {
         setPW(e.target.value);
     };
 
-    //userID, userPW 를 key로, id, pw 정보를 localStorage에 저장하고 ~~로 이동
-    const saveAccounts = () => {
-        window.localStorage.setItem("userID", id);
-        window.localStorage.setItem("userPW", pw);
-        navigate("/homePage");
-    };
-
     //회원가입하기 글자누르면 회원가입 페이지로 이동
     const gotoSignUp = () => {
         navigate("/signUp");
+    };
+
+    const gotoHome = () => {
+        navigate("/home");
     };
 
     return (
         <>
             <Wrapper>
                 <Container>
+                    <Header></Header>
                     <LogoWrapper>
                         <img src={mainLogo} />
                         <p class="title">국민들의 건강 관리 지키미, 건강지갑</p>
@@ -56,7 +56,7 @@ const LoginPage = () => {
                             value={pw}
                             onChange={handleChange2}
                         ></input>
-                        <button class="btn_login" onClick={saveAccounts}>
+                        <button class="btn_login" onClick={gotoHome}>
                             로그인
                         </button>
                         <div class="btn_signUp" onClick={gotoSignUp}>
@@ -72,7 +72,7 @@ const LoginPage = () => {
 export default LoginPage;
 
 const Wrapper = styled.div`
-    height: 800px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -80,7 +80,7 @@ const Wrapper = styled.div`
     background: #202329;
 `;
 const Container = styled.div`
-    width: 80%;
+    width: 90%;
     max-width: 300px;
     display: flex;
     flex-direction: column;
@@ -91,6 +91,9 @@ const LogoWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     width: 85%;
+    img {
+        padding-top: 5%;
+    }
     .title {
         color: white;
         font-size: 13px;
