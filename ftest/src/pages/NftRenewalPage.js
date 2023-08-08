@@ -18,8 +18,8 @@ const NftRenewalPage=()=>{
         </TitleWrapper>
 
         <ContentWrapper>
-            {nftHospitalList.map((hospital)=>(
-                <RenewalCard hospital={hospital}/>
+            {nftHospitalList.map((nftHospital)=>(
+                <RenewalCard nftHospital={nftHospital}/>
             ))}
         </ContentWrapper>
         </Wrapper>
@@ -33,7 +33,8 @@ const Wrapper=styled.div`
 height:100%;
 `;
 const TitleWrapper=styled.div`
-margin-bottom:10px;
+margin-bottom:100px;
 `;
 const ContentWrapper=styled.div`
+height:100%;
 `;
