@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import SurgeryTab from './SurgeryTab';
+import SurgeryTab from './SergeryTab';
 //Data
-import { hospitalData } from '../_mock/surgeryData';
+import { hospitalData } from '../_mock/hospitalData';
 //image
 import btn from "../pages/images/btn.png";
 

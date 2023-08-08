@@ -12,7 +12,7 @@ import { hospitalData } from '../_mock/hospitalData';
 
 //image
 import underbar from "../pages/images/underbar.png";
-import { surgeryData } from '../_mock/surgeryData';
+
 
 
 const CategoryPage=()=>{
