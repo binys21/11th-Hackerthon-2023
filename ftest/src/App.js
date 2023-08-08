@@ -5,7 +5,7 @@ import LoginPage from "./pages/Login/LoginPage";
 import SignUpPage from "./pages/Login/SignUpPage";
 import MyHistory from './pages/Patient/MyHistory';
 import HistoryDetail from './pages/Patient/HistoryDetail';
-import DrugDetail from './pages/DrugDetail';
+import DrugDetail from './pages/Patient/DrugDetail';
 import CategoryPage from './pages/CategoryPage';
 import SurgeryDetail from './pages/Patient/SurgeryDetail';
 

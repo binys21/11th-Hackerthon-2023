@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 //image
-import d1 from "../pages/images/drugimages/d1.png";
-import d2 from "../pages/images/drugimages/d2.png";
-import d3 from "../pages/images/drugimages/d3.png";
+import d1 from "../images/drugimages/d1.png";
+import d2 from "../images/drugimages/d2.png";
+import d3 from "../images/drugimages/d3.png";
 
 const DrugDetail=()=>{
     return (
