@@ -13,6 +13,7 @@ const BfVerify = () => {
     const [id, setID] = useState();
     const [pw, setPW] = useState();
     const [pw_re, setPW_re] = useState();
+    const [usertype, setUsertype] = useState();
 
     const handleChange = (e) => {
         setID(e.target.value);
@@ -27,9 +28,15 @@ const BfVerify = () => {
     const handleChange3 = (e) => {
         setPW_re(e.target.value);
     };
-
+    const handleUsertypeChange = (type) => {
+        setUsertype(type);
+    };
     const completeVerify = () => {
-        navigate("/afVerify");
+        if (usertype === "patient") {
+            navigate("/afVerify");
+        } else if (usertype === "doctor") {
+            navigate("/verifying");
+        }
     };
 
     return (
@@ -73,8 +80,22 @@ const BfVerify = () => {
                         해당하는 사용자 유형을 선택해 주세요.
                     </p>
                     <UserTypeWrapper>
-                        <span class="patient">일반 사용자</span>
-                        <span class="doctor">의료인 사용자</span>
+                        <span
+                            className={`patient ${
+                                usertype === "patient" ? "#175df9" : ""
+                            }`}
+                            onClick={() => handleUsertypeChange("patient")}
+                        >
+                            일반 사용자
+                        </span>
+                        <span
+                            className={`doctor ${
+                                usertype === "doctor" ? "#10c38e" : ""
+                            }`}
+                            onClick={() => handleUsertypeChange("doctor")}
+                        >
+                            의료인 사용자
+                        </span>
                     </UserTypeWrapper>
                     <button class="btn_next" onClick={completeVerify}>
                         다음으로
