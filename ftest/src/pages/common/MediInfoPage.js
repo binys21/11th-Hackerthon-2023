@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 //component
 import MyInfoCard from '../../components/mediInfo_comp/MyInfoCard';
+import AllegyCard from '../../components/mediInfo_comp/AllegyCard';
+import FamilyHisCard from '../../components/mediInfo_comp/FamilyHisCard';
+import GardianCard from '../../components/mediInfo_comp/GardianCard';
 
 const MediInfoPage=()=>{
     return(
@@ -14,6 +17,24 @@ const MediInfoPage=()=>{
             <TwoTitleWrapper>
                     알러지 및 부작용
                 </TwoTitleWrapper>
+                <AllegyCard/>
+                <br></br>
+                <AllegyCard/>
+                <ThirdTitleWrapper>
+                    가족력
+                </ThirdTitleWrapper>
+                <FamilyHisCard/>
+                <br></br>
+                <FamilyHisCard/>
+                <FourTitleWrapper>
+                    보호자 정보
+                </FourTitleWrapper>
+                <GardianCard/>
+                <br></br>
+                <GardianCard/>
+                <br></br>
+                <br></br>
+                
         </Wrapper>
         </>
     );
@@ -41,6 +62,22 @@ color:white;
 font-size:16px;
 font-weight:700;
 margin-right:210px;
+margin-top:45px;
+margin-bottom:20px;
+`;
+const ThirdTitleWrapper=styled.div`
+color:white;
+font-size:16px;
+font-weight:700;
+margin-right:280px;
+margin-top:45px;
+margin-bottom:20px;
+`;
+const FourTitleWrapper=styled.div`
+color:white;
+font-size:16px;
+font-weight:700;
+margin-right:260px;
 margin-top:45px;
 margin-bottom:20px;
 `;
