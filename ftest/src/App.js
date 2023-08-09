@@ -8,9 +8,9 @@ import HomePage from "./pages/Patient/HomePage";
 import MyHistory from "./pages/Patient/MyHistory";
 import HistoryDetail from "./pages/Patient/HistoryDetail";
 import DrugDetail from "./pages/Patient/DrugDetail";
-import CategoryPage from "./pages/CategoryPage";
+import CategoryPage from "./pages/common/CategoryPage";
 import SurgeryDetail from "./pages/Patient/SurgeryDetail";
-import NftRenewalPage from "./pages/NftRenewalPage";
+import NftRenewalPage from "./pages/common/NftRenewalPage";
 
 function App() {
     return (
