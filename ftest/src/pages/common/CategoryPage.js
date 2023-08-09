@@ -56,9 +56,11 @@ const CategoryPage=()=>{
 
     return (
         <>
-          <Wrapper>
+        <Back>
+        <Wrapper>
+          <Header title="진료 기록 조회"/>
             <Container>
-            <Header title="진료 기록 조회"/>
+            {/* <Header title="진료 기록 조회"/> */}
               <FilterBar>
                 {categories.map((category) => (
                   <Category
@@ -94,25 +96,35 @@ const CategoryPage=()=>{
               
             </Container>
           </Wrapper>
+
+
+
+        </Back>
+
         </>
       );
 
 };
 export default CategoryPage;
+const Back=styled.div`
+background: #202329;
+height:2000px;
+`;
 
 const Wrapper = styled.div`
-height: 100vh;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-background-color: #202329;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #202329;
 `;
 const Container = styled.div`
-width: 80%;
-max-width: 300px;
-display: flex;
-flex-direction: column;
+    width: 90%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 const FilterBar = styled.div`
   width: 100%;
@@ -141,6 +153,7 @@ const HospitalList = styled.div`
   width: 100%;
   height: 100px;
   margin-top: 20px; 
+  margin-right:24px;
 `;
 const Number=styled.div`
   color:white;
