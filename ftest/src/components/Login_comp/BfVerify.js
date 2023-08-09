@@ -6,6 +6,7 @@ import Header from "../Header";
 
 import mainLogo from "../images_comp/mainLogo.png";
 import checkedIcon from "../images_comp/checked.png";
+import uncheckedIcon from "../images_comp/unchecked.png";
 
 const BfVerify = () => {
     const navigate = useNavigate();
@@ -18,8 +19,8 @@ const BfVerify = () => {
     };
     const handleChange2 = (e) => {
         const value = e.target.value;
-        setPW(e.target.value);
-        if (value === pw_re) {
+        setPW(value);
+        if (value !== "") {
             setPW_re("");
         }
     };
@@ -54,17 +55,20 @@ const BfVerify = () => {
                         value={pw}
                         onChange={handleChange2}
                     ></input>
-                    <span class="pw2Container">
+                    <div class="pw2Container">
                         <input
                             type="password"
                             placeholder="비밀번호 재확인"
                             value={pw_re}
                             onChange={handleChange3}
                         ></input>
-                        {pw === pw_re && pw !== "" && (
-                            <Checked src={checkedIcon} />
-                        )}
-                    </span>
+                        {(pw === pw_re && pw !== "" && pw_re !== "" && (
+                            <img src={checkedIcon} />
+                        )) ||
+                            ((pw === "" || pw_re === "" || pw !== pw_re) && (
+                                <img src={uncheckedIcon} />
+                            ))}
+                    </div>
                     <p class="userType">
                         해당하는 사용자 유형을 선택해 주세요.
                     </p>
@@ -84,7 +88,7 @@ const BfVerify = () => {
 export default BfVerify;
 
 const Wrapper = styled.div`
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,6 +99,7 @@ const Wrapper = styled.div`
     }
 `;
 const BfVerifyContent = styled.div`
+    height: 100%;
     width: 85%;
     max-width: 300px;
     display: flex;
@@ -149,9 +154,16 @@ const InputWrapper = styled.div`
         border-radius: 10px;
         background-color: white;
         display: flex;
-    }
-    .pw2Container input {
-        height: 100%;
+        padding-right: 5%;
+        justify-content: space-between;
+        input {
+            height: 94%;
+        }
+        img {
+            height: 20px;
+            display: flex;
+            align-items: center;
+        }
     }
     button {
         height: 40px;
@@ -198,11 +210,4 @@ const UserTypeWrapper = styled.div`
     .doctor:hover {
         background: #10c38e;
     }
-`;
-const Checked = styled.img`
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-self: flex-end;
-    margin-left: 80px;
 `;

@@ -19,8 +19,8 @@ const HeaderWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 15%;
-    padding-bottom: 5%;
+    padding-top: 20%;
+    padding-bottom: 10%;
     .pageTitle {
         color: white;
         font-size: 14px;

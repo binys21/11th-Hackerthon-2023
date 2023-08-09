@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
-import Header from "../../components/Header";
-
 import mainLogo from "../images/mainLogo.png";
 
 const LoginPage = () => {
@@ -33,7 +31,6 @@ const LoginPage = () => {
         <>
             <Wrapper>
                 <Container>
-                    <Header></Header>
                     <LogoWrapper>
                         <img src={mainLogo} />
                         <p class="title">국민들의 건강 관리 지키미, 건강지갑</p>
@@ -72,7 +69,7 @@ const LoginPage = () => {
 export default LoginPage;
 
 const Wrapper = styled.div`
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,7 +88,9 @@ const LogoWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     width: 85%;
+    padding-top: 20%;
     img {
+        width: 135px;
         padding-top: 5%;
     }
     .title {
@@ -144,6 +143,7 @@ const InputWrapper = styled.div`
     }
     .btn_signUp {
         margin-top: 20px;
+        padding-bottom: 40%;
         display: flex;
         justify-content: center;
     }
