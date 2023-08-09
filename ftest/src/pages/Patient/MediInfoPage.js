@@ -5,11 +5,14 @@ import MyInfoCard from '../../components/mediInfo_comp/MyInfoCard';
 import AllegyCard from '../../components/mediInfo_comp/AllegyCard';
 import FamilyHisCard from '../../components/mediInfo_comp/FamilyHisCard';
 import GardianCard from '../../components/mediInfo_comp/GardianCard';
+import Header from '../../components/Header';
+
 
 const MediInfoPage=()=>{
     return(
         <>
         <Wrapper>
+            <Header title="의료정보"/>
                 <OneTitleWrapper>
                     나의 기본 의료 정보
                 </OneTitleWrapper>    

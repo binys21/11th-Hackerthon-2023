@@ -2,16 +2,10 @@ import React from "react";
 import styled from "styled-components";
 //image
 import lowbtn from '../../pages/images/lowbtn.png';
-const MyInfoCard=()=>{
+const ForDocter=()=>{
     return(
         <>
-        {/* <ExWrapper>내려서 상세보기</ExWrapper>
-            <BtnWrapper>
-            
-            <button >
-            <img src={lowbtn} alt=""></img>
-            </button>
-            </BtnWrapper> */}
+
         <BoxWrapper>
 
             <ContentWrapper>
@@ -49,14 +43,10 @@ const MyInfoCard=()=>{
     );
 
 };
-export default MyInfoCard;
+export default ForDocter;
 const BoxWrapper=styled.div`
-
-// filter: blur(1px);
-// -webkit-filter: blur(5px);
-
 display: flex;
-background-color:#175DF9;
+background-color:#10C38E;
 width:333px;
 height:315px;
 color:white;
@@ -82,24 +72,3 @@ font-weight:700;
 line-height:2.5;
 margin-left:20px;
 `;
-// const BtnWrapper=styled.div`
-// button {
-//     border: 0;
-//     background-color: transparent;
-    
-// }
-// z-index:100;
-// position: absolute;
-// top:100px;
-// left: 49%;
-// `;
-// const ExWrapper=styled.div`
-// color:white;
-// font-size:12px;
-// font-weight:400;
-// z-index:100;
-// position: absolute;
-// top:75px;
-// left: 48%;
-
-// `;
