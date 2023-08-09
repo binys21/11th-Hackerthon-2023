@@ -4,14 +4,15 @@ import { useNavigate } from "react-router-dom";
 
 import goBackIcon from "./images_comp/goBack.png";
 
-const Header = () => {
+const Header = (props) => {
+    const { title } = props;
     const navigate = useNavigate();
     const path = window.location.pathname;
     return (
         <>
             <HeaderWrapper>
                 <img src={goBackIcon} />
-                <div class="pageTitle">회원가입</div>
+                <div class="pageTitle">{title}</div>
                 <div></div>
             </HeaderWrapper>
         </>

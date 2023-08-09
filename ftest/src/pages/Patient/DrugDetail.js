@@ -4,12 +4,14 @@ import styled from "styled-components";
 import d1 from "../images/drugimages/d1.png";
 import d2 from "../images/drugimages/d2.png";
 import d3 from "../images/drugimages/d3.png";
+import Header from '../../components/Header';
 
 const DrugDetail=()=>{
     return (
         <>
         <Wrapper>
         <Container>
+            <Header title="상세보기"/>
             <ImgWrapper>
             <img src={d1} width='300px'/>
             <img src={d2} width = '300px'/>
@@ -43,7 +45,7 @@ const Container = styled.div`
 `;
 const ImgWrapper=styled.div`
     img{
-        border-radius: 4%;
+        border-radius: 6px;
         margin-bottom:15px;
     }
 

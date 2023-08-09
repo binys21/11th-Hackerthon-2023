@@ -1,10 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-
+//image
+import lowbtn from '../../pages/images/lowbtn.png';
 const MyInfoCard=()=>{
     return(
         <>
+        <ExWrapper>내려서 상세보기</ExWrapper>
+            <BtnWrapper>
+            
+            <button >
+            <img src={lowbtn} alt=""></img>
+            </button>
+            </BtnWrapper>
         <BoxWrapper>
+
             <ContentWrapper>
                 <NameWrapper>정대만</NameWrapper>
                 남/2000.05.22
@@ -42,6 +51,9 @@ const MyInfoCard=()=>{
 };
 export default MyInfoCard;
 const BoxWrapper=styled.div`
+filter: blur(1px);
+-webkit-filter: blur(5px);
+
 display: flex;
 background-color:#175DF9;
 width:333px;
@@ -49,6 +61,7 @@ height:315px;
 color:white;
 border-radius:10px;
 `;
+
 const TitleWrapper=styled.div`
 font-size:12px;
 font-weight:400;
@@ -67,4 +80,25 @@ font-size:16px;
 font-weight:700;
 line-height:2.5;
 margin-left:20px;
+`;
+const BtnWrapper=styled.div`
+button {
+    border: 0;
+    background-color: transparent;
+    
+}
+z-index:100;
+position: absolute;
+top:100px;
+left: 49%;
+`;
+const ExWrapper=styled.div`
+color:white;
+font-size:12px;
+font-weight:400;
+z-index:100;
+position: absolute;
+top:75px;
+left: 48%;
+
 `;

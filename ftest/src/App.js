@@ -6,6 +6,7 @@ import SignUpPage from "./pages/Login/SignUpPage";
 import AfVerify from "./components/Login_comp/afVerify";
 import HomePage from "./pages/Patient/HomePage";
 import MyNFT from "./pages/Patient/MyNFT";
+
 import MyNFTcleared from "./pages/Patient/MyNFTcleared";
 import HistoryDetail from "./pages/Patient/HistoryDetail";
 import DrugDetail from "./pages/Patient/DrugDetail";
