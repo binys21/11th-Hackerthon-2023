@@ -42,6 +42,7 @@ const MyInfoCard=()=>{
 };
 export default MyInfoCard;
 const BoxWrapper=styled.div`
+
 display: flex;
 background-color:#175DF9;
 width:333px;
