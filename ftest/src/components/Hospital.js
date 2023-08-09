@@ -4,9 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 import { filterSlice, setFilter } from "../redux/filterSlice";
 import { useSelector, useDispatch } from "react-redux";
-//Data
-import { hospitalData } from "../_mock/hospitalData";
-import { hospitalCover } from "../_mock/hospitalData";
 //image
 import circleimg from "../pages/images/circleimg.png";
 import btn from "../pages/images/btn.png";
