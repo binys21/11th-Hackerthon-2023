@@ -10,6 +10,7 @@ import CategoryPage from './pages/CategoryPage';
 import SurgeryDetail from './pages/Patient/SurgeryDetail';
 import NftRenewalPage from './pages/NftRenewalPage';
 
+
 function App() {
     return (
         <>
@@ -23,6 +24,7 @@ function App() {
                     <Route path="/category" element={<CategoryPage/>}/>
                     <Route path="/surgerydetail" element={<SurgeryDetail/>}/>
                     <Route path='/nftrenewal' element={<NftRenewalPage/>}/>
+
                 </Routes>
             </Router>
         </>
