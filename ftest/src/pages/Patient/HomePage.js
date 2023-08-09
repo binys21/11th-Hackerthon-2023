@@ -8,25 +8,39 @@ import goArrow2 from "../images/goArrow2.png";
 import reddot from "../images/reddot.png";
 import bluebox1 from "../images/bluebox1.png";
 import bluebox2 from "../images/bluebox2.png";
+import QrPatient from "../../components/QrPatient";
 
 const HomePage = () => {
+    const [qr, setQr] = useState(false);
+    const qrPop = () => {
+        setQr(true);
+    };
+
+    const navigate = useNavigate();
+    const gotoMyNFT = () => {
+        navigate("/mynft");
+    };
+
     return (
         <>
             <Wrapper>
                 <Container>
+                    {qr ? <QrPatient setQr={setQr} /> : null}
                     <HomeHeader />
                     <Content>
                         <div class="title">정대만님의 건강 NFT</div>
                         <Card>
                             <Line1>
                                 <div class="name">정대만</div>
-                                <div class="btn_qr">QR 코드</div>
+                                <div onClick={qrPop} class="btn_qr">
+                                    QR 코드
+                                </div>
                             </Line1>
                             <Line2>
                                 <div class="btn_renewal">갱신일 2023.07.29</div>
                                 <div class="stored">안전하게 보관 중</div>
                             </Line2>
-                            <GoMyNft>
+                            <GoMyNft onClick={gotoMyNFT}>
                                 <div class="wrap">
                                     <div class="ment_mynft">나의 NFT 조회</div>
                                     <img src={reddot} />
