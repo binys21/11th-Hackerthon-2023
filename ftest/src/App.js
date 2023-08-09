@@ -9,9 +9,10 @@ import MyNFT from "./pages/Patient/MyNFT";
 import MyHistory from "./pages/Patient/MyHistory";
 import HistoryDetail from "./pages/Patient/HistoryDetail";
 import DrugDetail from "./pages/Patient/DrugDetail";
-import CategoryPage from "./pages/CategoryPage";
+import CategoryPage from "./pages/common/CategoryPage";
 import SurgeryDetail from "./pages/Patient/SurgeryDetail";
-import NftRenewalPage from "./pages/NftRenewalPage";
+import NftRenewalPage from "./pages/common/NftRenewalPage";
+import MediInfoPage from './pages/common/MediInfoPage';
 
 function App() {
     return (
@@ -29,6 +30,7 @@ function App() {
                     <Route path="/category" element={<CategoryPage />} />
                     <Route path="/surgerydetail" element={<SurgeryDetail />} />
                     <Route path="/nftrenewal" element={<NftRenewalPage />} />
+                    <Route path='/medicalinfo' element={<MediInfoPage/>}/>
                 </Routes>
             </Router>
         </>

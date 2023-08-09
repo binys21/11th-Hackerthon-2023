@@ -2,9 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 //conmponent
-import RenewalCard from '../components/RenewalCard';
-//data
-import { nftHospitalData } from '../_mock/nftHospitalData';
+import RenewalCard from '../../components/RenewalCard';
+import { nftHospitalData} from '../../_mock/nftHospitalData';
 
 const NftRenewalPage=()=>{
     

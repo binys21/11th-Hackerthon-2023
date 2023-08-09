@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { styled } from "styled-components";
 import { useNavigate } from "react-router-dom";
 //image
-import btn from "../pages/images/btn.png";
+import btn from "../../pages/images/btn.png";
 
 const SurgeryTab = (props) => {
     const{setTab}=props;
