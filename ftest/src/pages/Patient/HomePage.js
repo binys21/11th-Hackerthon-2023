@@ -71,7 +71,7 @@ const HomePage = () => {
                     </CardInfo>
                     <CardInfo>
                         <BlueBox>
-                            <div class="contentTitle">나의 의료 정보</div>
+                            <div class="contentTitle">나의 진료 정보</div>
                             <img src={bluebox2} />
                         </BlueBox>
                         <div class="detailWrapper">

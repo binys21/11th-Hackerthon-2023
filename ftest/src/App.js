@@ -22,7 +22,7 @@ import CategoryPage from "./pages/common/CategoryPage";
 import SurgeryDetail from "./pages/Patient/SurgeryDetail";
 import NftRenewalPage from "./pages/common/NftRenewalPage";
 import MediInfoPage from './pages/Patient/MediInfoPage';
-import DocterMediInfo from './pages/doctor/DocterMediInfo';
+import DocterMediInfo from './pages/Doctor/DocterMediInfo';
 import AgreePop from "./components/NFT_comp/AgreeNft";
 
 function App() {
