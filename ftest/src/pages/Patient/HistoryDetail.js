@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-
+import Header from '../../components/Header';
 import chart from "../images/chart.png";
 import ch1 from "../images/ch1.png";
 import ch2 from "../images/ch2.png";
@@ -13,6 +13,7 @@ const HistoryDetail=()=>{
     return (
         <>
                 <Wrapper>
+                <Header title="상세보기"/>
             <Container>
             
                 <InfoWrapper>

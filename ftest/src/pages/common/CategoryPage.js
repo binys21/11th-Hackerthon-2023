@@ -12,6 +12,7 @@ import { hospitalData } from '../../_mock/hospitalData';
 
 //image
 import underbar from "../../pages/images/underbar.png";
+import Header from '../../components/Header';
 
 
 
@@ -57,7 +58,7 @@ const CategoryPage=()=>{
         <>
           <Wrapper>
             <Container>
-            
+            <Header title="진료 기록 조회"/>
               <FilterBar>
                 {categories.map((category) => (
                   <Category
