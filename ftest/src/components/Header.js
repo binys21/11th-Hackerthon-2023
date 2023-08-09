@@ -26,7 +26,8 @@ const HeaderWrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-top: 20%;
+    padding-top: 15%;
+    padding-bottom: 5%;
 
     img {
         width: 7px;
@@ -34,5 +35,6 @@ const HeaderWrapper = styled.div`
     .pageTitle {
         color: white;
         font-size: 14px;
+        font-weight: 500;
     }
 `;
