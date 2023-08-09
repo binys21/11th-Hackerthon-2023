@@ -43,7 +43,7 @@ const Container = styled.div`
 `;
 const ImgWrapper=styled.div`
     img{
-        border-radius: 4%;
+        border-radius: 6px;
         margin-bottom:15px;
     }
 
