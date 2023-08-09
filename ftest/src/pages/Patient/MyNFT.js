@@ -4,12 +4,20 @@ import styled from "styled-components";
 import HomeHeader from "../../components/homeHeader";
 import btn_receive from "../images/btn_receive.png";
 import nftList from "../images/nftList.png";
+import AgreeNft from "../../components/NFT_comp/AgreeNft";
 
 const MyNFT = () => {
+    const [agreePop, setAgreePop] = useState(false);
+
+    const openAgreePop = () => {
+        setAgreePop(true);
+    };
+
     return (
         <>
             <Wrapper>
                 <Container>
+                    {agreePop ? <AgreeNft setAgreePop={setAgreePop} /> : null}
                     <HomeHeader />
                     <Content>
                         <div class="title">새로운 NFT 조회 요청</div>
@@ -25,7 +33,7 @@ const MyNFT = () => {
                                 </div>
                             </BlueBox>
                             <div class="imgwrap">
-                                <img src={btn_receive} />
+                                <img onClick={openAgreePop} src={btn_receive} />
                             </div>
                         </CardInfo>
                         <CardInfo>
@@ -39,7 +47,7 @@ const MyNFT = () => {
                                 </div>
                             </BlueBox>
                             <div class="imgwrap">
-                                <img src={btn_receive} />
+                                <img onClick={openAgreePop} src={btn_receive} />
                             </div>
                         </CardInfo>
                         <Circles>
