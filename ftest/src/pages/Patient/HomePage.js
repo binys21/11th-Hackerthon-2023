@@ -4,7 +4,10 @@ import { useNavigate } from "react-router-dom";
 
 import HomeHeader from "../../components/homeHeader";
 import goArrow from "../images/goArrow.png";
+import goArrow2 from "../images/goArrow2.png";
 import reddot from "../images/reddot.png";
+import bluebox1 from "../images/bluebox1.png";
+import bluebox2 from "../images/bluebox2.png";
 
 const HomePage = () => {
     return (
@@ -38,6 +41,34 @@ const HomePage = () => {
                         정대만님의 건강 NFT에 <br />
                         기록된 내용이에요
                     </div>
+                    <CardInfo>
+                        <BlueBox>
+                            <div class="contentTitle">나의 의료 정보</div>
+                            <img src={bluebox1} />
+                        </BlueBox>
+                        <div class="detailWrapper">
+                            <div class="goDetail">
+                                내용
+                                <br />
+                                보러 가기
+                            </div>
+                            <img src={goArrow2} />
+                        </div>
+                    </CardInfo>
+                    <CardInfo>
+                        <BlueBox>
+                            <div class="contentTitle">나의 의료 정보</div>
+                            <img src={bluebox2} />
+                        </BlueBox>
+                        <div class="detailWrapper">
+                            <div class="goDetail">
+                                내용
+                                <br />
+                                보러 가기
+                            </div>
+                            <img src={goArrow2} />
+                        </div>
+                    </CardInfo>
                 </Content>
             </Wrapper>
         </>
@@ -76,7 +107,7 @@ const Content = styled.div`
     }
 `;
 const Card = styled.div`
-    width: 90%;
+    width: 95%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -117,6 +148,7 @@ const Line2 = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
+    margin-top: 10px;
     .btn_renewal {
         color: #175df9;
         font-size: 10px;
@@ -156,5 +188,52 @@ const GoMyNft = styled.div`
     img {
         width: 5%;
         margin-right: 15px;
+    }
+`;
+const CardInfo = styled.div`
+    width: 95%;
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-radius: 10px;
+    background: #363b46;
+    margin: 10px 0;
+    .detailWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 11px;
+        .goDetail {
+            color: white;
+            font-size: 10px;
+            background-color: #363b46;
+            border-style: none;
+            margin: 10px 0;
+            text-align: center;
+        }
+        img {
+            width: 15px;
+        }
+    }
+`;
+const BlueBox = styled.div`
+    width: 80%;
+    background: #175df9;
+    border-radius: 10px;
+    align-items: center;
+    .contentTitle {
+        display: flex;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 7%;
+        justify-self: flex-start;
+    }
+    img {
+        width: 200px;
+        padding: 7% 0 5% 7%;
+        margin-top: 15px;
     }
 `;
