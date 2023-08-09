@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import SurgeryTab from './SergeryTab';
 //Data
-import { hospitalData } from '../_mock/hospitalData';
+import { hospitalData } from '../../_mock/hospitalData';
 //image
-import btn from "../pages/images/btn.png";
+import btn from "../../pages/images/btn.png";
 
 const Surgery=(props)=>{
-    const {hospital}=props; //수술 정보를 props로 받아옴 
+    const {hospital}=props; //병원 정보를 props로 받아옴 
     const [tab,setTab]=useState(false);
     const navigate = useNavigate();
     

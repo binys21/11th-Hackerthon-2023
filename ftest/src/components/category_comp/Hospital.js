@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
-import { filterSlice, setFilter } from "../redux/filterSlice";
+import { filterSlice, setFilter } from "../../redux/filterSlice";
 import { useSelector, useDispatch } from "react-redux";
 //image
-import circleimg from "../pages/images/circleimg.png";
-import btn from "../pages/images/btn.png";
+import circleimg from "../../pages/images/circleimg.png";
+import btn from "../../pages/images/btn.png";
 
 const Hospital = (props) => {
     const { hospital } = props; //병원 정보를 props로 받아옴

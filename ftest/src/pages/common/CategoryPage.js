@@ -2,16 +2,16 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
 
-import Hospital from '../components/Hospital';
-import Surgery from '../components/Surgery';
+import Hospital from '../../components/category_comp/Hospital';
+import Surgery from '../../components/category_comp/Surgery';
 // Data
-import { filterSlice, setFilter } from "../redux/filterSlice";
+import { filterSlice, setFilter } from "../../redux/filterSlice";
 import {useSelector,useDispatch} from "react-redux";
 
-import { hospitalData } from '../_mock/hospitalData';
+import { hospitalData } from '../../_mock/hospitalData';
 
 //image
-import underbar from "../pages/images/underbar.png";
+import underbar from "../../pages/images/underbar.png";
 
 
 
@@ -46,15 +46,6 @@ const CategoryPage=()=>{
     //     navigate("/surgerydetail");
     //   }
     
-    // };
-
-    // const SelectBox = () => {
-    //   return (
-    //     <select>
-    //             <option key="latest" value="latest">최근순</option>
-    //             <option key="older" value="older">오래된순</option>
-    //     </select>
-    //   );
     // };
 
    

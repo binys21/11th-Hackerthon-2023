@@ -59,6 +59,7 @@ font-weight:400
 const SideWrapper=styled.div`
 margin-top:14px;
 margin-left:41px;
+text-align:right;
 font-size:10px;
 font-weight:400;
 color:#FF6868;
