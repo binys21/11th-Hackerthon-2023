@@ -1,24 +1,32 @@
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import closeQr2 from "../components/images_comp/closeQr2.png";
 import qrDoctor from "../components/images_comp/qrDoctor.png";
+import RequestNft from "./NFT_comp/RequestNft";
 
 const QrDoctor = (props) => {
     const { setQr } = props;
 
+    const [qrScanned, setQrScanned] = useState(false);
+
     const deleteQr = () => {
         setQr(false);
+    };
+    const scanned = () => {
+        setQrScanned(true);
     };
 
     return (
         <Wrapper>
+            {qrScanned ? <RequestNft setQrScanned={setQrScanned} /> : null}
             <Container>
                 <QrTitle>
                     <div>건강 NFT 불러오기</div>
                     <img onClick={deleteQr} src={closeQr2} />
                 </QrTitle>
                 <div class="btn_qr">QR 코드</div>
-                <img src={qrDoctor} />
+                <img onClick={scanned} src={qrDoctor} />
             </Container>
         </Wrapper>
     );

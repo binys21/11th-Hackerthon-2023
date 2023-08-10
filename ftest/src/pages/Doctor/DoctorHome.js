@@ -6,8 +6,11 @@ import HomeHeader from "../../components/homeHeader";
 import doneAllDoc from "../images/doneAllDoc.png";
 import slideBtn from "../images/slideBtn.png";
 import QrDoctor from "../../components/QrDoctor";
+import RequestNft from "../../components/NFT_comp/RequestNft";
 
-const DoctorHome = () => {
+const DoctorHome = (props) => {
+    const { qrScanned, setQrScanned } = props;
+
     const [qr, setQr] = useState(false);
     const qrPop = () => {
         setQr(true);
@@ -19,6 +22,9 @@ const DoctorHome = () => {
         <>
             <Wrapper>
                 {qr ? <QrDoctor setQr={setQr} /> : null}
+                {qrScanned ? (
+                    <RequestNft setQr={setQr} setQrScanned={setQrScanned} />
+                ) : null}
                 <HomeHeader />
                 <Content>
                     <div class="title">
