@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 //conmponent
 import RenewalCard from '../../components/RenewalCard';
 import { nftHospitalData} from '../../_mock/nftHospitalData';
+import Header from '../../components/Header';
 
 const NftRenewalPage=()=>{
     
@@ -11,6 +12,7 @@ const NftRenewalPage=()=>{
     return (
         <>
         <Wrapper>
+            <Header title="갱신 기록"/>
         <TitleWrapper>
             정대만님의 NFT 갱신 기록
         </TitleWrapper>
@@ -48,6 +50,7 @@ background-color: #202329;
 `;
 const TitleWrapper=styled.div`
 margin-bottom:15px;
+margin-top:15px;
 margin-right:170px;
 color:white;
 font-size:16px;

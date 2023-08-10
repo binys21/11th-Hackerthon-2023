@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+import Header from '../../components/Header';
+
 import s1 from "../images/surimages/s1.png";
 import s2 from "../images/surimages/s2.png";
 import s3 from "../images/surimages/s3.png";
@@ -11,6 +13,7 @@ const SurgeryDetail=()=>{
     return (
         <>
         <Wrapper>
+            <Header title="상세보기"/>
         <Container>
         <InfoWrapper>
                 차트 No.038415                        2023.06.13 | 최영아 작성
