@@ -6,12 +6,22 @@ import mainLogo from "../images_comp/mainLogo.png";
 
 const Verifying = (props) => {
     const fileInput = React.useRef(null);
+    const [uploadedFileName, setUploadedFileName] =
+        useState("파일을 업로드 해 주세요.");
 
     const handleButtonClick = (e) => {
         fileInput.current.click();
     };
+
+    const [isUploaded, setIsUploaded] = useState(false);
+
     const handleChange = (e) => {
-        console.log(e.target.files[0]);
+        const uploadedFile = e.target.files[0];
+        if (uploadedFile) {
+            setUploadedFileName(uploadedFile.name);
+            setIsUploaded(true);
+        }
+        console.log(uploadedFile);
     };
 
     const navigate = useNavigate();
@@ -39,16 +49,29 @@ const Verifying = (props) => {
                 <React.Fragment>
                     <UploadWrapper>
                         <input
-                            class="upload_blank"
+                            class="upload_name"
+                            value={uploadedFileName}
+                            disabled="disabled"
+                        ></input>
+                        <input
+                            class="upload_hidden"
                             type="file"
                             id="fileUpload"
                             ref={fileInput}
                             accept="image/jpg, image/png, image/jpeg"
                             onChange={handleChange}
                         />
+                        <label for="fileUpload">파일 업로드</label>
                     </UploadWrapper>
                 </React.Fragment>
-                <button onClick={completeVerify}>인증하기</button>
+                <button
+                    onClick={completeVerify}
+                    style={{
+                        backgroundColor: isUploaded ? "#10c38e" : "#aeaeae",
+                    }}
+                >
+                    인증하기
+                </button>
             </Wrapper>
         </>
     );
@@ -68,20 +91,19 @@ const Wrapper = styled.div`
         align-items: center;
     }
     button {
-        height: 40px;
-        width: 80%;
+        height: 45px;
+        width: 85%;
         border-style: none;
         outline: none;
         border-radius: 20px;
         color: white;
         font-size: 12px;
         font-weight: 600;
-        background: #10c38e;
-        margin: 50px 0 200px 0;
+        margin: 30px 0 200px 0;
     }
 `;
 const Container = styled.div`
-    width: 90%;
+    width: 85%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -99,17 +121,45 @@ const Container = styled.div`
     }
 `;
 const UploadWrapper = styled.div`
-    width: 90%;
-    .upload_btn {
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    label {
         color: white;
-        font-size: 14px;
+        background-color: #aeaeae;
+        font-size: 10px;
+        padding: 10px;
+        height: 25px;
         display: flex;
         justify-content: center;
         align-items: center;
+        border-style: none;
+        border-radius: 10px;
+        cursor: pointer;
     }
-    .upload_blank {
-        color: white;
+    input[type="file"] {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
     }
-    input {
+    .upload_name {
+        display: flex;
+        height: 28px;
+        width: 67%;
+        padding: 8px;
+        font-size: 13px;
+        background-color: white;
+        justify-content: flex-start;
+        align-items: center;
+        border-style: none;
+        border-radius: 10px;
+        color: #aeaeae;
     }
 `;
