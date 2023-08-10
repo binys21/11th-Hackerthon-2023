@@ -24,6 +24,7 @@ import NftRenewalPage from "./pages/common/NftRenewalPage";
 import MediInfoPage from './pages/Patient/MediInfoPage';
 import DocterMediInfo from './pages/Doctor/DocterMediInfo';
 import AgreePop from "./components/NFT_comp/AgreeNft";
+import DocterCategory from './pages/Doctor/DocterCategory';
 
 function App() {
     return (
@@ -49,7 +50,9 @@ function App() {
                     <Route path="/surgerydetail" element={<SurgeryDetail />} />
                     <Route path="/nftrenewal" element={<NftRenewalPage />} />
                     <Route path='/medicalinfo' element={<MediInfoPage/>}/>
+
                     <Route path='/doctermediinfo' element={<DocterMediInfo/>}/>
+                    <Route path='/doctercategory' element={<DocterCategory/>}/>
                 </Routes>
             </Router>
         </>
