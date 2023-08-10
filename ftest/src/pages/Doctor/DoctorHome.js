@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import HomeHeader from "../../components/homeHeader";
 import doneAllDoc from "../images/doneAllDoc.png";
 import slideBtn from "../images/slideBtn.png";
+import QrDoctor from "../../components/QrDoctor";
 
 const DoctorHome = () => {
     const [qr, setQr] = useState(false);
@@ -17,7 +18,7 @@ const DoctorHome = () => {
     return (
         <>
             <Wrapper>
-                {/* {qr ? <QrDoctor setQr={setQr} /> : null} */}
+                {qr ? <QrDoctor setQr={setQr} /> : null}
                 <HomeHeader />
                 <Content>
                     <div class="title">
@@ -33,7 +34,7 @@ const DoctorHome = () => {
                     <br />
                     환자의 건강 NFT 기록을 불러오세요
                 </div>
-                <Container>
+                <Container onClick={qrPop}>
                     <div class="slide">올려서 QR 스캔하기</div>
                     <div class="slide_btn">
                         <img src={slideBtn} />

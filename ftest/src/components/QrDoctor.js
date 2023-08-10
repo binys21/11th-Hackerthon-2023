@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import closeQr from "../components/images_comp/closeQr.png";
+import closeQr2 from "../components/images_comp/closeQr2.png";
+import qrDoctor from "../components/images_comp/qrDoctor.png";
 
 const QrDoctor = (props) => {
     const { setQr } = props;
@@ -14,9 +15,10 @@ const QrDoctor = (props) => {
             <Container>
                 <QrTitle>
                     <div>건강 NFT 불러오기</div>
-                    <img onClick={deleteQr} src={closeQr} />
+                    <img onClick={deleteQr} src={closeQr2} />
                 </QrTitle>
                 <div class="btn_qr">QR 코드</div>
+                <img src={qrDoctor} />
             </Container>
         </Wrapper>
     );
@@ -53,6 +55,13 @@ const Container = styled.div`
         border-radius: 10px;
         background-color: none;
         padding: 4px;
+    }
+    img {
+        display: flex;
+        width: 80%;
+        justify-self: center;
+        align-self: center;
+        margin-top: 10px;
     }
 `;
 
