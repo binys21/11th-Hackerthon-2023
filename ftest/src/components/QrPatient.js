@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import closeQr from "../components/images_comp/closeQr.png";
+import qrPatient from "../components/images_comp/qrPatient.png";
 
 const QrPatient = (props) => {
     const { setQr } = props;
@@ -17,6 +18,7 @@ const QrPatient = (props) => {
                     <img onClick={deleteQr} src={closeQr} />
                 </QrTitle>
                 <div class="btn_qr">QR 코드</div>
+                <img src={qrPatient} />
             </Container>
         </Wrapper>
     );
@@ -53,6 +55,13 @@ const Container = styled.div`
         border-radius: 10px;
         background-color: none;
         padding: 4px;
+    }
+    img {
+        display: flex;
+        width: 80%;
+        justify-self: center;
+        align-self: center;
+        margin-top: 10px;
     }
 `;
 
