@@ -17,7 +17,7 @@ const DoctorHome = () => {
     return (
         <>
             <Wrapper>
-                {/* {qr ? <QrPatient setQr={setQr} /> : null} */}
+                {/* {qr ? <QrDoctor setQr={setQr} /> : null} */}
                 <HomeHeader />
                 <Content>
                     <div class="title">
