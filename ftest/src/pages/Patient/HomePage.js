@@ -20,6 +20,15 @@ const HomePage = () => {
     const gotoMyNFT = () => {
         navigate("/mynft");
     };
+    const gotoNftRenewal = () => {
+        navigate("/nftrenewal");
+    };
+    const gotoMediInfo = () => {
+        navigate("/medicalinfo");
+    };
+    const gotoCategory = () => {
+        navigate("/category");
+    };
 
     return (
         <>
@@ -37,7 +46,12 @@ const HomePage = () => {
                                 </div>
                             </Line1>
                             <Line2>
-                                <div class="btn_renewal">갱신일 2023.07.29</div>
+                                <div
+                                    onClick={gotoNftRenewal}
+                                    class="btn_renewal"
+                                >
+                                    갱신일 2023.07.29
+                                </div>
                                 <div class="stored">안전하게 보관 중</div>
                             </Line2>
                             <GoMyNft onClick={gotoMyNFT}>
@@ -60,7 +74,7 @@ const HomePage = () => {
                             <div class="contentTitle">나의 의료 정보</div>
                             <img src={bluebox1} />
                         </BlueBox>
-                        <div class="detailWrapper">
+                        <div onClick={gotoMediInfo} class="detailWrapper">
                             <div class="goDetail">
                                 내용
                                 <br />
@@ -74,7 +88,7 @@ const HomePage = () => {
                             <div class="contentTitle">나의 진료 정보</div>
                             <img src={bluebox2} />
                         </BlueBox>
-                        <div class="detailWrapper">
+                        <div onClick={gotoCategory} class="detailWrapper">
                             <div class="goDetail">
                                 내용
                                 <br />
