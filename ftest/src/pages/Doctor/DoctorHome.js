@@ -35,7 +35,9 @@ const DoctorHome = () => {
                 </div>
                 <Container>
                     <div class="slide">올려서 QR 스캔하기</div>
-                    <img src={slideBtn} />
+                    <div class="slide_btn">
+                        <img src={slideBtn} />
+                    </div>
                 </Container>
             </Wrapper>
         </>
@@ -82,7 +84,7 @@ const Content = styled.div`
 `;
 const Container = styled.div`
     width: 85%;
-    height: 150px;
+    height: 100px;
     bottom: 0;
     display: flex;
     flex-direction: column;
@@ -91,7 +93,7 @@ const Container = styled.div`
     background-color: #10c38e;
     border-style: none;
     border-radius: 20px 20px 0 0;
-    margin-top: 190px;
+    margin-top: 240px;
     .slide {
         color: white;
         font-size: 12px;
@@ -99,8 +101,8 @@ const Container = styled.div`
         margin-bottom: 0;
         font-weight: 600;
     }
-    img {
-        width: 50px;
-        height: 40px;
+    .slide_btn img {
+        width: 40px;
+        margin-top: 20px;
     }
 `;
