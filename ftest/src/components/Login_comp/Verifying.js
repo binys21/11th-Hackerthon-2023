@@ -4,7 +4,16 @@ import { useNavigate } from "react-router-dom";
 
 import mainLogo from "../images_comp/mainLogo.png";
 
-const Verifying = () => {
+const Verifying = (props) => {
+    const fileInput = React.useRef(null);
+
+    const handleButtonClick = (e) => {
+        fileInput.current.click();
+    };
+    const handleChange = (e) => {
+        console.log(e.target.files[0]);
+    };
+
     const navigate = useNavigate();
     const completeVerify = (e) => {
         navigate("/afVerify2");
@@ -27,6 +36,18 @@ const Verifying = () => {
                         *면허 번호 포함, jpg, png 사진만 가능, 용량 1M이하
                     </div>
                 </Container>
+                <React.Fragment>
+                    <UploadWrapper>
+                        <input
+                            class="upload_blank"
+                            type="file"
+                            id="fileUpload"
+                            ref={fileInput}
+                            accept="image/jpg, image/png, image/jpeg"
+                            onChange={handleChange}
+                        />
+                    </UploadWrapper>
+                </React.Fragment>
                 <button onClick={completeVerify}>인증하기</button>
             </Wrapper>
         </>
@@ -56,8 +77,7 @@ const Wrapper = styled.div`
         font-size: 12px;
         font-weight: 600;
         background: #10c38e;
-        margin-top: 40%;
-        margin-bottom: 45%;
+        margin: 50px 0 200px 0;
     }
 `;
 const Container = styled.div`
@@ -65,6 +85,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding-bottom: 20%;
     .ment {
         color: white;
         font-size: 20px;
@@ -75,5 +96,20 @@ const Container = styled.div`
         color: #aeaeae;
         font-size: 10px;
         padding-top: 10%;
+    }
+`;
+const UploadWrapper = styled.div`
+    width: 90%;
+    .upload_btn {
+        color: white;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .upload_blank {
+        color: white;
+    }
+    input {
     }
 `;
