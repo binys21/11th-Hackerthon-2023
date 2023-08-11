@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
+import Header from "../Header";
 import mainLogo from "../images_comp/mainLogo.png";
 
 const Verifying = (props) => {
@@ -32,7 +33,8 @@ const Verifying = (props) => {
     return (
         <>
             <Wrapper>
-                <img src={mainLogo} />
+                <Header title="본인인증" />
+                <img class="mainlogo" src={mainLogo} />
                 <Container>
                     <div class="ment">
                         의료인 인증을 위한 간단한
@@ -86,7 +88,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     background: #202329;
-    img {
+    .mainlogo {
         width: 135px;
         align-items: center;
     }
