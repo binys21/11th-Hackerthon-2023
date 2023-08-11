@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+//image
+import lowbtn from '../../pages/images/lowbtn.png';
 
 const AllegyCard=()=>{
+    const [isBlur, setIsBlur] = useState(true);
+    const [isButtonVisible, setIsButtonVisible] = useState(true);
+
+    const toggleBlur = () => {
+        setIsBlur(!isBlur);
+        setIsButtonVisible(false);
+    };
+
     return(
         <>
-        <BoxWrapper>
+                {isButtonVisible && (
+                        <BtnWrapper>
+                        <button onClick={toggleBlur}>
+                                 내려서 상세보기
+                                 <br></br>
+                                 <br></br>
+                                <img src={lowbtn} alt=""></img>
+                        </button>
+                        </BtnWrapper>
+        )}
+        <BoxWrapper blur={isBlur}>
         <ContentWrapper>
                 <NameWrapper>파목신</NameWrapper>
                 amoxicillin
@@ -37,6 +57,9 @@ const AllegyCard=()=>{
 };
 export default AllegyCard;
 const BoxWrapper=styled.div`
+filter: ${({ blur }) => (blur ? "blur(1px)" : "none")};
+-webkit-filter: ${({ blur }) => (blur ? "blur(5px)" : "none")};
+
 background-color:#363B46;
 display: flex;
 width:333px;
@@ -78,4 +101,16 @@ margin-top:64px;
 `;
 const FourTitle=styled.div`
 margin-top:25px;
+`;
+const BtnWrapper=styled.div`
+button {
+    color:white;
+    border: 0;
+    background-color: transparent;
+    
+}
+z-index:100;
+position: absolute;
+top:68%;
+left: 40%;
 `;
