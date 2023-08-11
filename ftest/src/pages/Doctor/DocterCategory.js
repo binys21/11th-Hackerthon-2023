@@ -1,23 +1,20 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
-
+//component
 import DocterHospital from '../../components/category_comp/DocterHospital';
 // Data
 import { filterSlice, setFilter } from "../../redux/filterSlice";
 import {useSelector,useDispatch} from "react-redux";
-
 import { hospitalData } from '../../_mock/hospitalData';
-
 //image
 import underbar from "../../pages/images/underbar.png";
 import HeaderWithRef from '../../components/HeaderWithRef';
-
-
+import Surgery from '../../components/category_comp/Surgery';
 
 const DocterCategory=()=>{
-    const categories = ["진단", "약물처방", "수술"];
-
+    const categories = [ "진단","약물처방", "수술"];
+    
 
     //filterSlice의 filter 받아오기, dispatch 사용 선언
     const { filter } = useSelector((state) => state.filter);
@@ -26,7 +23,7 @@ const DocterCategory=()=>{
 
     //dispatch 사용 => 카테고리 변경 저장하는 saveCategory함수
     const saveCategory = (e) => {
-      // console.log(filter);
+       console.log(filter);
         dispatch(
           setFilter({
                 filter: e.target.id,
@@ -34,6 +31,8 @@ const DocterCategory=()=>{
         );
         
     };
+
+
    
     //선택한 카테고리와 일치하는 병원데이터만 받아서 저장 (filter 함수 사용)
     const hospitalList = hospitalData.filter((hospital)=>hospital.category == filter);
@@ -45,15 +44,12 @@ const DocterCategory=()=>{
         <Wrapper>
           <HeaderWithRef title="진료 기록 조회"/>
             <Container>
-            {/* <Header title="진료 기록 조회"/> */}
               <FilterBar>
                 {categories.map((category) => (
                   <Category
                     id={category}
                     checked={filter === category}
-                    onClick={saveCategory}
-                  >
-                
+                    onClick={saveCategory}>
                     {category}
                   </Category>
                 ))}
@@ -70,10 +66,13 @@ const DocterCategory=()=>{
               </TopWrapper>
 
               <HospitalList>
-                {hospitalList.map((hospital) => (
-                  <DocterHospital hospital={hospital} />
-                ))}
-
+                {hospitalList.map((hospital) =>
+                  filter == "진단" || filter == "약물처방" ? (
+                    <DocterHospital hospital={hospital} />
+                  ) : (
+                    filter == "수술" && <Surgery hospital={hospital} />
+                  )
+                )}
               </HospitalList>
               
             </Container>

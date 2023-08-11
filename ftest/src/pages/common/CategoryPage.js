@@ -24,7 +24,7 @@ const CategoryPage = () => {
 
     //dispatch 사용 => 카테고리 변경 저장하는 saveCategory함수
     const saveCategory = (e) => {
-        // console.log(filter);
+        console.log(e.target.id);
         dispatch(
             setFilter({
                 filter: e.target.id,
@@ -42,7 +42,6 @@ const CategoryPage = () => {
     //   else{
     //     navigate("/surgerydetail");
     //   }
-
     // };
 
     //선택한 카테고리와 일치하는 병원데이터만 받아서 저장 (filter 함수 사용)
@@ -82,14 +81,14 @@ const CategoryPage = () => {
                                 </select>
                             </SelectBox>
                         </TopWrapper>
-
                         <HospitalList>
-                            {hospitalList.map((hospital) => (
-                                <Hospital hospital={hospital} />
-                            ))}
-                            {hospitalList.map((hospital) => (
-                                <Surgery hospital={hospital} />
-                            ))}
+                        {hospitalList.map((hospital) =>
+                        filter == "진단" || filter == "약물처방" ? (
+                            <Hospital hospital={hospital} />
+                        ) : (
+                            filter == "수술" && <Surgery hospital={hospital} />
+                        )
+                        )}
                         </HospitalList>
                     </Container>
                 </Wrapper>
