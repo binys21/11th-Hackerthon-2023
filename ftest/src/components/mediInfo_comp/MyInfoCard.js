@@ -5,13 +5,13 @@ import lowbtn from '../../pages/images/lowbtn.png';
 const MyInfoCard=()=>{
     return(
         <>
-        {/* <ExWrapper>내려서 상세보기</ExWrapper>
+        <ExWrapper>내려서 상세보기</ExWrapper>
             <BtnWrapper>
             
             <button >
             <img src={lowbtn} alt=""></img>
             </button>
-            </BtnWrapper> */}
+            </BtnWrapper>
         <BoxWrapper>
 
             <ContentWrapper>
@@ -52,8 +52,8 @@ const MyInfoCard=()=>{
 export default MyInfoCard;
 const BoxWrapper=styled.div`
 
-// filter: blur(1px);
-// -webkit-filter: blur(5px);
+filter: blur(1px);
+-webkit-filter: blur(5px);
 
 display: flex;
 background-color:#175DF9;
@@ -82,24 +82,24 @@ font-weight:700;
 line-height:2.5;
 margin-left:20px;
 `;
-// const BtnWrapper=styled.div`
-// button {
-//     border: 0;
-//     background-color: transparent;
+const BtnWrapper=styled.div`
+button {
+    border: 0;
+    background-color: transparent;
     
-// }
-// z-index:100;
-// position: absolute;
-// top:100px;
-// left: 49%;
-// `;
-// const ExWrapper=styled.div`
-// color:white;
-// font-size:12px;
-// font-weight:400;
-// z-index:100;
-// position: absolute;
-// top:75px;
-// left: 48%;
+}
+z-index:100;
+position: absolute;
+top:100px;
+left: 49%;
+`;
+const ExWrapper=styled.div`
+color:white;
+font-size:12px;
+font-weight:400;
+z-index:100;
+position: absolute;
+top:75px;
+left: 48%;
 
-// `;
+`;
