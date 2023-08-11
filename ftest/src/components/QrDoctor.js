@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Webcam from "react-webcam";
 import { useNavigate } from "react-router-dom";
 import closeQr2 from "../components/images_comp/closeQr2.png";
-import qrDoctor from "../components/images_comp/qrDoctor.png";
 import RequestNft from "./NFT_comp/RequestNft";
 
 const QrDoctor = (props) => {
@@ -26,7 +26,9 @@ const QrDoctor = (props) => {
                     <img onClick={deleteQr} src={closeQr2} />
                 </QrTitle>
                 <div class="btn_qr">QR 코드</div>
-                <Webcam />
+                <div class="webcam">
+                    <Webcam height={100 + "%"} width={100 + "%"} />
+                </div>
             </Container>
         </Wrapper>
     );
@@ -50,6 +52,7 @@ const Container = styled.div`
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     background-color: #10c38e;
     .btn_qr {
         display: flex;
@@ -63,6 +66,13 @@ const Container = styled.div`
         border-radius: 10px;
         background-color: none;
         padding: 4px;
+        margin-bottom: 10px;
+    }
+    .webcam {
+        position: relative;
+        align-self: center;
+        width: 80%;
+        height: 100%;
     }
 `;
 
@@ -83,9 +93,4 @@ const QrTitle = styled.div`
         margin-top: 30px;
     }
     padding-bottom: 20%;
-`;
-
-const Webcam = styled.div`
-    width: 200px;
-    height: 200px;
 `;
