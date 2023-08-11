@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Webcam from "react-webcam";
+import QrReader from "react-web-qr-reader";
 import { useNavigate } from "react-router-dom";
 import closeQr2 from "../components/images_comp/closeQr2.png";
 import RequestNft from "./NFT_comp/RequestNft";
@@ -17,6 +18,21 @@ const QrDoctor = (props) => {
         setQrScanned(true);
     };
 
+    const delay = 500;
+    const previewStyle = {
+        height: 250,
+        width: 250,
+    };
+    const [result, setReselt] = useState("No result");
+    const handleScan = (result) => {
+        if (result) {
+            setReselt(result);
+        }
+    };
+    const handleError = (error) => {
+        console.log(error);
+    };
+
     return (
         <Wrapper>
             {qrScanned ? <RequestNft setQrScanned={setQrScanned} /> : null}
@@ -27,7 +43,12 @@ const QrDoctor = (props) => {
                 </QrTitle>
                 <div class="btn_qr">QR 코드</div>
                 <div class="webcam">
-                    <Webcam height={100 + "%"} width={100 + "%"} />
+                    <QrReader
+                        delay={delay}
+                        style={previewStyle}
+                        onError={handleError}
+                        onScan={handleScan}
+                    />
                 </div>
             </Container>
         </Wrapper>
@@ -69,10 +90,9 @@ const Container = styled.div`
         margin-bottom: 10px;
     }
     .webcam {
-        position: relative;
+        display: flex;
+        justify-content: center;
         align-self: center;
-        width: 80%;
-        height: 100%;
     }
 `;
 
@@ -92,5 +112,5 @@ const QrTitle = styled.div`
         height: 20px;
         margin-top: 30px;
     }
-    padding-bottom: 20%;
+    padding-bottom: 15%;
 `;
