@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
-import HomeHeader from "../../components/homeHeader";
+import Header from "../../components/Header";
 import doneAllDoc from "../images/doneAllDoc.png";
 import slideBtn from "../images/slideBtn.png";
 import QrDoctor from "../../components/QrDoctor";
@@ -23,12 +23,12 @@ const DoctorHome = (props) => {
 
     return (
         <>
+            {qr ? <QrDoctor setQr={setQr} /> : null}
+            {qrScanned ? (
+                <RequestNft setQr={setQr} setQrScanned={setQrScanned} />
+            ) : null}
             <Wrapper>
-                {qr ? <QrDoctor setQr={setQr} /> : null}
-                {qrScanned ? (
-                    <RequestNft setQr={setQr} setQrScanned={setQrScanned} />
-                ) : null}
-                <HomeHeader />
+                <Header title="HOME" />
                 <Content>
                     <div class="title">
                         아직 환자 건강 NFT
@@ -39,12 +39,14 @@ const DoctorHome = (props) => {
                         새로 고침
                     </div>
                 </Content>
-                <img src={doneAllDoc} />
-                <div class="ment">
-                    QR 스캔으로
-                    <br />
-                    환자의 건강 NFT 기록을 불러오세요
-                </div>
+                <DoneWrapper>
+                    <img class="done" src={doneAllDoc} />
+                    <div class="ment">
+                        QR 스캔으로
+                        <br />
+                        환자의 건강 NFT 기록을 불러오세요
+                    </div>
+                </DoneWrapper>
                 <Container onClick={qrPop}>
                     <div class="slide">올려서 QR 스캔하기</div>
                     <div class="slide_btn">
@@ -65,7 +67,15 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: flex-start;
     background: #202329;
-    img {
+`;
+const DoneWrapper = styled.div`
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 135px;
+    .done {
         margin: 20% 0 5% 0;
     }
     .ment {
@@ -75,9 +85,10 @@ const Wrapper = styled.div`
         text-align: center;
     }
 `;
-
 const Content = styled.div`
     width: 85%;
+    position: relative;
+    top: 13%;
     display: flex;
     flex-direction: column;
     .title {

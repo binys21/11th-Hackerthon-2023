@@ -12,6 +12,7 @@ import { hospitalData } from "../../_mock/hospitalData";
 
 //image
 import underbar from "../../pages/images/underbar.png";
+import select_btn from "../../pages/images/select_btn.png";
 import Header from "../../components/Header";
 
 const CategoryPage = () => {
@@ -55,7 +56,6 @@ const CategoryPage = () => {
                 <Wrapper>
                     <Header title="진료 기록 조회" />
                     <Container>
-                        {/* <Header title="진료 기록 조회"/> */}
                         <FilterBar>
                             {categories.map((category) => (
                                 <Category
@@ -67,7 +67,8 @@ const CategoryPage = () => {
                                 </Category>
                             ))}
                         </FilterBar>
-                        <br></br>
+                        <div class="line"></div>
+                        <br />
                         <TopWrapper>
                             <Number>총 5건</Number>
                             <SelectBox>
@@ -79,16 +80,19 @@ const CategoryPage = () => {
                                         오래된순
                                     </option>
                                 </select>
+                                <img src={select_btn} />
                             </SelectBox>
                         </TopWrapper>
                         <HospitalList>
-                        {hospitalList.map((hospital) =>
-                        filter == "진단" || filter == "약물처방" ? (
-                            <Hospital hospital={hospital} />
-                        ) : (
-                            filter == "수술" && <Surgery hospital={hospital} />
-                        )
-                        )}
+                            {hospitalList.map((hospital) =>
+                                filter == "진단" || filter == "약물처방" ? (
+                                    <Hospital hospital={hospital} />
+                                ) : (
+                                    filter == "수술" && (
+                                        <Surgery hospital={hospital} />
+                                    )
+                                )
+                            )}
                         </HospitalList>
                     </Container>
                 </Wrapper>
@@ -99,69 +103,94 @@ const CategoryPage = () => {
 export default CategoryPage;
 const Back = styled.div`
     background: #202329;
-    height: 2000px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
 `;
 
 const Wrapper = styled.div`
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background: #202329;
 `;
 const Container = styled.div`
-    width: 90%;
-    max-width: 300px;
+    position: absolute;
+    top: 13%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    .line {
+        border-style: none none solid none;
+        border-bottom: solid 2px #4c4e53;
+    }
 `;
 const FilterBar = styled.div`
-    width: 100%;
-    max-width: 400px;
-    height: 70px;
+    width: 50%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    border-style: none none solid none;
-    border-bottom: solid 1px #cedff9;
+    font-weight: 600;
+    padding-left: 30px;
 `;
 const Category = styled.div`
-    height: 100%;
     width: 33%;
     display: flex;
+    font-size: 14px;
     justify-content: center;
     align-items: center;
-    color: ${(props) => (props.checked ? "#ffffff" : "#9b9b9b")};
-
+    color: ${(props) => (props.checked ? "#ffffff" : "#4c4e53")};
     background-image: ${(props) =>
         props.checked ? `url(${underbar})` : "none"};
     background-repeat: no-repeat;
     background-position: bottom;
-`;
-const HospitalList = styled.div`
-    width: 100%;
-    height: 100px;
-    margin-top: 20px;
-    margin-right: 24px;
-`;
-const Number = styled.div`
-    color: white;
-    font-size: 14px;
-    display: flex;
-    justify-content: flex-start;
-    margin-left: 24px;
-`;
-
-const SelectBox = styled.div`
-    margin-left: 180px;
-    width: 56.33px;
-    height: 17px;
-    background-color: transparent;
-    color: #175df9;
+    padding-bottom: 15px;
 `;
 const TopWrapper = styled.div`
     display: flex;
+    width: 85%;
     justify-content: space-between;
+    align-items: center;
+    align-self: center;
+`;
+const Number = styled.div`
+    color: white;
+    font-size: 12px;
+    display: flex;
+`;
+const SelectBox = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    img {
+        width: 12px;
+        height: 8px;
+    }
+    select {
+        width: 45px;
+        padding: 0.8em 0.5em;
+        font-size: 13px;
+        color: #175df9;
+        border: none;
+        background-color: transparent;
+        background: "url(${select_btn})" no-repeat 95% 50%;
+        -o-appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        padding: 0;
+    }
+    select::-ms-expand {
+        display: none;
+    }
+`;
+const HospitalList = styled.div`
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    padding-top: 8%;
 `;
