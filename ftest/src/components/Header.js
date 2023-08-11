@@ -22,7 +22,6 @@ const Header = (props) => {
 export default Header;
 
 const HeaderWrapper = styled.div`
-    position: absolute;
     top: 0;
     width: 330px;
     display: flex;
