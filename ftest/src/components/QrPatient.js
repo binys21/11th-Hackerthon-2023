@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import closeQr from "../components/images_comp/closeQr.png";
-import qrPatient from "../components/images_comp/qrPatient.png";
+import { QRCodeCanvas } from "qrcode.react";
 
 const QrPatient = (props) => {
     const { setQr } = props;
@@ -18,7 +18,9 @@ const QrPatient = (props) => {
                     <img onClick={deleteQr} src={closeQr} />
                 </QrTitle>
                 <div class="btn_qr">QR 코드</div>
-                <img src={qrPatient} />
+                <div class="qrCode">
+                    <QRCodeCanvas size={200} />
+                </div>
             </Container>
         </Wrapper>
     );
@@ -62,6 +64,18 @@ const Container = styled.div`
         justify-self: center;
         align-self: center;
         margin-top: 10px;
+    }
+    .qrCode {
+        width: 75%;
+        height: 55%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        margin-top: 20px;
+        background-color: white;
+        border-style: none;
+        border-radius: 10px;
     }
 `;
 
