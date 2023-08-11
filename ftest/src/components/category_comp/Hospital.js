@@ -25,7 +25,7 @@ const Hospital = (props) => {
             <Wrapper>
                 <BoxWrapper>
                     <LeftWrapper>
-                        <TypeWrapper>의원</TypeWrapper>
+                        <TypeWrapper>{hospital.type}</TypeWrapper>
                         <ImgWrapper>
                             <img src={circleimg} />
                         </ImgWrapper>

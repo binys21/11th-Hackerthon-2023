@@ -25,7 +25,7 @@ const CategoryPage = () => {
 
     //dispatch 사용 => 카테고리 변경 저장하는 saveCategory함수
     const saveCategory = (e) => {
-        console.log(e.target.id);
+
         dispatch(
             setFilter({
                 filter: e.target.id,
