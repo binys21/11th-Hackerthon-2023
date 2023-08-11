@@ -1,100 +1,81 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 //image
-import lowbtn from '../../pages/images/lowbtn.png';
+import lowbtn from "../../pages/images/lowbtn.png";
 
-const FamilyHisCard=()=>{
-    const [isBlur, setIsBlur] = useState(true);
-    const [isButtonVisible, setIsButtonVisible] = useState(true);
-
-    const toggleBlur = () => {
-        setIsBlur(!isBlur);
-        setIsButtonVisible(false);
-    };
-    return(
+const FamilyHisCard = () => {
+    return (
         <>
-         {isButtonVisible && (
-                        <BtnWrapper>
-                        <button onClick={toggleBlur}>
-                                 내려서 상세보기
-                                 <br></br>
-                                 <br></br>
-                                <img src={lowbtn} alt=""></img>
-                        </button>
-                        </BtnWrapper>
-        )}
-        <BoxWrapper blur={isBlur}>
-            <ContentWrapper>
-                <NameWrapper>당뇨</NameWrapper>
-                1966.03.23 - 
-                <br></br>
-                -
-            </ContentWrapper>
-            <TitleWrapper>
-            <OneTitle>친아버지</OneTitle>
-                <TwoTitle>생년월일 - 사망일자</TwoTitle>
-                <ThreeTitle>사망원인</ThreeTitle>
-            </TitleWrapper>
+            <BoxWrapper>
+                <NameWrapper>
+                    <div class="name">당뇨</div>
+                    <div class="stage">친아버지</div>
+                </NameWrapper>
+                <Substance>
+                    <div class="content">
+                        1966.03.23 -<br />-
+                    </div>
+                    <div class="title">
+                        생년월일 - 사망일자
+                        <br />
+                        사망원인
+                    </div>
+                </Substance>
             </BoxWrapper>
-            </>
-
+        </>
     );
-
 };
 export default FamilyHisCard;
-const BoxWrapper=styled.div`
-filter: ${({ blur }) => (blur ? "blur(1px)" : "none")};
--webkit-filter: ${({ blur }) => (blur ? "blur(5px)" : "none")};
 
-background-color:#363B46;
-display: flex;
-width:333px;
-height:155px;
-color:white;
-border-radius:10px;
+const BoxWrapper = styled.div`
+    background-color: #363b46;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: white;
+    border-radius: 10px;
 `;
-const ContentWrapper=styled.div`
-font-size:16px;
-font-weight:700;
-margin-top:10px;
-margin-left:20px;
-line-height:1.8;
+const NameWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .name {
+        text-align: left;
+        padding-left: 20px;
+        padding-top: 5%;
+        font-weight: 600;
+        font-size: 20px;
+    }
+    .stage {
+        text-align: right;
+        padding-right: 20px;
+        padding-top: 5%;
+        font-weight: 600;
+        font-size: 18px;
+        color: white;
+    }
 `;
-const NameWrapper=styled.div`
-font-size:24px;
-font-weight:600;
-margin-top:4px;
-margin-bottom:10px;
-line-height:2.3;
-`;
-
-const TitleWrapper=styled.div`
-font-size:12px;
-font-weight:400;
-text-align:right;
-margin-top:13px;
-margin-left:100px;
-`;
-const OneTitle=styled.div`
-font-size:16px;
-font-weight:700;
-margin-top:15px;
-`;
-const TwoTitle=styled.div`
-margin-top:38px;
-`;
-const ThreeTitle=styled.div`
-margin-top:20px;
-`;
-const BtnWrapper=styled.div`
-button {
-    color:white;
-    border: 0;
-    background-color: transparent;
-    
-}
-z-index:100;
-position: absolute;
-top:142%;
-left: 40%;
+const Substance = styled.div`
+    width: 100%;
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    margin: 5% 0;
+    .content {
+        text-align: left;
+        padding-left: 20px;
+        padding-top: 5%;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 2.3;
+    }
+    .title {
+        text-align: right;
+        padding-right: 20px;
+        padding-top: 5%;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 3;
+        margin-top: 4px;
+    }
 `;

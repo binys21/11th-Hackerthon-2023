@@ -1,58 +1,73 @@
 import React from "react";
 import styled from "styled-components";
 
-const GardianCard=()=>{
+const GardianCard = () => {
     return (
         <>
-                <BoxWrapper>
-            <ContentWrapper>
-                <NameWrapper>정수리</NameWrapper>
-                010-2222-2222
-            </ContentWrapper>
-            <TitleWrapper>
-            <OneTitle>친아버지</OneTitle>
-                <TwoTitle>연락처</TwoTitle>
-            </TitleWrapper>
-            </BoxWrapper></>
+            <BoxWrapper>
+                <NameWrapper>
+                    <div class="name">정수리</div>
+                    <div class="stage">친아버지</div>
+                </NameWrapper>
+                <Substance>
+                    <div class="content">010-2222-2222</div>
+                    <div class="title">연락처</div>
+                </Substance>
+            </BoxWrapper>
+        </>
     );
-
 };
 export default GardianCard;
-const BoxWrapper=styled.div`
-background-color:#363B46;
-display: flex;
-width:333px;
-height:115px;
-color:white;
-border-radius:10px;
-`;
-const ContentWrapper=styled.div`
-font-size:16px;
-font-weight:700;
-margin-top:8px;
-margin-left:20px;
-line-height:1.3;
-`;
-const NameWrapper=styled.div`
-font-size:24px;
-font-weight:600;
-margin-top:4px;
-margin-bottom:10px;
-line-height:2.3;
-`;
 
-const TitleWrapper=styled.div`
-font-size:12px;
-font-weight:400;
-text-align:right;
-margin-top:13px;
-margin-left:100px;
+const BoxWrapper = styled.div`
+    background-color: #363b46;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: white;
+    border-radius: 10px;
 `;
-const OneTitle=styled.div`
-font-size:16px;
-font-weight:700;
-margin-top:15px;
+const NameWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .name {
+        text-align: left;
+        padding-left: 20px;
+        padding-top: 5%;
+        font-weight: 600;
+        font-size: 20px;
+    }
+    .stage {
+        text-align: right;
+        padding-right: 20px;
+        padding-top: 5%;
+        font-weight: 600;
+        font-size: 18px;
+        color: white;
+    }
 `;
-const TwoTitle=styled.div`
-margin-top:30px;
+const Substance = styled.div`
+    width: 100%;
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    margin: 5% 0;
+    .content {
+        text-align: left;
+        padding-left: 20px;
+        padding-top: 5%;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 2;
+    }
+    .title {
+        text-align: right;
+        padding-right: 20px;
+        padding-top: 5%;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 2.2;
+        margin-top: 4px;
+    }
 `;
