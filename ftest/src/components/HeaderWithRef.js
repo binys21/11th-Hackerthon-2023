@@ -33,13 +33,17 @@ const HeaderWrapper = styled.div`
 
     img {
         width: 7px;
+        margin-right: 50px;
     }
     .pageTitle {
         color: white;
         font-weight: 500;
-        font-size: 18px;
+        font-size: 14px;
     }
-    .button {
+    button {
         background-color: transparent;
+        border-style: none;
+        color: white;
+        font-size: 11px;
     }
 `;
