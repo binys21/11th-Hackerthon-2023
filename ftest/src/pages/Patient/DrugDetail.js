@@ -16,8 +16,8 @@ const DrugDetail=()=>{
     return (
         <>
         <Wrapper>
+        <Header title="상세보기"/>
         <Container>
-            <Header title="상세보기"/>
             <br></br>
             <Hospital hospital={{ date: "조제일자 2023-07-29 | 연결 진단서 1건",
             name: "독수리약국",
@@ -37,7 +37,7 @@ export default DrugDetail;
 
 
 const Wrapper = styled.div`
-    height: 800px; 
+    height: 810px; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,17 +45,11 @@ const Wrapper = styled.div`
     background-color: #202329;
 `;
 const Container = styled.div`
+    margin-top:68px;
     width: 80%;
     max-width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
     
-`;
-const ImgWrapper=styled.div`
-    img{
-        border-radius: 6px;
-        margin-bottom:15px;
-    }
-
 `;
