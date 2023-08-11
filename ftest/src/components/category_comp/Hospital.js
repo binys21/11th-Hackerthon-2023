@@ -12,12 +12,13 @@ const Hospital = (props) => {
     const { hospital } = props; //병원 정보를 props로 받아옴
     const navigate = useNavigate();
 
+    const navigateToDetail = () => {
+        navigate("/drugdetail", { state: { hospital } });
+    };
+
     const { filter } = useSelector((state) => state.filter);
 
-    //진단 카테고리면 historyDetail, 약물 카테고리면 drugDetail로 이동하도록
-    const navigateToDetail = () => {
-        navigate("/historydetail");
-    };
+  
 
     return (
         <>
