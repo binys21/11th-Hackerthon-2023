@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Webcam from "react-webcam";
+// import Webcam from "react-webcam";
 import QrReader from "react-web-qr-reader";
 import { useNavigate } from "react-router-dom";
 import closeQr2 from "../components/images_comp/closeQr2.png";
@@ -27,6 +27,7 @@ const QrDoctor = (props) => {
     const handleScan = (result) => {
         if (result) {
             setReselt(result);
+            setQrScanned(true);
         }
     };
     const handleError = (error) => {
@@ -112,5 +113,5 @@ const QrTitle = styled.div`
         height: 20px;
         margin-top: 30px;
     }
-    padding-bottom: 15%;
+    padding-bottom: 10%;
 `;
