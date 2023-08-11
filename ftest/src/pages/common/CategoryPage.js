@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-
+//component
 import Hospital from "../../components/category_comp/Hospital";
 import Surgery from "../../components/category_comp/Surgery";
+import Pharmacy from '../../components/category_comp/Pharmacy';
 // Data
 import { filterSlice, setFilter } from "../../redux/filterSlice";
 import { useSelector, useDispatch } from "react-redux";
@@ -53,7 +54,6 @@ const CategoryPage = () => {
         <>
             <Back>
                 <Wrapper>
-                    <Header title="진료 기록 조회" />
                     <Container>
                         {/* <Header title="진료 기록 조회"/> */}
                         <FilterBar>
@@ -83,11 +83,13 @@ const CategoryPage = () => {
                         </TopWrapper>
                         <HospitalList>
                         {hospitalList.map((hospital) =>
-                        filter == "진단" || filter == "약물처방" ? (
+                            filter === "진단" ? (
                             <Hospital hospital={hospital} />
-                        ) : (
-                            filter == "수술" && <Surgery hospital={hospital} />
-                        )
+                            ) : filter === "약물처방" ? (
+                            <Pharmacy hospital={hospital} />
+                            ) : filter === "수술" ? (
+                            <Surgery hospital={hospital} />
+                            ) : null
                         )}
                         </HospitalList>
                     </Container>
