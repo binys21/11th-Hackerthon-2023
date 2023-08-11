@@ -47,7 +47,8 @@ export default RequestNft;
 const Wrapper = styled.div`
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
+    z-index: 10;
     background: rgba(0, 0, 0, 0.8);
 `;
 const Container = styled.div`

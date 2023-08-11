@@ -26,7 +26,7 @@ const QrDoctor = (props) => {
                     <img onClick={deleteQr} src={closeQr2} />
                 </QrTitle>
                 <div class="btn_qr">QR 코드</div>
-                <img onClick={scanned} src={qrDoctor} />
+                <Webcam />
             </Container>
         </Wrapper>
     );
@@ -64,13 +64,6 @@ const Container = styled.div`
         background-color: none;
         padding: 4px;
     }
-    img {
-        display: flex;
-        width: 80%;
-        justify-self: center;
-        align-self: center;
-        margin-top: 10px;
-    }
 `;
 
 const QrTitle = styled.div`
@@ -90,4 +83,9 @@ const QrTitle = styled.div`
         margin-top: 30px;
     }
     padding-bottom: 20%;
+`;
+
+const Webcam = styled.div`
+    width: 200px;
+    height: 200px;
 `;
