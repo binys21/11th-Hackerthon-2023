@@ -1,23 +1,32 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-//image
-import d1 from "../images/drugimages/d1.png";
-import d2 from "../images/drugimages/d2.png";
+import { useLocation } from "react-router-dom";
+
 import d3 from "../images/drugimages/d3.png";
 import Header from '../../components/Header';
+//componenet
+import DrugCard from '../../components/detail_comp/DrugCard';
+import Hospital from '../../components/category_comp/Hospital';
+import DrugCard2 from '../../components/detail_comp/DrugCard2';
 
 const DrugDetail=()=>{
+    const location = useLocation();     //useLocation으로 hospital 상태 정보 가져옴 
+    const { hospital } = location.state || {};
+
     return (
         <>
         <Wrapper>
         <Container>
             <Header title="상세보기"/>
-            <ImgWrapper>
-            <img src={d1} width='300px'/>
-            <img src={d2} width = '300px'/>
-            <img src={d3} width = '300px'/>
+            <br></br>
+            <Hospital hospital={{ date: "조제일자 2023-07-29 | 연결 진단서 1건",
+            name: "독수리약국",
+            addr: "서울 서대문구 연세로 36 독수리빌딩",
+            doctor: "권한민 약사" }} />
 
-            </ImgWrapper>
+            <DrugCard/>
+            <br></br>
+            <DrugCard2/>
         </Container>
         </Wrapper>
         </>
