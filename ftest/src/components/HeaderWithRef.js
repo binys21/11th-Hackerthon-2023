@@ -22,6 +22,8 @@ const HeaderWithRef = (props) => {
 export default HeaderWithRef;
 
 const HeaderWrapper = styled.div`
+    position: absolute;
+    top: 0;
     width: 330px;
     display: flex;
     justify-content: space-between;
@@ -36,10 +38,8 @@ const HeaderWrapper = styled.div`
         color: white;
         font-weight: 500;
         font-size: 18px;
-
     }
-    .button{
-    background-color:transparent;
-
+    .button {
+        background-color: transparent;
     }
 `;

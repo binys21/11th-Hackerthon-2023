@@ -41,8 +41,8 @@ const BfVerify = () => {
 
     return (
         <Wrapper>
+            <Header title="회원가입" />
             <BfVerifyContent>
-                <Header></Header>
                 <LogoWrapper>
                     <img src={mainLogo} />
                     <p class="title">국민들의 건강 관리 지키미, 건강지갑</p>
@@ -120,6 +120,7 @@ const Wrapper = styled.div`
     }
 `;
 const BfVerifyContent = styled.div`
+    margin-top: 80px;
     height: 100%;
     width: 85%;
     max-width: 300px;

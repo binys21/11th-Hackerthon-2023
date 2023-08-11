@@ -17,6 +17,9 @@ const DoctorHome = (props) => {
     };
 
     const navigate = useNavigate();
+    const refresh = () => {
+        navigate("/viewnft");
+    };
 
     return (
         <>
@@ -32,7 +35,9 @@ const DoctorHome = (props) => {
                         <br />
                         기록을 불러오지 못했어요
                     </div>
-                    <div class="renew_btn">새로 고침</div>
+                    <div onClick={refresh} class="renew_btn">
+                        새로 고침
+                    </div>
                 </Content>
                 <img src={doneAllDoc} />
                 <div class="ment">

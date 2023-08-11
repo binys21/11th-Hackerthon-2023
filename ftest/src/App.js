@@ -14,6 +14,8 @@ import HomePage from "./pages/Patient/HomePage";
 import MyNFT from "./pages/Patient/MyNFT";
 
 import DoctorHome from "./pages/Doctor/DoctorHome";
+import DoctorNft from "./pages/Doctor/DoctorNft";
+import ViewNft from "./pages/Doctor/ViewNft";
 
 import MyNFTcleared from "./pages/Patient/MyNFTcleared";
 import HistoryDetail from "./pages/Patient/HistoryDetail";
@@ -21,10 +23,10 @@ import DrugDetail from "./pages/Patient/DrugDetail";
 import CategoryPage from "./pages/common/CategoryPage";
 import SurgeryDetail from "./pages/Patient/SurgeryDetail";
 import NftRenewalPage from "./pages/common/NftRenewalPage";
-import MediInfoPage from './pages/Patient/MediInfoPage';
-import DocterMediInfo from './pages/Doctor/DocterMediInfo';
+import MediInfoPage from "./pages/Patient/MediInfoPage";
+import DocterMediInfo from "./pages/Doctor/DocterMediInfo";
 import AgreePop from "./components/NFT_comp/AgreeNft";
-import DocterCategory from './pages/Doctor/DocterCategory';
+import DocterCategory from "./pages/Doctor/DocterCategory";
 
 function App() {
     return (
@@ -41,6 +43,8 @@ function App() {
                     <Route path="/home" element={<HomePage />} />
 
                     <Route path="/doctorhome" element={<DoctorHome />} />
+                    <Route path="/doctornft" element={<DoctorNft />} />
+                    <Route path="/viewnft" element={<ViewNft />} />
 
                     <Route path="/mynft" element={<MyNFT />} />
                     <Route path="/mynftcleared" element={<MyNFTcleared />} />
@@ -49,10 +53,16 @@ function App() {
                     <Route path="/category" element={<CategoryPage />} />
                     <Route path="/surgerydetail" element={<SurgeryDetail />} />
                     <Route path="/nftrenewal" element={<NftRenewalPage />} />
-                    <Route path='/medicalinfo' element={<MediInfoPage/>}/>
+                    <Route path="/medicalinfo" element={<MediInfoPage />} />
 
-                    <Route path='/doctermediinfo' element={<DocterMediInfo/>}/>
-                    <Route path='/doctercategory' element={<DocterCategory/>}/>
+                    <Route
+                        path="/doctermediinfo"
+                        element={<DocterMediInfo />}
+                    />
+                    <Route
+                        path="/doctercategory"
+                        element={<DocterCategory />}
+                    />
                 </Routes>
             </Router>
         </>
