@@ -102,7 +102,7 @@ const CenterWrapper=styled.div`
   flex-direction: column;
   margin-left:25px;
   hr{
-    width:185px;
+    width:250px;
     height:0.5px;
     border:1px;
     background-color:#868C8C;
@@ -114,7 +114,7 @@ button{
   background-color: transparent;
 }
 margin-top:50px;
-margin-left:65px;
+margin-left:20px;
 `;
 const SurNumWrapper=styled.div`
 margin-top:3px;
