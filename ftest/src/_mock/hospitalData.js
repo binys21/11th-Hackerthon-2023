@@ -43,7 +43,8 @@ export const hospitalData = [
       name: "아현서울이비인후과의원",
       date:"마지막 방문 2023.07.29",
       doctor:"김현아 의사",
-      addr:"서울특별시 서대문구 136-21"
+      addr:"서울특별시 서대문구 136-21",
+      type:"의원"
     },
     {
       id: 6,
@@ -51,7 +52,8 @@ export const hospitalData = [
       name: "세브란스병원",
       date:"마지막 방문 2023.05.20",
       doctor:"김학선 의사",
-      addr:"서울특별시 서대문구 신촌동 연세로 50-1"
+      addr:"서울특별시 서대문구 신촌동 연세로 50-1",
+      type:"종합병원"
     },
     {
       id: 7,
@@ -59,7 +61,8 @@ export const hospitalData = [
       name: "삼성메디이비인후과의원",
       date:"마지막 방문 2023.05.29",
       doctor:"박수완 의사",
-      addr:"부산 동구 중앙대로 197 뉴포트빌딩 4층"
+      addr:"부산 동구 중앙대로 197 뉴포트빌딩 4층",
+      type:"의원"
     },
     {
       id: 8,
@@ -67,7 +70,8 @@ export const hospitalData = [
       name: "뉴튼치과병원",
       date:"마지막 방문 2023.07.29",
       doctor:"이성진 의사 외 2건",
-      addr:"부산 동구 중앙대로 216 2층, 3층"
+      addr:"부산 동구 중앙대로 216 2층, 3층",
+      type:"치과병원"
     },
     {
       id: 9,
@@ -75,7 +79,8 @@ export const hospitalData = [
       name: "척시원병원",
       date:"마지막 방문 2023.05.29",
       doctor:"김지선 의사",
-      addr:"부산 동구 대영로 261 척시원병원"
+      addr:"부산 동구 대영로 261 척시원병원",
+      type:"병원"
     },
     {
       id: 10,

@@ -8,12 +8,12 @@ import { useSelector, useDispatch } from "react-redux";
 import circleimg from "../../pages/images/circleimg.png";
 import btn from "../../pages/images/btn.png";
 
-const Hospital = (props) => {
+const Pharmacy = (props) => {
     const { hospital } = props; //병원 정보를 props로 받아옴
     const navigate = useNavigate();
 
     const navigateToDetail = () => {
-        navigate("/historydetail", { state: { hospital } });
+        navigate("/drugdetail", { state: { hospital } });
     };
 
     const { filter } = useSelector((state) => state.filter);
@@ -25,7 +25,6 @@ const Hospital = (props) => {
             <Wrapper>
                 <BoxWrapper>
                     <LeftWrapper>
-                        <TypeWrapper>{hospital.type}</TypeWrapper>
                         <ImgWrapper>
                             <img src={circleimg} />
                         </ImgWrapper>
@@ -50,7 +49,7 @@ const Hospital = (props) => {
     );
 };
 
-export default Hospital;
+export default Pharmacy;
 const Wrapper = styled.div`
     background-color: none;
 `;
@@ -62,17 +61,6 @@ const BoxWrapper = styled.div`
     height: 114px;
     margin-bottom: 20px;
     border-radius: 8px;
-`;
-const TypeWrapper = styled.div`
-    background-color: #2273ec;
-    color: white;
-    width: 28px;
-    height: 18px;
-    border-radius: 7px;
-    font-size: 9px;
-    text-align: center;
-    margin-left: 22px;
-    margin-top: 6px;
 `;
 const ImgWrapper = styled.div``;
 const NameWrapper = styled.div`

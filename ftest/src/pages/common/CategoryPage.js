@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-
+//component
 import Hospital from "../../components/category_comp/Hospital";
 import Surgery from "../../components/category_comp/Surgery";
+import Pharmacy from '../../components/category_comp/Pharmacy';
 // Data
 import { filterSlice, setFilter } from "../../redux/filterSlice";
 import { useSelector, useDispatch } from "react-redux";
@@ -25,7 +26,7 @@ const CategoryPage = () => {
 
     //dispatch 사용 => 카테고리 변경 저장하는 saveCategory함수
     const saveCategory = (e) => {
-        console.log(e.target.id);
+
         dispatch(
             setFilter({
                 filter: e.target.id,
@@ -54,7 +55,6 @@ const CategoryPage = () => {
         <>
             <Back>
                 <Wrapper>
-                    <Header title="진료 기록 조회" />
                     <Container>
                         <FilterBar>
                             {categories.map((category) => (
@@ -84,15 +84,15 @@ const CategoryPage = () => {
                             </SelectBox>
                         </TopWrapper>
                         <HospitalList>
-                            {hospitalList.map((hospital) =>
-                                filter == "진단" || filter == "약물처방" ? (
-                                    <Hospital hospital={hospital} />
-                                ) : (
-                                    filter == "수술" && (
-                                        <Surgery hospital={hospital} />
-                                    )
-                                )
-                            )}
+                        {hospitalList.map((hospital) =>
+                            filter === "진단" ? (
+                            <Hospital hospital={hospital} />
+                            ) : filter === "약물처방" ? (
+                            <Pharmacy hospital={hospital} />
+                            ) : filter === "수술" ? (
+                            <Surgery hospital={hospital} />
+                            ) : null
+                        )}
                         </HospitalList>
                     </Container>
                 </Wrapper>

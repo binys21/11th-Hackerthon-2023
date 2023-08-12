@@ -8,6 +8,13 @@ import GardianCard from "../../components/mediInfo_comp/GardianCard";
 import Header from "../../components/Header";
 
 const MediInfoPage = () => {
+    const [modal,setModal]=useState(false); //질문창 모달 
+
+      // modal 여는 함수
+    const openModal = () => {
+        setModal(true);
+    };
+
     return (
         <>
             <Wrapper>
