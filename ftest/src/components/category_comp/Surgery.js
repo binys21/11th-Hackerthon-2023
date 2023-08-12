@@ -6,6 +6,7 @@ import SurgeryTab from './SergeryTab';
 import { hospitalData } from '../../_mock/hospitalData';
 //image
 import btn from "../../pages/images/btn.png";
+import Vector from "../../pages/images/Vector.png";
 
 const Surgery=(props)=>{
     const {hospital}=props; //병원 정보를 props로 받아옴 
@@ -17,16 +18,12 @@ const Surgery=(props)=>{
     const onClickImageMoreViewButton = () => {
       setIsMoreView(!isMoreView);
     }; // 클릭시 상태 반전
-        
-    //수술 상세보기 여는 함수
-    // const openTab=()=>{
-    //     setTab(true);
-    // };
+  
 
     return (
         <>
         <Wrapper>
-          <BoxWrapper>
+          <BoxWrapper isMoreView={isMoreView} >
    
             <CenterWrapper>
             <DateWrapper>{hospital.date}</DateWrapper>
@@ -36,7 +33,9 @@ const Surgery=(props)=>{
             <DocWrapper>{hospital.doctor}</DocWrapper>
             <SurNumWrapper>{hospital.surgery}</SurNumWrapper>
             
-            {isMoreView ? <SurgeryTab />:null}
+            
+            {isMoreView ? <SurgeryTab /> :null}
+            {isMoreView ? <SurgeryTab /> :null}
             </CenterWrapper>
 
            <BtnWrapper isMoreView={isMoreView}>
@@ -69,11 +68,12 @@ const Wrapper=styled.div`
 const BoxWrapper=styled.div`
     background-color:white;
     display: flex;
-
     width:330px;
     height:114px;
-    margin-bottom:20px;
+    margin-top:20px;
     border-radius:8px;
+    margin-bottom: ${(props) => (props.isMoreView ? "180px" : "5px")};
+    transition: margin-top 0.3s ease; 
 `;
 
 

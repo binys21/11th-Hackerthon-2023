@@ -19,7 +19,8 @@ const SurgeryTab = (props) => {
 
     return(
         <Wrapper>
-            <Content>
+          <BoxWrapper>
+          <Content>
             <Date>수술일 2023.06.03</Date>
             <SurName>외부 충격파쇄술[50590]</SurName>
             <DocName>
@@ -27,6 +28,7 @@ const SurgeryTab = (props) => {
             김현아 의사</DocName>
             </Content>
             <BtnWrapper><button onClick={navigateToDetail}><img src={btn} ></img></button></BtnWrapper>
+          </BoxWrapper>
         </Wrapper>
 
 
@@ -34,23 +36,24 @@ const SurgeryTab = (props) => {
     )
 };
 export default SurgeryTab;
+const BoxWrapper=styled.div`
+margin-top:15px;
+margin-left:9px;
+background-color:white;
+width:296px;
+height:77px;
+border-radius:10px;
+display: flex;
+`;
 
 const Content=styled.div`
 margin-left:20px;
 margin-top:15px;
 display: flex;
 flex-direction: column;
-
 `;
 const Wrapper = styled.div`
-    margin-left:9px;
-    background-color:#363B46;
-    width:297px;
-    height:77px;
-    border-radius:10px;
-    display: flex;
-
-
+margin-top:5px;
 `;
 
 const Date=styled.div`
