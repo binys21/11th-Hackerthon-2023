@@ -5,12 +5,12 @@ import { useNavigate } from "react-router-dom";
 import btn from "../../pages/images/btn.png";
 
 const SurgeryTab = (props) => {
-    const{setTab}=props;
+    const{setIsMoreView}=props;
     const navigate = useNavigate();
     
     //탭 닫기 함수
     const closeTab=()=>{
-        setTab(false);
+      setIsMoreView(false);
     };
     const navigateToDetail = () => {
       navigate("/SurgeryDetail");
@@ -41,15 +41,16 @@ margin-top:15px;
 display: flex;
 flex-direction: column;
 
-
 `;
-const Wrapper = styled.div`\
+const Wrapper = styled.div`
     margin-left:9px;
     background-color:#363B46;
     width:297px;
     height:77px;
     border-radius:10px;
     display: flex;
+
+
 `;
 
 const Date=styled.div`
