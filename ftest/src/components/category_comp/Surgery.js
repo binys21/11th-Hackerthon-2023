@@ -11,11 +11,16 @@ const Surgery=(props)=>{
     const {hospital}=props; //병원 정보를 props로 받아옴 
     const [tab,setTab]=useState(false);
     const navigate = useNavigate();
-    
+    const [isMoreView, setIsMoreView] = useState(false); // 더보기&접기 상태 저장
+
+    const onClickImageMoreViewButton = () => {
+      setIsMoreView(!isMoreView);
+    }; // 클릭시 상태 반전
+        
     //수술 상세보기 여는 함수
-    const openTab=()=>{
-        setTab(true);
-    };
+    // const openTab=()=>{
+    //     setTab(true);
+    // };
 
     return (
         <>
@@ -30,10 +35,13 @@ const Surgery=(props)=>{
             <DocWrapper>{hospital.doctor}</DocWrapper>
             <SurNumWrapper>{hospital.surgery}</SurNumWrapper>
             
-            {tab ? <SurgeryTab setTab={setTab}/>:null}
+            {tab ? <SurgeryTab />:null}
             </CenterWrapper>
 
-           <BtnWrapper><button onClick={openTab}><img src={btn} ></img></button></BtnWrapper>
+           <BtnWrapper isMoreView={isMoreView}>
+            <button onClick={onClickImageMoreViewButton}>
+              {isMoreView ? null: <img src={btn} ></img> }
+            </button></BtnWrapper>
             
             
           </BoxWrapper>
