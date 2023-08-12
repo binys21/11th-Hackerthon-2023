@@ -39,6 +39,13 @@ const CategoryPage = () => {
         (hospital) => hospital.category == filter
     );
 
+
+    const [isMoreView, setIsMoreView] = useState(false); // 더보기 & 접기 상태 저장
+
+    const onClickImageMoreViewButton = () => {
+    setIsMoreView(!isMoreView);
+    }; // 클릭시 상태 반전
+
     return (
         <>
             <Back>
@@ -78,7 +85,10 @@ const CategoryPage = () => {
                             ) : filter === "약물처방" ? (
                             <Pharmacy hospital={hospital} />
                             ) : filter === "수술" ? (
-                            <Surgery hospital={hospital} />
+                            <Surgery hospital={hospital} 
+                                    isMoreView={isMoreView} 
+                                    onClickImageMoreViewButton={onClickImageMoreViewButton} />
+
                             ) : null
                         )}
                         </HospitalList>
