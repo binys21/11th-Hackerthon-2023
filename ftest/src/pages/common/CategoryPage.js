@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 //component
 import Hospital from "../../components/category_comp/Hospital";
 import Surgery from "../../components/category_comp/Surgery";
-import Pharmacy from '../../components/category_comp/Pharmacy';
+import Pharmacy from "../../components/category_comp/Pharmacy";
 // Data
 import { filterSlice, setFilter } from "../../redux/filterSlice";
 import { useSelector, useDispatch } from "react-redux";
