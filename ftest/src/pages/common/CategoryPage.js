@@ -13,8 +13,9 @@ import { hospitalData } from "../../_mock/hospitalData";
 
 //image
 import underbar from "../../pages/images/underbar.png";
-import Header from "../../components/Header";
 import select_btn from "../../pages/images/select_btn.png";
+import Header from "../../components/Header";
+
 const CategoryPage = () => {
     const categories = ["진단", "약물처방", "수술"];
 
@@ -55,7 +56,6 @@ const CategoryPage = () => {
             <Back>
                 <Wrapper>
                     <Container>
-                        {/* <Header title="진료 기록 조회"/> */}
                         <FilterBar>
                             {categories.map((category) => (
                                 <Category
@@ -67,7 +67,8 @@ const CategoryPage = () => {
                                 </Category>
                             ))}
                         </FilterBar>
-                        <br></br>
+                        <div class="line"></div>
+                        <br />
                         <TopWrapper>
                             <Number>총 5건</Number>
                             <SelectBox>
@@ -79,6 +80,7 @@ const CategoryPage = () => {
                                         오래된순
                                     </option>
                                 </select>
+                                <img src={select_btn} />
                             </SelectBox>
                         </TopWrapper>
                         <HospitalList>

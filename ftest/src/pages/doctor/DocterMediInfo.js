@@ -5,13 +5,25 @@ import AllegyCard from "../../components/mediInfo_comp/AllegyCard";
 import FamilyHisCard from "../../components/mediInfo_comp/FamilyHisCard";
 import GardianCard from "../../components/mediInfo_comp/GardianCard";
 import ForDocter from "../../components/mediInfo_comp/ForDocter";
-import HeaderWithRef from "../../components/HeaderWithRef";
+import Header from "../../components/Header";
 
-const DocterMediInfo = () => {
+import RefreshNft from "../../components/NFT_comp/RefreshNft";
+import RefreshedPop from "../../components/NFT_comp/RefreshedPop";
+
+const DocterMediInfo = (props) => {
+    const { setdoneRefresh } = props;
+
+    const [getNewPop, setgetNewPop] = useState(false);
+    const getPop = () => {
+        setgetNewPop(true);
+    };
     return (
         <>
             <Wrapper>
-                <HeaderWithRef title="의료 정보" />
+                {getNewPop ? <RefreshNft setgetNewPop={setgetNewPop} /> : null}
+
+                <Header title="의료 정보" />
+                <BtnRenewal onClick={getPop}>새로고침</BtnRenewal>
                 <Container>
                     <OneTitleWrapper>환자의 기본 의료 정보</OneTitleWrapper>
                     <ForDocter />
@@ -43,13 +55,23 @@ const Wrapper = styled.div`
     justify-content: center;
     background-color: #202329;
 `;
+const BtnRenewal = styled.div`
+    position: relative;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
+    color: white;
+    font-size: 11px;
+`;
 const Container = styled.div`
     width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 30%;
+    margin-top: 10%;
 `;
 const OneTitleWrapper = styled.div`
     color: white;
