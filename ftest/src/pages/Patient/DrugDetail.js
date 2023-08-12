@@ -20,6 +20,7 @@ const DrugDetail=()=>{
         <Container>
             <br></br>
             <Hospital hospital={{ date: "조제일자 2023-07-29 | 연결 진단서 1건",
+            type:"의원",
             name: "독수리약국",
             addr: "서울 서대문구 연세로 36 독수리빌딩",
             doctor: "권한민 약사" }} />
@@ -37,7 +38,6 @@ export default DrugDetail;
 
 
 const Wrapper = styled.div`
-    height: 810px; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,8 +45,8 @@ const Wrapper = styled.div`
     background-color: #202329;
 `;
 const Container = styled.div`
-    margin-top:68px;
     width: 80%;
+    height: 100%; 
     max-width: 300px;
     display: flex;
     flex-direction: column;

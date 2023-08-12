@@ -81,7 +81,7 @@ font-weight:500;
 text-align:right;
 margin-bottom:50%;
 position: absolute;
-top:71.5%;
+top:72.5%;
 left: 49%;
 line-height:1.6;
 z-index:10;
@@ -92,7 +92,7 @@ font-size: 12px;
 font-weight: 500;
 line-height:1.6;
 position: absolute;
-top:85%;
+top:86%;
 left: 83%;
 `;
 
