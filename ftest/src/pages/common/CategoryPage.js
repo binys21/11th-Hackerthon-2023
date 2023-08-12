@@ -33,18 +33,6 @@ const CategoryPage = () => {
             })
         );
     };
-    //카테고리 별로 이동하는 페이지를 다르게 하는 함수
-    // const navigateToDetail = () => {
-    //   if(filter=="진단"){
-    //     navigate("/historydetail");
-    //   }
-    //   else if(filter=="약물처방"){
-    //     navigate("/drugdatail");
-    //   }
-    //   else{
-    //     navigate("/surgerydetail");
-    //   }
-    // };
 
     //선택한 카테고리와 일치하는 병원데이터만 받아서 저장 (filter 함수 사용)
     const hospitalList = hospitalData.filter(

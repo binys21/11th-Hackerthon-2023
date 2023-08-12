@@ -81,7 +81,7 @@ font-weight:500;
 text-align:right;
 margin-bottom:50%;
 position: absolute;
-top:37%;
+top:38%;
 left: 69%;
 line-height:1.6;
 `;
@@ -92,7 +92,7 @@ font-size: 12px;
 font-weight: 500;
 line-height:1.6;
 position: absolute;
-top:51%;
+top:52%;
 left: 83%;
 `;
 
