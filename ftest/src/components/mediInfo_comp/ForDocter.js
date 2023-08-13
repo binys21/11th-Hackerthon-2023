@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 //image
 import lowbtn from "../../pages/images/lowbtn.png";
-const ForDocter = () => {
+const ForDocter = () => { //의사가 보는 환자 개인정보 카드(의사용컬러)
     return (
         <>
             <BoxWrapper>
