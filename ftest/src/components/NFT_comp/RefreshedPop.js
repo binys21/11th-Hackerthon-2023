@@ -4,12 +4,13 @@ import { useNavigate } from "react-router-dom";
 import popupRequest from "../images_comp/popupRequest.png";
 
 const RefreshedPop = (props) => {
-    const { setgetNewPop, setdoneRefresh } = props;
+    const { closeGetNewPop, closeDoneRefresh } = props;
 
-    const viewRefreshed = () => {
-        setdoneRefresh(false);
-        setgetNewPop(false);
+    const handleCloseAllModals = () => {
+        closeGetNewPop();
+        closeDoneRefresh();
     };
+
     return (
         <Wrapper>
             <Container>
@@ -19,7 +20,7 @@ const RefreshedPop = (props) => {
                     <br />
                     반영 완료
                 </div>
-                <AgreeBtn onClick={viewRefreshed}>
+                <AgreeBtn onClick={handleCloseAllModals}>
                     반영된 내용 보러가기
                 </AgreeBtn>
             </Container>
@@ -33,6 +34,7 @@ const Wrapper = styled.div`
     width: 100%;
     height: 100%;
     position: fixed;
+    top: 0;
     z-index: 10;
     background: rgba(0, 0, 0, 0.8);
 `;
@@ -43,7 +45,6 @@ const Container = styled.div`
     border-style: none;
     border-radius: 20px;
     position: absolute;
-
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -6,21 +6,18 @@ import popupRequest from "../images_comp/popupRequest.png";
 import RefreshedPop from "./RefreshedPop";
 
 const RefreshNft = (props) => {
-    const { setgetNewPop } = props;
+    const { closeGetNewPop, handleDoneRefresh } = props;
 
-    const [doneRefresh, setdoneRefresh] = useState(false);
-    const refreshedAll = () => {
-        // setgetNewPop(false);
-        setdoneRefresh(true);
+    const handleLater = () => {
+        closeGetNewPop();
     };
-    const laterRefresh = () => {
-        setgetNewPop(false);
+    const handleInnerModal = () => {
+        closeGetNewPop();
+        handleDoneRefresh();
     };
+
     return (
         <Wrapper>
-            {doneRefresh ? (
-                <RefreshedPop setdoneRefresh={setdoneRefresh} />
-            ) : null}
             <Container>
                 <img src={popupRequest} />
                 <div class="ment">
@@ -36,8 +33,8 @@ const RefreshNft = (props) => {
                         오후 03시 50분
                     </div>
                 </RequestInfo>
-                <AgreeBtn onClick={refreshedAll}>네, 좋아요</AgreeBtn>
-                <LaterBtn onClick={laterRefresh}>다음에 할게요</LaterBtn>
+                <AgreeBtn onClick={handleInnerModal}>네, 좋아요</AgreeBtn>
+                <LaterBtn onClick={handleLater}>다음에 할게요</LaterBtn>
             </Container>
         </Wrapper>
     );
@@ -48,7 +45,8 @@ export default RefreshNft;
 const Wrapper = styled.div`
     width: 100%;
     height: 100vh;
-    position: relative;
+    position: fixed;
+    top: 0;
     background: rgba(0, 0, 0, 0.8);
 `;
 const Container = styled.div`
