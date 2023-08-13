@@ -10,20 +10,41 @@ import Header from "../../components/Header";
 import RefreshNft from "../../components/NFT_comp/RefreshNft";
 import RefreshedPop from "../../components/NFT_comp/RefreshedPop";
 
-const DocterMediInfo = (props) => {
-    const { setdoneRefresh } = props;
-
+const DocterMediInfo = () => {
     const [getNewPop, setgetNewPop] = useState(false);
-    const getPop = () => {
+    const [doneRefresh, setdoneRefresh] = useState(false);
+
+    const handleGetNewPop = () => {
         setgetNewPop(true);
+    };
+    const closeGetNewPop = () => {
+        setgetNewPop(false);
+    };
+    const handleDoneRefresh = () => {
+        setdoneRefresh(true);
+    };
+    const closeDoneRefresh = () => {
+        setdoneRefresh(false);
     };
     return (
         <>
             <Wrapper>
-                {getNewPop ? <RefreshNft setgetNewPop={setgetNewPop} /> : null}
-
+                {getNewPop && (
+                    <RefreshNft
+                        handleGetNewPop={handleGetNewPop}
+                        closeGetNewPop={closeGetNewPop}
+                        handleDoneRefresh={handleDoneRefresh}
+                    />
+                )}
+                {doneRefresh && (
+                    <RefreshedPop
+                        handleDoneRefresh={handleDoneRefresh}
+                        closeDoneRefresh={closeDoneRefresh}
+                        closeGetNewPop={closeGetNewPop}
+                    />
+                )}
                 <Header title="의료 정보" />
-                <BtnRenewal onClick={getPop}>새로고침</BtnRenewal>
+                <BtnRenewal onClick={handleGetNewPop}>새로고침</BtnRenewal>
                 <Container>
                     <OneTitleWrapper>환자의 기본 의료 정보</OneTitleWrapper>
                     <ForDocter />
