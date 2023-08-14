@@ -29,6 +29,7 @@ import AgreePop from "./components/NFT_comp/AgreeNft";
 import DocterCategory from "./pages/Doctor/DocterCategory";
 import MyQuestion from "./pages/Patient/MyQuestion";
 import MyPage from './pages/Patient/MyPage';
+import DocterQuestion from './pages/Doctor/DocterQuestion';
 
 function App() {
     return (
@@ -67,7 +68,9 @@ function App() {
                         path="/doctercategory"
                         element={<DocterCategory />}
                     />
+                     <Route path='/docterquestion' element={<DocterQuestion/>}/>
                 </Routes>
+               
             </Router>
         </>
     );

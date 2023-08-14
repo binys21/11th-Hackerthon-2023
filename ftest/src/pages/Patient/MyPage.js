@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import styled from "styled-components";
 //component
 import Header from '../../components/Header';
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faUserDocter } from "@fortawesome/free-solid-svg-icons";
+// //image
+// <script src="https://kit.fontawesome.com/7268985bf2.js" crossorigin="anonymous"></script>
+
 
 const MyPage= () => {
 
@@ -11,6 +16,8 @@ const MyPage= () => {
                 <Header title="나의 정보"/>
                 <hr></hr>
                 <Container>
+                {/* <FontAwesomeIcon icon={ faUserDocter }/> */}
+                    
 
 \
                 </Container>
