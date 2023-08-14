@@ -1,62 +1,72 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 //image
 import Home from "../pages/images/Home.png";
 import usericon from "../pages/images/usericon.png";
 import QRicon from "../pages/images/QRicon.png";
 
-const NavigateBar=()=>{
+const NavigateBar = () => {
     return (
         <>
-        <Wrapper>
-            <Navbar>
-                <Link className="navbarhomeMenu" to={'/home'}><img src={Home}></img>홈</Link>
-                <Link className="navbarMenu" to={'/home'}><img src={usericon}></img>QR 조회하기</Link>
-                <Link className="navbarMenu" to={'/mynft'}><img src={QRicon}></img>나의 정보</Link>
-            </Navbar>
-
-        </Wrapper>
-
+            <Wrapper>
+                <Navbar>
+                    <Link className="navbarhomeMenu" to={"/home"}>
+                        <img src={Home} /> 홈
+                    </Link>
+                    <Link className="navbarMenu" to={"/home"}>
+                        <img src={QRicon} />
+                        QR 조회하기
+                    </Link>
+                    <Link className="navbarMenu" to={"/mynft"}>
+                        <img src={usericon} />
+                        나의 정보
+                    </Link>
+                </Navbar>
+            </Wrapper>
         </>
-
     );
-
 };
 export default NavigateBar;
-const Wrapper=styled.div`
-
-`;
-const Navbar=styled.div`
-    .img{
-        flex-direction: column;
-    }
+const Wrapper = styled.div`
+    width: 85%;
     display: flex;
+    position: absolute;
+    bottom: 0;
+    margin-left: 15px;
+`;
+const Navbar = styled.div`
+    display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    font-size: 1.2rem;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-
-    width: 393px;
-    height: 98px;
+    width: 100%;
+    height: 100px;
     border-radius: 20px;
-    background: #15181D;
-    .navbarMenu{
-
-        text-decoration-line: none;
-        color:#FFFFFF;
-        font-size: 13.1px;
-    font-style: normal;
-    font-weight: 500;
-    }
-    .navbarhomeMenu{
+    background: #15181d;
+    z-index: 20;
+    .navbarhomeMenu {
+        display: flex;
         flex-direction: column;
         text-decoration-line: none;
-        color:#2F70FF;
+        color: #2f70ff;
         font-size: 13.1px;
-    font-style: normal;
-    font-weight: 500;
+        font-style: normal;
+        font-weight: 500;
+        align-items: center;
+        margin-right: 10px;
+    }
+    .navbarMenu {
+        display: flex;
+        flex-direction: column;
+        text-decoration-line: none;
+        color: #ffffff;
+        font-size: 13.1px;
+        font-style: normal;
+        font-weight: 500;
+        align-items: center;
+        img {
+            width: 25px;
+        }
     }
 `;
