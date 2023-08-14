@@ -3,51 +3,44 @@ import { useNavigate } from "react-router-dom";
 
 import popupRequest from "../images_comp/popupRequest.png";
 
-const RequestNft = (props) => {
-    const { setQr, setQrScanned } = props;
-
+const RefreshedPop2 = (props) => {
+    const { closeGetNewPop, closeDoneRefresh } = props;
     const navigate = useNavigate();
 
-    const goRequested = () => {
-        navigate("/viewnft");
+    const handleCloseAllModals = () => {
+        closeGetNewPop();
+        closeDoneRefresh();
+        navigate("/doctercategory");
     };
-    const deletePop = () => {
-        setQrScanned(false);
+    const gotoMore = () => {
+        navigate("/renewalpage2");
     };
+
     return (
         <Wrapper>
             <Container>
                 <img src={popupRequest} />
                 <div class="ment">
-                    건강 NFT 조회를
+                    새로운 데이터
                     <br />
-                    요청하시겠습니까?
+                    반영 완료
                 </div>
-                <RequestInfo>
-                    <div class="request">환자명</div>
-                    <div class="request_c">정대만</div>
-                </RequestInfo>
-                <RequestInfo>
-                    <div class="request">요청자</div>
-                    <div class="request_c">
-                        세브란스병원 외과
-                        <br />
-                        전문의 김학선
-                    </div>
-                </RequestInfo>
-                <AgreeBtn onClick={goRequested}>네, 좋아요</AgreeBtn>
-                <LaterBtn onClick={deletePop}>다음에 할게요</LaterBtn>
+                <AgreeBtn onClick={handleCloseAllModals}>
+                    반영된 내용 보러가기
+                </AgreeBtn>
+                <MoreBtn onClick={gotoMore}>더 반영할 내용이 남았어요</MoreBtn>
             </Container>
         </Wrapper>
     );
 };
 
-export default RequestNft;
+export default RefreshedPop2;
 
 const Wrapper = styled.div`
     width: 100%;
     height: 100%;
     position: fixed;
+    top: 0;
     z-index: 10;
     background: rgba(0, 0, 0, 0.8);
 `;
@@ -58,7 +51,6 @@ const Container = styled.div`
     border-style: none;
     border-radius: 20px;
     position: absolute;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,22 +63,8 @@ const Container = styled.div`
         text-align: center;
         padding: 5% 0;
     }
-`;
-const RequestInfo = styled.div`
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 30px;
-    .request {
-        font-size: 10px;
-        color: #aeaeae;
-    }
-    .request_c {
-        font-size: 10px;
-        color: white;
-        text-align: end;
+    img {
+        margin-top: 40px;
     }
 `;
 const AgreeBtn = styled.div`
@@ -102,9 +80,9 @@ const AgreeBtn = styled.div`
     background-color: #10c38e;
     margin: 20% 0 3% 0;
 `;
-const LaterBtn = styled.div`
+const MoreBtn = styled.div`
     width: 80%;
-    height: 35px;
+    height: 38px;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -112,5 +90,6 @@ const LaterBtn = styled.div`
     font-size: 12px;
     font-weight: 600;
     color: white;
-    background-color: #202329;
+    background-color: #363b46;
+    margin: 1% 0 3% 0;
 `;

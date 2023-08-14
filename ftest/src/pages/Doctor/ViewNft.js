@@ -58,7 +58,7 @@ const Wrapper = styled.div`
     background: #202329;
 `;
 const Content = styled.div`
-    margin-top: 100px;
+    margin-top: 20px;
     width: 85%;
     display: flex;
     flex-direction: column;
@@ -153,7 +153,7 @@ const Container = styled.div`
     background-color: #10c38e;
     border-style: none;
     border-radius: 20px 20px 0 0;
-    margin-top: 340px;
+    margin-top: 310px;
     .slide {
         color: white;
         font-size: 12px;

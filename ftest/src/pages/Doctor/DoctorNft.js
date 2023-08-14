@@ -24,20 +24,21 @@ const DoctorNft = () => {
     return (
         <>
             <Wrapper>
-                <HomeHeader />
                 <Content>
                     <div class="title">
-                        정대만님의 건강 NFT에 <br />
-                        기록된 내용이에요
+                        정대만님의 건강 NFT에서 <br />
+                        조회하실 수 있는 내용이에요.
                     </div>
-                    <div class="renewal_date">갱신일 2023.07.29</div>
-                    <div onClick={gotoNftRenewal} class="btn_renewal">
-                        NFT 갱신 기록 보러가기
-                    </div>
+                    <RenewWrap>
+                        <div class="renewal_date">갱신일 2023.07.29</div>
+                        <div onClick={gotoNftRenewal} class="btn_renewal">
+                            NFT 갱신 기록 보러가기
+                        </div>
+                    </RenewWrap>
                     <CardInfo>
                         <GreenBox>
                             <div class="contentTitle">나의 의료 정보</div>
-                            <img src={greenbox1} />
+                            <img class="greenbox1" src={greenbox1} />
                         </GreenBox>
                         <div onClick={gotoMediInfo} class="detailWrapper">
                             <div class="goDetail">
@@ -51,7 +52,7 @@ const DoctorNft = () => {
                     <CardInfo>
                         <GreenBox>
                             <div class="contentTitle">나의 진료 정보</div>
-                            <img src={greenbox2} />
+                            <img class="greenbox2" src={greenbox2} />
                         </GreenBox>
                         <div onClick={gotoCategory} class="detailWrapper">
                             <div class="goDetail">
@@ -91,6 +92,11 @@ const Content = styled.div`
         left: 0;
         margin-bottom: 20px;
     }
+`;
+const RenewWrap = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     .renewal_date {
         color: white;
         font-size: 10px;
@@ -103,7 +109,6 @@ const Content = styled.div`
         margin-bottom: 20px;
     }
 `;
-
 const CardInfo = styled.div`
     width: 100%;
     display: flex;
@@ -140,14 +145,19 @@ const GreenBox = styled.div`
     .contentTitle {
         display: flex;
         color: white;
-        font-size: 14px;
+        font-size: 18px;
         font-weight: 600;
         padding: 7%;
         justify-self: flex-start;
     }
-    img {
+    .greenbox1 {
         width: 200px;
-        padding: 7% 0 5% 7%;
+        padding: 5% 0 5% 7%;
+        margin-top: 15px;
+    }
+    .greenbox2 {
+        width: 120px;
+        padding: 5% 0 5% 7%;
         margin-top: 15px;
     }
 `;

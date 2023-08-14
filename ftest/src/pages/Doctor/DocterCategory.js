@@ -13,7 +13,8 @@ import { hospitalData } from "../../_mock/hospitalData";
 //image
 import underbar from "../../pages/images/underbar.png";
 import select_btn_doc from "../../pages/images/select_btn_doc.png";
-import HeaderWithRef from "../../components/HeaderWithRef";
+
+import Header from "../../components/Header";
 // import Surgery from "../../components/category_comp/Surgery";
 
 const DocterCategory = () => {
@@ -44,11 +45,15 @@ const DocterCategory = () => {
         setIsMoreView(!isMoreView);
     }; // 클릭시 상태 반전
 
+    const gotoRenewalPage = () => {
+        navigate("/renewalpage");
+    };
     return (
         <>
             <Back>
                 <Wrapper>
-                    <HeaderWithRef title="진료 기록 조회" />
+                    <Header title="진료 기록 조회"></Header>
+                    <BtnRenewal onClick={gotoRenewalPage}>갱신하기</BtnRenewal>
                     <Container>
                         <FilterBar>
                             {categories.map((category) => (
@@ -115,9 +120,19 @@ const Wrapper = styled.div`
     align-items: center;
     background: #202329;
 `;
+const BtnRenewal = styled.div`
+    position: relative;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
+    color: white;
+    font-size: 11px;
+`;
 const Container = styled.div`
     position: absolute;
-    top: 13%;
+    top: 17%;
     width: 100%;
     display: flex;
     flex-direction: column;
