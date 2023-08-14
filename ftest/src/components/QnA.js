@@ -5,10 +5,10 @@ const QnA=({ toggleModal })=>{ //질문창 열고 닫을 상태 변경 함수 pr
     return(
         <>
         <Wrapper>
-            {/* 배경을 클릭하면 모달창이 닫힘 */}
+            {/* 배경을 클릭하면 질문창이 닫힘 */}
 			<ModalBackground onClick={toggleModal} />
 			{/* 배경보다 z-index가 높은 모달창은 클릭해도 닫히지 않음 */}
-			<ModalDiv>Q&A 조회하기</ModalDiv>
+			<ModalDiv>내가 남길 질문</ModalDiv>
         </Wrapper>
         </>
     );
