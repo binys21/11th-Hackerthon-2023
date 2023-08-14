@@ -32,6 +32,7 @@ import DocterCategory from "./pages/Doctor/DocterCategory";
 import MyQuestion from "./pages/Patient/MyQuestion";
 import MyPage from './pages/Patient/MyPage';
 import DocterQuestion from './pages/Doctor/DocterQuestion';
+import DocterMypage from './pages/Doctor/DocterMypage';
 
 function App() {
     return (
@@ -74,6 +75,7 @@ function App() {
                         element={<DocterCategory />}
                     />
                      <Route path='/docterquestion' element={<DocterQuestion/>}/>
+                     <Route path='/docmypage' element={<DocterMypage/>}/>
                 </Routes>
                
             </Router>
