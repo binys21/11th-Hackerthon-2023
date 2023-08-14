@@ -16,6 +16,8 @@ import MyNFT from "./pages/Patient/MyNFT";
 import DoctorHome from "./pages/Doctor/DoctorHome";
 import DoctorNft from "./pages/Doctor/DoctorNft";
 import ViewNft from "./pages/Doctor/ViewNft";
+import RenewalPage from "./pages/Doctor/RenewalPage";
+import RenewalPage2 from "./pages/Doctor/RenewalPage2";
 
 import MyNFTcleared from "./pages/Patient/MyNFTcleared";
 import HistoryDetail from "./pages/Patient/HistoryDetail";
@@ -46,6 +48,8 @@ function App() {
                     <Route path="/doctorhome" element={<DoctorHome />} />
                     <Route path="/doctornft" element={<DoctorNft />} />
                     <Route path="/viewnft" element={<ViewNft />} />
+                    <Route path="/renewalpage" element={<RenewalPage />} />
+                    <Route path="/renewalpage2" element={<RenewalPage2 />} />
 
                     <Route path="/mynft" element={<MyNFT />} />
                     <Route path="/mynftcleared" element={<MyNFTcleared />} />
@@ -55,7 +59,7 @@ function App() {
                     <Route path="/surgerydetail" element={<SurgeryDetail />} />
                     <Route path="/nftrenewal" element={<NftRenewalPage />} />
                     <Route path="/medicalinfo" element={<MediInfoPage />} />
-                    <Route path='/myquestion' element={<MyQuestion/>}/>
+                    <Route path="/myquestion" element={<MyQuestion />} />
 
                     <Route
                         path="/doctermediinfo"

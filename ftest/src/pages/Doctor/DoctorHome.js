@@ -24,16 +24,16 @@ const DoctorHome = (props) => {
     return (
         <>
             {qr ? <QrDoctor setQr={setQr} /> : null}
-            {qrScanned ? (
+            {/* {qrScanned ? (
                 <RequestNft setQr={setQr} setQrScanned={setQrScanned} />
-            ) : null}
+            ) : null} */}
             <Wrapper>
                 <Header title="HOME" />
                 <Content>
                     <div class="title">
                         아직 환자 건강 NFT
                         <br />
-                        기록을 불러오지 못했어요
+                        기록을 불러오지 못했어요. :{"("}
                     </div>
                     <div onClick={refresh} class="renew_btn">
                         새로 고침
@@ -74,7 +74,7 @@ const DoneWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 135px;
+    margin-top: 40px;
     .done {
         margin: 20% 0 5% 0;
     }
@@ -88,7 +88,7 @@ const DoneWrapper = styled.div`
 const Content = styled.div`
     width: 85%;
     position: relative;
-    top: 13%;
+    top: 5%;
     display: flex;
     flex-direction: column;
     .title {

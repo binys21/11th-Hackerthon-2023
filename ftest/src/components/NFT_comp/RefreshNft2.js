@@ -1,54 +1,60 @@
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 import popupRequest from "../images_comp/popupRequest.png";
+import RefreshedPop from "./RefreshedPop";
 
-const RequestNft = (props) => {
-    const { setQr, setQrScanned } = props;
+const RefreshNft2 = (props) => {
+    const { closeGetNewPop, handleDoneRefresh } = props;
 
-    const navigate = useNavigate();
-
-    const goRequested = () => {
-        navigate("/viewnft");
+    const handleLater = () => {
+        closeGetNewPop();
     };
-    const deletePop = () => {
-        setQrScanned(false);
+    const handleInnerModal = () => {
+        closeGetNewPop();
+        handleDoneRefresh();
     };
+
     return (
         <Wrapper>
             <Container>
                 <img src={popupRequest} />
                 <div class="ment">
-                    건강 NFT 조회를
+                    새로운 데이터를
                     <br />
-                    요청하시겠습니까?
+                    가져오시겠습니까?
                 </div>
                 <RequestInfo>
-                    <div class="request">환자명</div>
-                    <div class="request_c">정대만</div>
-                </RequestInfo>
-                <RequestInfo>
-                    <div class="request">요청자</div>
+                    <div class="request">작성자</div>
                     <div class="request_c">
-                        세브란스병원 외과
+                        독수리약국
                         <br />
-                        전문의 김학선
+                        약사 권한민
                     </div>
                 </RequestInfo>
-                <AgreeBtn onClick={goRequested}>네, 좋아요</AgreeBtn>
-                <LaterBtn onClick={deletePop}>다음에 할게요</LaterBtn>
+                <RequestInfo>
+                    <div class="request">작성 일시</div>
+                    <div class="request_c">
+                        2023.07.30 (일)
+                        <br />
+                        오후 03시 50분
+                    </div>
+                </RequestInfo>
+                <AgreeBtn onClick={handleInnerModal}>네, 좋아요</AgreeBtn>
+                <LaterBtn onClick={handleLater}>다음에 할게요</LaterBtn>
             </Container>
         </Wrapper>
     );
 };
 
-export default RequestNft;
+export default RefreshNft2;
 
 const Wrapper = styled.div`
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: fixed;
-    z-index: 10;
+    top: 0;
     background: rgba(0, 0, 0, 0.8);
 `;
 const Container = styled.div`
@@ -70,6 +76,9 @@ const Container = styled.div`
         font-weight: 600;
         text-align: center;
         padding: 5% 0;
+    }
+    img {
+        margin-top: 40px;
     }
 `;
 const RequestInfo = styled.div`
