@@ -10,11 +10,10 @@ import { filterSlice, setFilter } from "../../redux/filterSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 import { hospitalData } from "../../_mock/hospitalData";
-
+import Header from "../../components/Header";
 //image
 import underbar from "../../pages/images/underbar.png";
 import select_btn from "../../pages/images/select_btn.png";
-import Header from "../../components/Header";
 
 const CategoryPage = () => {
     const categories = ["진단", "약물처방", "수술"];
@@ -26,7 +25,6 @@ const CategoryPage = () => {
 
     //dispatch 사용 => 카테고리 변경 저장하는 saveCategory함수
     const saveCategory = (e) => {
-
         dispatch(
             setFilter({
                 filter: e.target.id,
@@ -39,17 +37,18 @@ const CategoryPage = () => {
         (hospital) => hospital.category == filter
     );
 
-
     const [isMoreView, setIsMoreView] = useState(false); // 더보기 & 접기 상태 저장
 
     const onClickImageMoreViewButton = () => {
-    setIsMoreView(!isMoreView);
+        setIsMoreView(!isMoreView);
     }; // 클릭시 상태 반전
 
     return (
         <>
             <Back>
                 <Wrapper>
+                    <Header title="진료 기록 조회"></Header>
+
                     <Container>
                         <FilterBar>
                             {categories.map((category) => (
@@ -79,18 +78,21 @@ const CategoryPage = () => {
                             </SelectBox>
                         </TopWrapper>
                         <HospitalList>
-                        {hospitalList.map((hospital) =>
-                            filter === "진단" ? (
-                            <Hospital hospital={hospital} />
-                            ) : filter === "약물처방" ? (
-                            <Pharmacy hospital={hospital} />
-                            ) : filter === "수술" ? (
-                            <Surgery hospital={hospital} 
-                                    isMoreView={isMoreView} 
-                                    onClickImageMoreViewButton={onClickImageMoreViewButton} />
-
-                            ) : null
-                        )}
+                            {hospitalList.map((hospital) =>
+                                filter === "진단" ? (
+                                    <Hospital hospital={hospital} />
+                                ) : filter === "약물처방" ? (
+                                    <Pharmacy hospital={hospital} />
+                                ) : filter === "수술" ? (
+                                    <Surgery
+                                        hospital={hospital}
+                                        isMoreView={isMoreView}
+                                        onClickImageMoreViewButton={
+                                            onClickImageMoreViewButton
+                                        }
+                                    />
+                                ) : null
+                            )}
                         </HospitalList>
                     </Container>
                 </Wrapper>
@@ -106,7 +108,6 @@ const Back = styled.div`
     display: flex;
     justify-content: center;
 `;
-
 const Wrapper = styled.div`
     width: 100%;
     display: flex;
