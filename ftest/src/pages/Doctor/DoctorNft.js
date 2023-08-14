@@ -18,7 +18,7 @@ const DoctorNft = () => {
         navigate("/DocterMediInfo");
     };
     const gotoCategory = () => {
-        navigate("/category");
+        navigate("/DocterCategory");
     };
 
     return (

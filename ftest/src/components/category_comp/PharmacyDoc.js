@@ -8,23 +8,21 @@ import { useSelector, useDispatch } from "react-redux";
 import circleimg from "../../pages/images/circleimg.png";
 import btn from "../../pages/images/btn.png";
 
-const DocterHospital = (props) => {
+const PharmacyDoc = (props) => {
     const { hospital } = props; //병원 정보를 props로 받아옴
     const navigate = useNavigate();
 
-    const { filter } = useSelector((state) => state.filter);
-
-    //진단 카테고리면 historyDetail, 약물 카테고리면 drugDetail로 이동하도록
     const navigateToDetail = () => {
-        navigate("/historydetail");
+        navigate("/drugdetail", { state: { hospital } });
     };
+
+    const { filter } = useSelector((state) => state.filter);
 
     return (
         <>
             <Wrapper>
                 <BoxWrapper>
                     <LeftWrapper>
-                        <TypeWrapper>의원</TypeWrapper>
                         <ImgWrapper>
                             <img src={circleimg} />
                         </ImgWrapper>
@@ -49,7 +47,7 @@ const DocterHospital = (props) => {
     );
 };
 
-export default DocterHospital;
+export default PharmacyDoc;
 const Wrapper = styled.div`
     background-color: none;
 `;
@@ -61,17 +59,6 @@ const BoxWrapper = styled.div`
     height: 114px;
     margin-bottom: 20px;
     border-radius: 8px;
-`;
-const TypeWrapper = styled.div`
-    background-color: #10c38e;
-    color: white;
-    width: 28px;
-    height: 18px;
-    border-radius: 7px;
-    font-size: 9px;
-    text-align: center;
-    margin-left: 22px;
-    margin-top: 6px;
 `;
 const ImgWrapper = styled.div``;
 const NameWrapper = styled.div`
