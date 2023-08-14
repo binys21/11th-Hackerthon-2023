@@ -26,10 +26,13 @@ const SurgeryDetail=()=>{
             doctor: "권한민 약사" }} />
 
         <PatientBox>
-            <div className='date'>2023.06.03 수술 | 1차 수술 
+            <Top>
+            <div className='date'>2023.06.03 수술 | 1차 수술 <br></br>
             연세세브란스
             </div>
             <div className='reginum'>환자 등록번호 : 0000193</div>
+            </Top>
+
 
             <TitleWrapper>
                 <div className='thick'>환자의 정보</div>
@@ -47,9 +50,9 @@ const SurgeryDetail=()=>{
 
             <PaientInfo>
                 정대만
-                <br></br>
+               <br></br>
                 720922-1234567
-                <hr></hr>
+               <br></br>
                 만 17세
                 <br></br>
                 남
@@ -58,8 +61,8 @@ const SurgeryDetail=()=>{
             </PaientInfo>
 
         </PatientBox>
-        <SurgeryBox>
-            해당 수술과
+        <DocterBox>
+        해당 수술과
             <hr></hr>
             수술 집도의명 <br></br> 수술 보조의명 
             <br></br><br></br>  <hr></hr>
@@ -71,6 +74,27 @@ const SurgeryDetail=()=>{
             김원필 간호사 <br></br><br></br>
             고이찬 의사 
         </DocterWrapper>
+        </DocterBox>
+
+        <SurgeryBox>
+            <div className='title'>환자의 수술사항</div>
+            <hr></hr>
+            수술명/CPT 코드 <br></br>외부 충격파쇄술[50590]
+            <br></br><br></br>
+            수술 전 진단명 <br></br> 신장 결석(Renal stone) 
+            <br></br><br></br>
+            수술 후 진단명 <br></br> 신장 결석(Renal stone) 
+            <hr></hr>
+            <Bottom>
+            <div>마취 방법</div>
+            <div>전신마취</div>
+            <div>수술 중 특이사항</div>
+            <div>무</div>
+            <div> 조직제거 여부 </div>
+            <div>유</div>
+            <div> 수술 중 수혈 유무 </div>
+            <div>무</div> 
+            </Bottom>
         </SurgeryBox>
 
 
@@ -81,6 +105,7 @@ const SurgeryDetail=()=>{
     );
 
 };
+
 export default SurgeryDetail;
 const Wrapper = styled.div`
     height: 100%; 
@@ -105,25 +130,57 @@ const InfoWrapper=styled.div`
     color:#FFF;
     white-space: pre-wrap;
 `;
+const Top=styled.div`
+display:flex;
 
+`;
 const PatientBox=styled.div`
 background-color: white;
 width: 333px;
 height: 245px;
 border-radius: 9.63px;
+.date{
+    display:flex;
+    color:  #10C38E;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+
+}
+.reginum{
+    text-align: right;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    margin-left:90px;
+
+}
 `;
 const SurgeryBox=styled.div`
 background-color: white;
 width: 333px;
-height: 174px;
+height: 345px;
 border-radius: 9.63px;
 `;
 const TitleWrapper=styled.div`
 `;
 const PaientInfo=styled.div`
+position:absolute;
+left:59%;
+top:38%;
+`;
+const DocterBox=styled.div`
+background-color: white;
+width: 336px;
+height: 174px;
+border-radius: 9.63px;
+
 `;
 const DocterWrapper=styled.div`
 position:absolute;
 top:62%;
 left:70%;
+`;
+const Bottom=styled.div`
+display:flex;
 `;
