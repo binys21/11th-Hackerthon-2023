@@ -10,7 +10,13 @@ const QuestionCard = () => {
         
                 <BoxWrapper>
                     <ContentWrapper>
-                    <Title>Q. 남긴 질문 게시글의 제목이 뜬...</Title>
+                        <TopWrapper>
+                        <Title>Q. 남긴 질문 게시글의 제목이 뜬...
+                     </Title>
+                     <ColorBox>나의 의료 정보</ColorBox>
+                        </TopWrapper>
+
+                   
                     <Date>2023.08.13 22:08 작성</Date>
                     <hr></hr>
                     <Contents>본문의 내용이 두줄정도 뜨게 된다. 본문의 내용이 두줄정도 뜨게 된다. 본문의 내용이 두줄정도 뜨게 된다. 본...</Contents>
@@ -75,4 +81,22 @@ hr{
 height: 0px;
 flex-shrink: 0;
 }
+`;
+const ColorBox=styled.div`
+margin-left:10px;
+border-radius: 4px;
+border: 1px solid rgba(0, 0, 0, 0.05);
+background: #6D95ED;
+color:white;
+padding: 3px 8px;
+width:60px;
+text-align: right;
+font-family: Pretendard;
+font-size: 10px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+`;
+const TopWrapper=styled.div`
+display:flex;
 `;
