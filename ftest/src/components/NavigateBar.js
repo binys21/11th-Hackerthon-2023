@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 import Home from "../pages/images/Home.png";
 import usericon from "../pages/images/usericon.png";
 import QRicon from "../pages/images/QRicon.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faExpand } from "@fortawesome/free-solid-svg-icons";
 
 const NavigateBar = () => {
     return (
@@ -12,14 +16,14 @@ const NavigateBar = () => {
             <Wrapper>
                 <Navbar>
                     <Link className="navbarhomeMenu" to={"/home"}>
-                        <img src={Home} /> 홈
+                        <FontAwesomeIcon icon={faHome} class="footIcon" /> 홈
                     </Link>
                     <Link className="navbarMenu" to={"/home"}>
-                        <img src={QRicon} />
+                        <FontAwesomeIcon icon={faExpand} class="footIcon" />
                         QR 조회하기
                     </Link>
                     <Link className="navbarMenu" to={"/mynft"}>
-                        <img src={usericon} />
+                        <FontAwesomeIcon icon={faCircleUser} class="footIcon" />
                         나의 정보
                     </Link>
                 </Navbar>
@@ -67,5 +71,15 @@ const Navbar = styled.div`
         img {
             width: 25px;
         }
+    }
+    .navbarMenu:hover {
+        color: #2f70ff;
+    }
+    .footIcon {
+        width: 22px;
+        margin-bottom: 4px;
+    }
+    .footIcon:hover {
+        color: #2f70ff;
     }
 `;
