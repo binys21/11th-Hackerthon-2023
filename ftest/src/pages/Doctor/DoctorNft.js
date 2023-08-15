@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import HomeHeader from "../../components/homeHeader";
+import NavigateBar from "../../components/NavigateBar";
 
 import goArrow2 from "../images/goArrow2.png";
 import greenbox1 from "../images/greenbox1.png";
@@ -64,6 +65,7 @@ const DoctorNft = () => {
                         </div>
                     </CardInfo>
                 </Content>
+                <NavigateBar />
             </Wrapper>
         </>
     );
@@ -73,11 +75,13 @@ export default DoctorNft;
 
 const Wrapper = styled.div`
     height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     background: #202329;
+    padding-top: 30%;
 `;
 const Content = styled.div`
     width: 90%;
