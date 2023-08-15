@@ -29,11 +29,10 @@ const NavigateBar = () => {
 };
 export default NavigateBar;
 const Wrapper = styled.div`
-    width: 85%;
+    width: 100%;
     display: flex;
     position: absolute;
     bottom: 0;
-    margin-left: 15px;
 `;
 const Navbar = styled.div`
     display: flex;
