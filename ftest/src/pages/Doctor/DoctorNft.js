@@ -87,6 +87,7 @@ const Content = styled.div`
     width: 90%;
     display: flex;
     flex-direction: column;
+    padding-top: 30%;
     .title {
         align-items: flex-start;
         color: white;
