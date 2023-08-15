@@ -68,6 +68,7 @@ const Wrapper = styled.div`
     justify-content: flex-start;
     background: #202329;
     padding-top: 25%;
+
 `;
 const DoneWrapper = styled.div`
     width: 90%;
@@ -118,11 +119,11 @@ const Container = styled.div`
     border-style: none;
     border-radius: 20px 20px 0 0;
     margin-top: 255px;
+
     .slide {
         color: white;
         font-size: 12px;
         margin-top: 20px;
-        margin-bottom: 0;
         font-weight: 600;
     }
     .slide_btn img {

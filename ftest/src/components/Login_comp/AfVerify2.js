@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 import mainLogo from "../images_comp/mainLogo.png";
+import healthLogo from "../images_comp/healthLogo.png";
 
 const AfVerify2 = () => {
     const navigate = useNavigate();
@@ -13,7 +14,7 @@ const AfVerify2 = () => {
     return (
         <>
             <Wrapper>
-                <img src={mainLogo} />
+                <img src={healthLogo} />
                 <Container>
                     <div class="ment">
                         인증이
@@ -44,7 +45,7 @@ const Wrapper = styled.div`
     }
     button {
         height: 40px;
-        width: 80%;
+        width: 85%;
         border-style: none;
         outline: none;
         border-radius: 20px;
@@ -57,7 +58,7 @@ const Wrapper = styled.div`
     }
 `;
 const Container = styled.div`
-    width: 90%;
+    width: 85%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
