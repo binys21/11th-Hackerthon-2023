@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
+import docteruser from "../../pages/images/docteruser.png";
 import QnaHeader from '../../components/qna_comp/QnaHeader';
 //Q&A_환자 답글 작성하기
 const Reply=()=>{
@@ -11,7 +11,7 @@ const Reply=()=>{
         setTitle(e.target.value);
       };
     const changeContent = (e) => {
-        setTitle(e.target.value);
+        setContent(e.target.value);
     };
 
     return (
@@ -21,21 +21,37 @@ const Reply=()=>{
         <Container>
             <hr></hr>
             <Question>
+                <ImgWrapper>
+                <img src={docteruser} width={23}></img> <div className="circle"></div>
+                </ImgWrapper>
+
+                <ContentWrapper>
                 <div className='title'>남긴 질문 게시글의 제목</div>
                 <div className='date'>2023.08.13 22:08 작성</div>
                 <hr></hr>
                 <Content>본문의 내용이 두줄정도 뜨게 된다.본문의 내용이 두줄정도 뜨게 된다. 
                     본문의 내용이 두줄정도 뜨게 된다.본문의 내용이 두줄정도 뜨게 된다. 
                     본문의 내용이 두줄정도 뜨게 된다.본문의 내용이 두줄정도 뜨게 된다. </Content>
-            <hr></hr>
+                </ContentWrapper>
+                <hr></hr>
             </Question>
-
+<hr></hr>
             <InputWrapper>
-            <Input placeholder="제목을 입력해주세요" onChange={changeTitle} value={title} />
+            <input
+                type="text"
+                placeholder="제목을 입력해주세요"
+                value={title}
+                onChange={changeTitle}
+                ></input>
             <hr></hr>
-            <Input placeholder="본문을 입력해주세요" onChange={changeContent} value={content} />
-
+            <input
+                type="text"
+                placeholder="본문을 입력해주세요"
+                value={content}
+                onChange={changeContent}
+                ></input>
             </InputWrapper>
+
         </Container>
 
         </Wrapper>
@@ -53,7 +69,7 @@ color:white;
 `;
 const Container = styled.div`
 hr{
-    width: 393px;
+    width: 400px;
     height: 0px;
     flex-shrink: 0;
     stroke-width: 1px;
@@ -64,6 +80,9 @@ hr{
     
 `;
 const Question=styled.div`
+padding:20px;
+margin-left:10px;
+display:flex;
 .title{
     font-size: 16px;
 font-style: normal;
@@ -76,7 +95,6 @@ line-height: normal;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
-
 }
 `;
 const Content=styled.div`
@@ -86,21 +104,48 @@ font-weight: 400;
 line-height: normal;
 letter-spacing: -0.13px;
 opacity: 0.8;
+margin-right:130px;
 
 `;
 const InputWrapper=styled.div`
+margin-left:20px;
+margin-top:20px;
+hr{
+    width: 393px;
+height: 0px;
+flex-shrink: 0;
+opacity: 0.08;
+}
+input {
+    border:none;
+    width:200px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-left: 7%;
+    background: transparent;
+    color: black;
+    &::placeholder {
+        color: #aeaeae;
+    }
+}
+`;
+
+const ImgWrapper=styled.div`
+.circle {
+
+    width : 40px;
+    height : 40px;
+    border-radius: 50%;
+    background-color: #10C38E;
+}
+img{
+    position:absolute;
+    top:16%;
+    left:12%;
+}
 
 `;
-const Input=styled.div`
-width: 96%;
-aspect-ratio: 10.1/1;
-margin-top: 4%;
-padding-left: 4%;
-
-box-shadow: 0px 1px 8px rgba(156, 156, 156, 0.15);
-border-radius: 10px;
-
-font-size: 18px;
-letter-spacing: 0.1em;
-
+const ContentWrapper=styled.div`
+margin-left:13px;
 `;
