@@ -7,11 +7,14 @@ import goBackIcon from "./images_comp/goBack.png";
 const Header = (props) => {
     const { title } = props;
     const navigate = useNavigate();
+    const goBackBtn = () => {
+        navigate(-1);
+    };
     const path = window.location.pathname;
     return (
         <>
             <HeaderWrapper>
-                <img src={goBackIcon} />
+                <img onClick={goBackBtn} src={goBackIcon} />
                 <div class="pageTitle">{title}</div>
                 <div></div>
             </HeaderWrapper>
@@ -23,6 +26,7 @@ export default Header;
 
 const HeaderWrapper = styled.div`
     top: 0;
+
     width: 330px;
     display: flex;
     flex-direction: row;
