@@ -90,8 +90,9 @@ const LogoWrapper = styled.div`
     width: 85%;
     padding-top: 20%;
     img {
-        width: 135px;
+        width: 110px;
         padding-top: 5%;
+        align-self: center;
     }
     .title {
         color: white;
