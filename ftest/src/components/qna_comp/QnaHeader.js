@@ -23,7 +23,7 @@ const QnaHeader = (props) => {
 
 export default QnaHeader;
 const Wrapper=styled.div`
-width: 390px;
+width: 380px;
 border-radius: 30px;
 border: 1px solid rgba(255, 255, 255, 0.05);
 background: #15181D;
@@ -40,7 +40,7 @@ background: #FFF;
 `;
 const HeaderWrapper = styled.div`
 
-    width: 390px;
+    width: 370px;
     margin-left:70px;
     display: flex;
     justify-content: center;
@@ -51,6 +51,10 @@ const HeaderWrapper = styled.div`
         font-weight: 500;
     }
     button{
+        font-size:20px;
+        
+        border:none;
+        color:white;
         background-color:#363B46;
         width:30px;
         height:30px;
