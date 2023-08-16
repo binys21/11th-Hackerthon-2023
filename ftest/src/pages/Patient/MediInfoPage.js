@@ -6,13 +6,20 @@ import AllegyCard from "../../components/mediInfo_comp/AllegyCard";
 import FamilyHisCard from "../../components/mediInfo_comp/FamilyHisCard";
 import GardianCard from "../../components/mediInfo_comp/GardianCard";
 import Header from "../../components/Header";
+import Reply from "../../components/qna_comp/Reply";
+import chatArrow from "../images/chatArrow.png";
+
+import chatFoot from "../../components/qna_comp/chatFoot";
 
 const MediInfoPage = () => {
-    const [modal, setModal] = useState(false); //질문창 모달
-
-    // modal 여는 함수
-    const openModal = () => {
-        setModal(true);
+    // const [modal, setModal] = useState(false); //질문창 모달
+    // // modal 여는 함수
+    // const openModal = () => {
+    //     setModal(true);
+    // };
+    const [showReply, setShowReply] = useState(false);
+    const handleToggleReply = () => {
+        setShowReply(!showReply);
     };
 
     return (
@@ -37,6 +44,9 @@ const MediInfoPage = () => {
                     <br></br>
                     <br></br>
                 </Container>
+                {/* <img src={chatArrow} onToggle={handleToggleReply} />
+                <Reply show={showReply} onToggle={handleToggleReply} /> */}
+                <chatFoot />
             </Wrapper>
         </>
     );

@@ -60,32 +60,6 @@ const MyInfoCard = () => {
 };
 export default MyInfoCard;
 
-// const BtnWrapper = styled.div`
-//     filter: blur(10px);
-//     -webkit-filter: blur(10px);
-
-//     position: absolute;
-//     top: 25%;
-//     width: 87%;
-//     height: 250px;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: flex-start;
-//     align-items: center;
-//     z-index: 9;
-//     border-radius: 10px;
-
-//     div {
-//         color: white;
-//         margin: 10px 0;
-//         z-index: 10;
-//     }
-//     img {
-//         width: 20px;
-//         height: 10px;
-//         z-index: 10;
-//     }
-// `;
 const BtnWrapper = styled.div`
     button {
         color: white;
@@ -93,7 +67,7 @@ const BtnWrapper = styled.div`
         background-color: transparent;
     }
     z-index: 10;
-    position: fixed;
+    position: absolute;
     top: 22%;
     margin-left: 120px;
 `;
