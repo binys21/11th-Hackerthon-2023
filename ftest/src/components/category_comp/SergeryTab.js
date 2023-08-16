@@ -80,7 +80,7 @@ hr{
 `;
 
 const BtnWrapper=styled.div`
-margin-left:45px;
+margin-left:49px;
 margin-top:25px;
 button{
   border: 0;
