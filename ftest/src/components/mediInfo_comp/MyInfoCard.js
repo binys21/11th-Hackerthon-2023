@@ -14,19 +14,18 @@ const MyInfoCard = () => {
 
     return (
         <>
-            {isButtonVisible && (
-                <BtnWrapper>
-                    <button onClick={toggleBlur}>
-                        내려서 상세보기
-                        <br></br>
-                        <br></br>
-                        <img src={lowbtn} alt=""></img>
-                    </button>
-                </BtnWrapper>
-            )}
-
-            <BoxWrapper blur={isBlur}>
-                <ContentWrapper>
+            <BoxWrapper>
+                {isButtonVisible && (
+                    <BtnWrapper>
+                        <button onClick={toggleBlur}>
+                            내려서 상세보기
+                            <br></br>
+                            <br></br>
+                            <img src={lowbtn} alt=""></img>
+                        </button>
+                    </BtnWrapper>
+                )}
+                <ContentWrapper blur={isBlur}>
                     <NameWrapper>정대만</NameWrapper>
                     남/2000.05.22
                     <br></br>
@@ -40,7 +39,7 @@ const MyInfoCard = () => {
                     <br></br>
                     서울특별시 서대문구 성산로 508
                 </ContentWrapper>
-                <TitleWrapper>
+                <TitleWrapper blur={isBlur}>
                     이름
                     <br></br>
                     성별/생년월일
@@ -93,15 +92,13 @@ const BtnWrapper = styled.div`
         border: 0;
         background-color: transparent;
     }
-    z-index: 100;
-    position: absolute;
-    top: 20%;
+    z-index: 10;
+    position: fixed;
+    top: 22%;
+    margin-left: 120px;
 `;
 
 const BoxWrapper = styled.div`
-    filter: ${({ blur }) => (blur ? "blur(1px)" : "none")};
-    -webkit-filter: ${({ blur }) => (blur ? "blur(5px)" : "none")};
-
     display: flex;
     background-color: #175df9;
     width: 100%;
@@ -110,6 +107,8 @@ const BoxWrapper = styled.div`
     color: white;
 `;
 const TitleWrapper = styled.div`
+    filter: ${({ blur }) => (blur ? "blur(1px)" : "none")};
+    -webkit-filter: ${({ blur }) => (blur ? "blur(5px)" : "none")};
     font-size: 12px;
     font-weight: 400;
     line-height: 3.2;
@@ -123,6 +122,8 @@ const NameWrapper = styled.div`
     text-align: left;
 `;
 const ContentWrapper = styled.div`
+    filter: ${({ blur }) => (blur ? "blur(1px)" : "none")};
+    -webkit-filter: ${({ blur }) => (blur ? "blur(5px)" : "none")};
     font-size: 15px;
     font-weight: 700;
     line-height: 2.5;
