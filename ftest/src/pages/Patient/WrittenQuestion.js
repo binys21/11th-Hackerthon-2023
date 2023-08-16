@@ -70,7 +70,6 @@ const Wrapper = styled.div`
 height: 893px;
 background: #15181D;
 color:white;
-
 `;
 const CardWrapper=styled.div`
 width:100px;
@@ -149,7 +148,7 @@ const ImgWrapper=styled.div`
 }
 img{
     position:absolute;
-    top:16%;
+    top:19%;
     left:12%;
 }
 

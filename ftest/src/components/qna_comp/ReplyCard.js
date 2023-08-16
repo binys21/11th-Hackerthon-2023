@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+//image
 import user from "../../pages/images/user.png";
 import docteruser from "../../pages/images/docteruser.png";
 
@@ -40,10 +41,32 @@ const ReplyCard = () => {
 
 export default ReplyCard;
 const Wrapper=styled.div`
+margin-left:50px;
 
 height: 179px;
 `;
 const InputWrapper=styled.div`
+margin-left:20px;
+
+hr{
+    width: 393px;
+height: 0px;
+flex-shrink: 0;
+opacity: 0.08;
+}
+input {
+    border:none;
+    width:200px;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    padding-left: 7%;
+    background: transparent;
+    color: black;
+    &::placeholder {
+        color: #aeaeae;
+    }
+}
 `;
 const ImgWrapper=styled.div`
 .circle {
@@ -88,6 +111,6 @@ font-weight: 400;
 line-height: normal;
 letter-spacing: -0.13px;
 opacity: 0.8;
-margin-right:130px;
+margin-right:185px;
 
 `;
