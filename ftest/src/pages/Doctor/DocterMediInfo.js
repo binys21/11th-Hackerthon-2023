@@ -9,10 +9,7 @@ import Header from "../../components/Header";
 
 import RefreshNft from "../../components/NFT_comp/RefreshNft";
 import RefreshedPop from "../../components/NFT_comp/RefreshedPop";
-
-import reddot from "../images/reddot.png";
-//올라가라
-
+//의사용 화면 
 const DocterMediInfo = () => {
     const [getNewPop, setgetNewPop] = useState(false);
     const [doneRefresh, setdoneRefresh] = useState(false);
