@@ -62,17 +62,17 @@ const QrDoctor = (props) => {
                     <img onClick={deleteQr} src={closeQr2} />
                 </QrTitle>
                 <div class="exp">의료인에게 건강 NFT를 스캔받으세요.</div>
-                {/* <div id="#text-area-qr-code-webcam" className={display}>
+                <div id="#text-area-qr-code-webcam" className={display}>
                     <video />
-                </div> */}
-                {/* <div class="webcam">
+                </div>
+                <div class="webcam">
                     <QrReader
                         delay={delay}
                         style={previewStyle}
                         onError={handleError}
                         onScan={handleScan}
                     />
-                </div> */}
+                </div>
             </Container>
         </Wrapper>
     );
