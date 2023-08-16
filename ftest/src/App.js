@@ -34,7 +34,7 @@ import MyQuestion from "./pages/Patient/MyQuestion";
 import MyPage from './pages/Patient/MyPage';
 import DocterQuestion from './pages/Doctor/DocterQuestion';
 import DocterMypage from './pages/Doctor/DocterMypage';
-import Reply from './pages/Patient/Reply';
+// import Reply from './pages/Patient/Reply';
 import MakeQuestion from './pages/Patient/MakeQuestion';
 import WrittenQuestion from './pages/Patient/WrittenQuestion';
 import NoQuestion from './pages/Patient/NoQuestion';
@@ -71,7 +71,7 @@ function App() {
 
                     <Route path='/myquestion' element={<MyQuestion/>}/>
                     <Route path='/mypage' element={<MyPage/>}/>
-                    <Route path='/reply' element={<Reply/>}/>
+                    {/* <Route path='/reply' element={<Reply/>}/> */}
                     <Route path='/makequestion' element={<MakeQuestion/> }/>
                     <Route path='/writtenquestion' element={<WrittenQuestion/>}/>
 
