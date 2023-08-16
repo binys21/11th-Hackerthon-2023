@@ -14,12 +14,22 @@ const AllegyCard = () => {
 
     return (
         <>
-            <BoxWrapper blur={isBlur}>
+            <BoxWrapper>
+                {isButtonVisible && (
+                    <BtnWrapper>
+                        <button onClick={toggleBlur}>
+                            내려서 상세보기
+                            <br></br>
+                            <br></br>
+                            <img src={lowbtn} alt=""></img>
+                        </button>
+                    </BtnWrapper>
+                )}
                 <NameWrapper>
                     <div class="name">파목신</div>
                     <div class="stage">Severe</div>
                 </NameWrapper>
-                <Substance>
+                <Substance blur={isBlur}>
                     <div class="content">
                         amoxicillin
                         <br />
@@ -54,6 +64,18 @@ const AllegyCard = () => {
     );
 };
 export default AllegyCard;
+
+const BtnWrapper = styled.div`
+    button {
+        color: white;
+        border: 0;
+        background-color: transparent;
+    }
+    z-index: 10;
+    position: absolute;
+    top: 70%;
+    margin-left: 120px;
+`;
 const BoxWrapper = styled.div`
     background-color: #363b46;
     display: flex;
@@ -84,6 +106,8 @@ const NameWrapper = styled.div`
     }
 `;
 const Substance = styled.div`
+    filter: ${({ blur }) => (blur ? "blur(1px)" : "none")};
+    -webkit-filter: ${({ blur }) => (blur ? "blur(5px)" : "none")};
     width: 100%;
     display: grid;
     grid-template-columns: 6fr 4fr;
