@@ -1,24 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 //image
-import Home from "../pages/images/Home.png";
-import usericon from "../pages/images/usericon.png";
-import QRicon from "../pages/images/QRicon.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { faExpand } from "@fortawesome/free-solid-svg-icons";
 
-const NavigateBar = () => {
+import QrDoctor from "../components/QrDoctor";
+
+const NavigateBarDoc = () => {
+    const [qr, setQr] = useState(false);
+    const qrPop = () => {
+        setQr(true);
+    };
+
     return (
         <>
+            {qr ? <QrDoctor setQr={setQr} /> : null}
+            {/* {qrScanned ? (
+                <RequestNft setQr={setQr} setQrScanned={setQrScanned} />
+            ) : null} */}
             <Wrapper>
                 <Navbar>
                     <Link className="navbarhomeMenu" to={"/home"}>
                         <FontAwesomeIcon icon={faHome} class="footIcon" /> 홈
                     </Link>
-                    <Link className="navbarMenu" to={"/home"}>
+                    <Link className="navbarMenu" onClick={qrPop}>
                         <FontAwesomeIcon icon={faExpand} class="footIcon" />
                         QR 조회하기
                     </Link>
@@ -31,7 +39,7 @@ const NavigateBar = () => {
         </>
     );
 };
-export default NavigateBar;
+export default NavigateBarDoc;
 const Wrapper = styled.div`
     width: 100%;
     display: flex;
@@ -52,7 +60,7 @@ const Navbar = styled.div`
         display: flex;
         flex-direction: column;
         text-decoration-line: none;
-        color: #2f70ff;
+        color: #24e7ad;
         font-size: 13.1px;
         font-style: normal;
         font-weight: 500;
@@ -73,13 +81,13 @@ const Navbar = styled.div`
         }
     }
     .navbarMenu:hover {
-        color: #2f70ff;
+        color: #24e7ad;
     }
     .footIcon {
         width: 22px;
         margin-bottom: 4px;
     }
     .footIcon:hover {
-        color: #2f70ff;
+        color: #24e7ad;
     }
 `;

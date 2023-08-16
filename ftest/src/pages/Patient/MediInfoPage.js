@@ -8,9 +8,9 @@ import GardianCard from "../../components/mediInfo_comp/GardianCard";
 import Header from "../../components/Header";
 
 const MediInfoPage = () => {
-    const [modal,setModal]=useState(false); //질문창 모달 
+    const [modal, setModal] = useState(false); //질문창 모달
 
-      // modal 여는 함수
+    // modal 여는 함수
     const openModal = () => {
         setModal(true);
     };
@@ -56,7 +56,7 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 30%;
+    margin-top: 8%;
 `;
 const OneTitleWrapper = styled.div`
     color: white;

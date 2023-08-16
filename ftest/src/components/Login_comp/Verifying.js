@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import Header from "../Header";
 import mainLogo from "../images_comp/mainLogo.png";
+import healthLogo from "../images_comp/healthLogo.png";
 
 const Verifying = (props) => {
     const fileInput = React.useRef(null);
@@ -33,8 +34,8 @@ const Verifying = (props) => {
     return (
         <>
             <Wrapper>
-                <Header title="본인인증" />
-                <img class="mainlogo" src={mainLogo} />
+                <Header title=" " />
+                <img class="healthLogo" src={healthLogo} />
                 <Container>
                     <div class="ment">
                         의료인 인증을 위한 간단한
@@ -82,15 +83,16 @@ const Verifying = (props) => {
 export default Verifying;
 
 const Wrapper = styled.div`
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background: #202329;
-    .mainlogo {
+    .healthLogo {
         width: 135px;
         align-items: center;
+        margin-top: 30px;
     }
     button {
         height: 45px;
@@ -101,7 +103,7 @@ const Wrapper = styled.div`
         color: white;
         font-size: 12px;
         font-weight: 600;
-        margin: 30px 0 200px 0;
+        margin: 30px 0 270px 0;
     }
 `;
 const Container = styled.div`

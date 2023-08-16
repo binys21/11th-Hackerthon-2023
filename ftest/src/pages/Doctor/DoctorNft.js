@@ -2,10 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import HomeHeader from "../../components/homeHeader";
+import NavigateBarDoc from "../../components/NavigateBarDoc";
 
 import goArrow2 from "../images/goArrow2.png";
 import greenbox1 from "../images/greenbox1.png";
 import greenbox2 from "../images/greenbox2.png";
+import chatIcon from "../images/chatIcon.png";
 
 const DoctorNft = () => {
     const navigate = useNavigate();
@@ -25,10 +27,15 @@ const DoctorNft = () => {
         <>
             <Wrapper>
                 <Content>
-                    <div class="title">
-                        정대만님의 건강 NFT에서 <br />
-                        조회하실 수 있는 내용이에요.
-                    </div>
+                    <FirstLine>
+                        <div class="title">
+                            정대만님의 건강 NFT에서 <br />
+                            조회하실 수 있는 내용이에요.
+                        </div>
+                        <div class="chaticon">
+                            <img src={chatIcon} />
+                        </div>
+                    </FirstLine>
                     <RenewWrap>
                         <div class="renewal_date">갱신일 2023.07.29</div>
                         <div onClick={gotoNftRenewal} class="btn_renewal">
@@ -64,6 +71,7 @@ const DoctorNft = () => {
                         </div>
                     </CardInfo>
                 </Content>
+                <NavigateBarDoc />
             </Wrapper>
         </>
     );
@@ -73,16 +81,26 @@ export default DoctorNft;
 
 const Wrapper = styled.div`
     height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     background: #202329;
+    padding-top: 10%;
 `;
 const Content = styled.div`
     width: 90%;
     display: flex;
     flex-direction: column;
+    padding-top: 20%;
+`;
+const FirstLine = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 40px;
     .title {
         align-items: flex-start;
         color: white;
@@ -90,7 +108,12 @@ const Content = styled.div`
         font-weight: 600;
         padding: 5% 0;
         left: 0;
-        margin-bottom: 20px;
+    }
+    .chaticon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-self: center;
     }
 `;
 const RenewWrap = styled.div`

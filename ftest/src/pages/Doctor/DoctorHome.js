@@ -28,7 +28,7 @@ const DoctorHome = (props) => {
                 <RequestNft setQr={setQr} setQrScanned={setQrScanned} />
             ) : null} */}
             <Wrapper>
-                <Header title="HOME" />
+                {/* <Header title="HOME" /> */}
                 <Content>
                     <div class="title">
                         아직 환자 건강 NFT
@@ -67,6 +67,8 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: flex-start;
     background: #202329;
+    padding-top: 25%;
+
 `;
 const DoneWrapper = styled.div`
     width: 90%;
@@ -116,12 +118,12 @@ const Container = styled.div`
     background-color: #10c38e;
     border-style: none;
     border-radius: 20px 20px 0 0;
-    margin-top: 240px;
+    margin-top: 255px;
+
     .slide {
         color: white;
         font-size: 12px;
         margin-top: 20px;
-        margin-bottom: 0;
         font-weight: 600;
     }
     .slide_btn img {

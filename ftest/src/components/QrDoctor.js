@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 // import Webcam from "react-webcam";
 import QrReader from "react-web-qr-reader";
@@ -6,7 +6,26 @@ import { useNavigate } from "react-router-dom";
 import closeQr2 from "../components/images_comp/closeQr2.png";
 import RequestNft from "./NFT_comp/RequestNft";
 
+import { BrowserQrCodeReader } from "@zxing/library";
+
 const QrDoctor = (props) => {
+    const [code, setCode] = useState("");
+    const [display, setDisplay] = useState("none");
+
+    async function scanCode() {
+        try {
+            setDisplay("block");
+            const codeReader = new BrowserQrCodeReader();
+            const previewElem = document.querySelector(
+                "#test-area-qr-code-webcam>video"
+            );
+            setDisplay("none");
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    useEffect(() => {}, []);
+
     const { setQr } = props;
 
     const [qrScanned, setQrScanned] = useState(false);
@@ -42,15 +61,18 @@ const QrDoctor = (props) => {
                     <div>건강 NFT 불러오기</div>
                     <img onClick={deleteQr} src={closeQr2} />
                 </QrTitle>
-                <div class="btn_qr">QR 코드</div>
-                <div class="webcam">
+                <div class="exp">의료인에게 건강 NFT를 스캔받으세요.</div>
+                {/* <div id="#text-area-qr-code-webcam" className={display}>
+                    <video />
+                </div> */}
+                {/* <div class="webcam">
                     <QrReader
                         delay={delay}
                         style={previewStyle}
                         onError={handleError}
                         onScan={handleScan}
                     />
-                </div>
+                </div> */}
             </Container>
         </Wrapper>
     );
@@ -75,21 +97,17 @@ const Container = styled.div`
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    background-color: #10c38e;
-    .btn_qr {
+
+    background: linear-gradient(to bottom, #10c38e, #000000);
+    .exp {
         display: flex;
-        justify-content: center;
-        align-self: center;
-        width: 50px;
+        justify-self: flex-start;
+        align-self: flex-start;
         color: white;
-        font-size: 10px;
+        font-size: 13px;
         font-weight: 500;
-        border: 1px solid white;
-        border-radius: 10px;
-        background-color: none;
-        padding: 4px;
-        margin-bottom: 10px;
+        margin-left: 30px;
+        padding-bottom: 20px;
     }
     .webcam {
         display: flex;
@@ -104,7 +122,7 @@ const QrTitle = styled.div`
     flex-direction: row;
     justify-content: space-between;
     div {
-        font-size: 18px;
+        font-size: 22px;
         font-weight: 600;
         color: white;
         padding: 30px 0 0 30px;
@@ -114,5 +132,5 @@ const QrTitle = styled.div`
         height: 20px;
         margin-top: 30px;
     }
-    padding-bottom: 10%;
+    padding-bottom: 10px;
 `;

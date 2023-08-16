@@ -15,6 +15,10 @@ const QnaHeader = (props) => {
                 <div class="pageTitle">{title}</div>
                 <button>X</button>
             </HeaderWrapper>
+            <Line>
+                <hr></hr>
+            </Line>
+            
         </Wrapper>
 
         </>
@@ -62,4 +66,14 @@ const HeaderWrapper = styled.div`
         margin-left:100px;
         margin-bottom:5px;
     }
+`;
+const Line=styled.div`
+hr{
+    width: 400px;
+    height: 0px;
+    flex-shrink: 0;
+    stroke-width: 1px;
+    stroke: #FFF;
+    opacity: 0.08;
+}
 `;

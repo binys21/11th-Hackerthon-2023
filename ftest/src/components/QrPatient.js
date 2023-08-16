@@ -17,7 +17,7 @@ const QrPatient = (props) => {
                     <div>정대만님의 건강 NFT</div>
                     <img onClick={deleteQr} src={closeQr} />
                 </QrTitle>
-                <div class="btn_qr">QR 코드</div>
+                <div class="exp">의료인에게 건강 NFT를 스캔받으세요.</div>
                 <div class="qrCode">
                     <QRCodeCanvas size={200} />
                 </div>
@@ -44,26 +44,22 @@ const Container = styled.div`
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    background-color: #175df9;
-    .btn_qr {
-        display: flex;
-        justify-content: center;
-        align-self: center;
-        width: 50px;
-        color: white;
-        font-size: 10px;
-        font-weight: 500;
-        border: 1px solid white;
-        border-radius: 10px;
-        background-color: none;
-        padding: 4px;
-    }
+    background: linear-gradient(to bottom, #175df9, #000000);
     img {
         display: flex;
         width: 80%;
         justify-self: center;
         align-self: center;
         margin-top: 10px;
+    }
+    .exp {
+        display: flex;
+        justify-self: flex-start;
+        align-self: flex-start;
+        color: white;
+        font-size: 13px;
+        font-weight: 500;
+        margin-left: 30px;
     }
     .qrCode {
         width: 75%;
@@ -85,7 +81,7 @@ const QrTitle = styled.div`
     flex-direction: row;
     justify-content: space-between;
     div {
-        font-size: 18px;
+        font-size: 22px;
         font-weight: 600;
         color: white;
         padding: 30px 0 0 30px;
@@ -95,5 +91,5 @@ const QrTitle = styled.div`
         height: 20px;
         margin-top: 30px;
     }
-    padding-bottom: 20%;
+    padding-bottom: 4%;
 `;
