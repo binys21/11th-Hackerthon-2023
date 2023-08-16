@@ -13,7 +13,7 @@ const WrittenQuestion=()=>{
         <Wrapper>
             <QnaHeader title="내가 남긴 질문"/>
         <Container>
-            <hr></hr>
+        
             <TopWrapper>
                             <Number>총 3건</Number>
                             <SelectBox>
@@ -155,7 +155,7 @@ margin-left:13px;
 const TopWrapper = styled.div`
 margin-top:30px;
     display: flex;
-    width: 100%;
+    width: 330px;
     justify-content: space-between;
     align-items: center;
     align-self: center;
@@ -176,8 +176,7 @@ const SelectBox = styled.div`
         height: 8px;
     }
     select {
-        width: 75px;
-        padding: 0.8em 0.5em;
+        width: 45px;
         font-size: 13px;
         color: #175df9;
         border: none;

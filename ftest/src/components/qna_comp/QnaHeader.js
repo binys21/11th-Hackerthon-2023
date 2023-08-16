@@ -10,8 +10,10 @@ const QnaHeader = (props) => {
     return (
         <>
         <Wrapper>
-        <hr></hr>
+            <hr></hr>
+        
         <HeaderWrapper>
+       
                 <div class="pageTitle">{title}</div>
                 <button>X</button>
             </HeaderWrapper>
@@ -27,22 +29,28 @@ const QnaHeader = (props) => {
 
 export default QnaHeader;
 const Wrapper=styled.div`
-width: 380px;
+width: 374px;
 border-radius: 30px;
-border: 1px solid rgba(255, 255, 255, 0.05);
+padding-top:0.01px;
 background: #15181D;
-box-shadow: 0px 4px 100px 0px rgba(134, 197, 255, 0.20);
 margin-top:10px;
 hr{
+    
+    top:5px;
+    margin-top:20px;
     width: 117px;
-height: 4px;
+    height: 4px;
 flex-shrink: 0;
 border-radius: 3px;
 opacity: 0.7;
 background: #FFF;
 }
+
+
+
 `;
 const HeaderWrapper = styled.div`
+
 
     width: 370px;
     margin-left:70px;
