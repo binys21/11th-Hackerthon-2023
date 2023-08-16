@@ -3,8 +3,8 @@ import styled from "styled-components";
 import docteruser from "../../pages/images/docteruser.png";
 import QnaHeader from '../../components/qna_comp/QnaHeader';
 //image
-import qmark from "../../pages/images/qmark.png";
 import noQ from "../../pages/images/noQ.png";
+import qmark from "../../pages/images/qmark.png";
 //Q&A_환자 질문 없을 때
 const NoQuestion=()=>{
 
@@ -15,8 +15,7 @@ const NoQuestion=()=>{
             <QnaHeader title="내가 받은 질문"/>
         <Container>
             <ImageWrapper>
-            <Img>  <img src={noQ}/></Img>
-            <Mark>  <img src={qmark}/></Mark>
+            <Img>  <img src={qmark}/></Img>
             </ImageWrapper>
 
             <div className='main'>아직 남겨진 질문이 없어요.</div>
@@ -36,9 +35,11 @@ const NoQuestion=()=>{
 export default NoQuestion;
 const Wrapper = styled.div`
 height: 893px;
+bottom:0;
 background: #15181D;
 color:white;
 text-align:center;
+box-shadow: 0px 4px 100px 0px rgba(134, 197, 255, 0.20);
 
 `;
 const Container = styled.div`
@@ -77,9 +78,4 @@ const ImageWrapper=styled.div`
 margin-bottom:25px;
 `;
 const Img=styled.div`
-`;
-const Mark=styled.div`
-position:absolute;
-top:34%;
-left:52%;
 `;
