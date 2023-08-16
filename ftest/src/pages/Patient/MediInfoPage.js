@@ -9,7 +9,7 @@ import Header from "../../components/Header";
 import ReplyComp from '../../components/qna_comp/ReplyComp';
 import chatArrow from "../images/chatArrow.png";
 
-import chatFoot from "../../components/qna_comp/chatFoot";
+import ChatFooter from "../../components/qna_comp/ChatFooter";
 
 const MediInfoPage = () => {
     // const [modal, setModal] = useState(false); //질문창 모달
@@ -46,7 +46,7 @@ const MediInfoPage = () => {
                 </Container>
                 {/* <img src={chatArrow} onToggle={handleToggleReply} />
                 <Reply show={showReply} onToggle={handleToggleReply} /> */}
-                <chatFoot />
+                <ChatFooter />
             </Wrapper>
         </>
     );
