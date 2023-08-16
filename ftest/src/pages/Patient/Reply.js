@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import docteruser from "../../pages/images/docteruser.png";
+import doctoruser from "../../pages/images/doctoruser.png";
 import QnaHeader from '../../components/qna_comp/QnaHeader';
 //Q&A_환자 답글 작성하기
 const Reply=()=>{
@@ -22,7 +22,7 @@ const Reply=()=>{
             <hr></hr>
             <Question>
                 <ImgWrapper>
-                <img src={docteruser} width={23}></img> <div className="circle"></div>
+                <img src={doctoruser} width={40}></img>
                 </ImgWrapper>
 
                 <ContentWrapper>
@@ -139,11 +139,7 @@ const ImgWrapper=styled.div`
     border-radius: 50%;
     background-color: #10C38E;
 }
-img{
-    position:absolute;
-    top:16%;
-    left:12%;
-}
+
 
 `;
 const ContentWrapper=styled.div`
