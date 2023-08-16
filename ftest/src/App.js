@@ -26,9 +26,10 @@ import CategoryPage from "./pages/common/CategoryPage";
 import SurgeryDetail from "./pages/Patient/SurgeryDetail";
 import NftRenewalPage from "./pages/common/NftRenewalPage";
 import MediInfoPage from "./pages/Patient/MediInfoPage";
-import DocterMediInfo from "./pages/Doctor/DocterMediInfo";
 import AgreePop from "./components/NFT_comp/AgreeNft";
+
 import DocterCategory from "./pages/Doctor/DocterCategory";
+import DocterMediInfo from "./pages/Doctor/DocterMediInfo";
 import MyQuestion from "./pages/Patient/MyQuestion";
 import MyPage from './pages/Patient/MyPage';
 import DocterQuestion from './pages/Doctor/DocterQuestion';
@@ -76,10 +77,7 @@ function App() {
 
                     <Route path='/noquestion' element={<NoQuestion/>}/>
 
-                    <Route
-                        path="/doctermediinfo"
-                        element={<DocterMediInfo />}
-                    />
+                    <Route path="/doctermediinfo" element={<DocterMediInfo />}/>
                     <Route
                         path="/doctercategory"
                         element={<DocterCategory />}
