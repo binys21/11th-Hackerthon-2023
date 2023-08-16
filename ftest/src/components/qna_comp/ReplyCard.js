@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 //image
 import user from "../../pages/images/user.png";
-import docteruser from "../../pages/images/docteruser.png";
+import doctoruser from "../../pages/images/doctoruser.png";
 
 const ReplyCard = () => {
     const [comment,setComment]=useState("");
@@ -13,9 +13,8 @@ const ReplyCard = () => {
         <Wrapper>
         <Question>
                 <ImgWrapper>
-                <img src={docteruser} width={23}></img> <div className="circle"></div>
+                <img src={doctoruser} width={40}></img> 
                 </ImgWrapper>
-
                 <ContentWrapper>
                 <div className='title'>남긴 질문 답변의 제목</div>
                 <div className='date'>2023.08.13 22:08 작성</div>
@@ -42,24 +41,22 @@ const ReplyCard = () => {
 export default ReplyCard;
 const Wrapper=styled.div`
 margin-left:50px;
-
+margin-bottom:20px;
 height: 179px;
 `;
 const InputWrapper=styled.div`
-margin-left:20px;
-
+margin-left:29px;
 hr{
     width: 393px;
-height: 0px;
-flex-shrink: 0;
-opacity: 0.08;
+    height: 0px;
+    flex-shrink: 0;
+    opacity: 0.08;
 }
 input {
     border:none;
     width:200px;
     font-size: 13px;
     font-weight: 400;
-    margin-bottom: 15px;
     padding-left: 7%;
     background: transparent;
     color: black;
@@ -76,11 +73,7 @@ const ImgWrapper=styled.div`
     border-radius: 50%;
     background-color: #10C38E;
 }
-img{
-    position:absolute;
-    top:16%;
-    left:12%;
-}
+
 
 `;
 const ContentWrapper=styled.div`
