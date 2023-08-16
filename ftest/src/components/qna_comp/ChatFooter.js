@@ -25,11 +25,11 @@ const Wrapper = styled.div`
     z-index: 10;
     height: 40px;
     background-color: #15181d;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1),
-        0 0 40px rgba(255, 255, 255, 0.1), 0 0 50px rgba(255, 255, 255, 0.1);
-
+    /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.1),
+        0 0 40px rgba(255, 255, 255, 0.1), 0 0 50px rgba(255, 255, 255, 0.1); */
+    box-shadow: 0px 4px 120px rgba(134, 197, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     height: 15%;
-    border-style: none;
     border-radius: 20px 20px 0 0;
 `;
 const Container = styled.div`
