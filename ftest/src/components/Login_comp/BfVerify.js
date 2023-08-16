@@ -11,8 +11,8 @@ import uncheckedIcon from "../images_comp/unchecked.png";
 const BfVerify = () => {
     const navigate = useNavigate();
     const [id, setID] = useState();
-    const [pw, setPW] = useState();
-    const [pw_re, setPW_re] = useState();
+    const [pw, setPW] = useState("");
+    const [pw_re, setPW_re] = useState("");
     const [usertype, setUsertype] = useState();
 
     const handleChange = (e) => {
@@ -69,14 +69,15 @@ const BfVerify = () => {
                             onChange={handleChange3}
                         ></input>
                         <div class="checkicon">
-                            {(pw === pw_re && pw !== "" && pw_re !== "" && (
-                                <img src={checkedIcon} />
-                            )) ||
-                                ((pw === "" ||
-                                    pw_re === "" ||
-                                    pw !== pw_re) && (
-                                    <img src={uncheckedIcon} />
-                                ))}
+                            {pw_re !== "" && (
+                                <img
+                                    src={
+                                        pw == pw_re
+                                            ? checkedIcon
+                                            : uncheckedIcon
+                                    }
+                                />
+                            )}
                         </div>
                     </div>
                     <div class="input">성명을 입력하세요.</div>
@@ -86,13 +87,7 @@ const BfVerify = () => {
                         value={id}
                         onChange={handleChange}
                     ></input>
-                    <div class="input">성명을 입력하세요.</div>
-                    <input
-                        type="text"
-                        placeholder="성명 입력"
-                        value={id}
-                        onChange={handleChange}
-                    ></input>
+
                     <GenderAndAge>
                         <Gender>
                             <p class="genderType">성별을 선택하세요.</p>
@@ -104,7 +99,10 @@ const BfVerify = () => {
                         <Age>
                             <p class="genderType">나이를 입력하세요.</p>
                             <AgeWrapper>
-                                <span class="male">나이 입력</span>
+                                <input
+                                    type="text"
+                                    placeholder="나이 입력"
+                                ></input>
                                 <p class="count">세</p>
                             </AgeWrapper>
                         </Age>
@@ -289,7 +287,7 @@ const AgeWrapper = styled.div`
     p {
         margin-left: 5px;
     }
-    span {
+    input {
         background: white;
         height: 40px;
         width: 70%;
