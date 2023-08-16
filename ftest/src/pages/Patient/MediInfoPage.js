@@ -6,7 +6,7 @@ import AllegyCard from "../../components/mediInfo_comp/AllegyCard";
 import FamilyHisCard from "../../components/mediInfo_comp/FamilyHisCard";
 import GardianCard from "../../components/mediInfo_comp/GardianCard";
 import Header from "../../components/Header";
-import Reply from "../../components/qna_comp/Reply";
+import ReplyComp from '../../components/qna_comp/ReplyComp';
 import chatArrow from "../images/chatArrow.png";
 
 import chatFoot from "../../components/qna_comp/chatFoot";
