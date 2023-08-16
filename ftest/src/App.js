@@ -35,6 +35,7 @@ import DocterQuestion from './pages/Doctor/DocterQuestion';
 import DocterMypage from './pages/Doctor/DocterMypage';
 import Reply from './pages/Patient/Reply';
 import MakeQuestion from './pages/Patient/MakeQuestion';
+import WrittenQuestion from './pages/Patient/WrittenQuestion';
 
 function App() {
     return (
@@ -69,6 +70,7 @@ function App() {
                     <Route path='/mypage' element={<MyPage/>}/>
                     <Route path='/reply' element={<Reply/>}/>
                     <Route path='/makequestion' element={<MakeQuestion/> }/>
+                    <Route path='/writtenquestion' element={<WrittenQuestion/>}/>
 
                     <Route
                         path="/doctermediinfo"
@@ -80,6 +82,7 @@ function App() {
                     />
                      <Route path='/docterquestion' element={<DocterQuestion/>}/>
                      <Route path='/docmypage' element={<DocterMypage/>}/>
+                     
                 </Routes>
                
             </Router>
