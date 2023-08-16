@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 // import Webcam from "react-webcam";
 import QrReader from "react-web-qr-reader";
@@ -6,7 +6,26 @@ import { useNavigate } from "react-router-dom";
 import closeQr2 from "../components/images_comp/closeQr2.png";
 import RequestNft from "./NFT_comp/RequestNft";
 
+import { BrowserQrCodeReader } from "@zxing/library";
+
 const QrDoctor = (props) => {
+    const [code, setCode] = useState("");
+    const [display, setDisplay] = useState("none");
+
+    async function scanCode() {
+        try {
+            setDisplay("block");
+            const codeReader = new BrowserQrCodeReader();
+            const previewElem = document.querySelector(
+                "#test-area-qr-code-webcam>video"
+            );
+            setDisplay("none");
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    useEffect(() => {}, []);
+
     const { setQr } = props;
 
     const [qrScanned, setQrScanned] = useState(false);
@@ -43,14 +62,17 @@ const QrDoctor = (props) => {
                     <img onClick={deleteQr} src={closeQr2} />
                 </QrTitle>
                 <div class="exp">의료인에게 건강 NFT를 스캔받으세요.</div>
-                <div class="webcam">
+                {/* <div id="#text-area-qr-code-webcam" className={display}>
+                    <video />
+                </div> */}
+                {/* <div class="webcam">
                     <QrReader
                         delay={delay}
                         style={previewStyle}
                         onError={handleError}
                         onScan={handleScan}
                     />
-                </div>
+                </div> */}
             </Container>
         </Wrapper>
     );
