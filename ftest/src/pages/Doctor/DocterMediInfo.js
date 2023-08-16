@@ -1,34 +1,56 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 //component
-import MyInfoCard from "../../components/mediInfo_comp/MyInfoCard";
 import AllegyCard from "../../components/mediInfo_comp/AllegyCard";
 import FamilyHisCard from "../../components/mediInfo_comp/FamilyHisCard";
 import GardianCard from "../../components/mediInfo_comp/GardianCard";
+import ForDocter from "../../components/mediInfo_comp/ForDocter";
 import Header from "../../components/Header";
-import ReplyComp from '../../components/qna_comp/ReplyComp';
-import chatArrow from "../images/chatArrow.png";
 
-import ChatFooter from "../../components/qna_comp/ChatFooter";
+import RefreshNft from "../../components/NFT_comp/RefreshNft";
+import RefreshedPop from "../../components/NFT_comp/RefreshedPop";
 
-const MediInfoPage = () => {
-    // const [modal, setModal] = useState(false); //질문창 모달
-    // // modal 여는 함수
-    // const openModal = () => {
-    //     setModal(true);
-    // };
-    const [showReply, setShowReply] = useState(false);
-    const handleToggleReply = () => {
-        setShowReply(!showReply);
+import reddot from "../images/reddot.png";
+//올라가라
+
+const DocterMediInfo = () => {
+    const [getNewPop, setgetNewPop] = useState(false);
+    const [doneRefresh, setdoneRefresh] = useState(false);
+
+    const handleGetNewPop = () => {
+        setgetNewPop(true);
     };
-
+    const closeGetNewPop = () => {
+        setgetNewPop(false);
+    };
+    const handleDoneRefresh = () => {
+        setdoneRefresh(true);
+    };
+    const closeDoneRefresh = () => {
+        setdoneRefresh(false);
+    };
     return (
         <>
             <Wrapper>
+                {getNewPop && (
+                    <RefreshNft
+                        handleGetNewPop={handleGetNewPop}
+                        closeGetNewPop={closeGetNewPop}
+                        handleDoneRefresh={handleDoneRefresh}
+                    />
+                )}
+                {doneRefresh && (
+                    <RefreshedPop
+                        handleDoneRefresh={handleDoneRefresh}
+                        closeDoneRefresh={closeDoneRefresh}
+                        closeGetNewPop={closeGetNewPop}
+                    />
+                )}
                 <Header title="의료 정보" />
+                <BtnRenewal onClick={handleGetNewPop}>새로고침</BtnRenewal>
                 <Container>
-                    <OneTitleWrapper>나의 기본 의료 정보</OneTitleWrapper>
-                    <MyInfoCard />
+                    <OneTitleWrapper>환자의 기본 의료 정보</OneTitleWrapper>
+                    <ForDocter />
                     <TwoTitleWrapper>알러지 및 부작용</TwoTitleWrapper>
                     <AllegyCard />
                     <br></br>
@@ -44,14 +66,11 @@ const MediInfoPage = () => {
                     <br></br>
                     <br></br>
                 </Container>
-                {/* <img src={chatArrow} onToggle={handleToggleReply} />
-                <Reply show={showReply} onToggle={handleToggleReply} /> */}
-                <ChatFooter />
             </Wrapper>
         </>
     );
 };
-export default MediInfoPage;
+export default DocterMediInfo;
 const Wrapper = styled.div`
     height: 100%;
     display: flex;
@@ -60,13 +79,23 @@ const Wrapper = styled.div`
     justify-content: center;
     background-color: #202329;
 `;
+const BtnRenewal = styled.div`
+    position: relative;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
+    color: white;
+    font-size: 11px;
+`;
 const Container = styled.div`
     width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 8%;
+    margin-top: 10%;
 `;
 const OneTitleWrapper = styled.div`
     color: white;

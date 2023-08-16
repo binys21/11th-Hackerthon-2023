@@ -4,7 +4,7 @@ import doctoruser from "../../pages/images/doctoruser.png";
 import docteruser from "../../pages/images/docteruser.png";
 import QnaHeader from "./QnaHeader";
 //Q&A_환자 답글 작성하기
-const Reply = ({ show, onToggle }) => {
+const ReplyComp = ({ show, onToggle }) => {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
 
@@ -68,7 +68,7 @@ const Reply = ({ show, onToggle }) => {
     );
 };
 
-export default Reply;
+export default ReplyComp;
 const Wrapper = styled.div`
     background: #15181d;
     color: white;

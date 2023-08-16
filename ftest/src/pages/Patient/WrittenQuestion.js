@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import user from "../../pages/images/user.png";
+import userPatient from "../../pages/images/userPatient.png";
 import QnaHeader from '../../components/qna_comp/QnaHeader';
 import ReplyCard from '../../components/qna_comp/ReplyCard';
 import select_btn from "../../pages/images/select_btn.png";
@@ -30,7 +30,7 @@ const WrittenQuestion=()=>{
                         </TopWrapper>
             <Question>
                 <ImgWrapper>
-                <img src={user} width={23}></img> <div className="circle"></div>
+                <img src={userPatient} width={40}></img> 
                 </ImgWrapper>
 
                 <ContentWrapper>
@@ -70,7 +70,6 @@ const Wrapper = styled.div`
 height: 893px;
 background: #15181D;
 color:white;
-
 `;
 const CardWrapper=styled.div`
 width:100px;
@@ -147,23 +146,21 @@ const ImgWrapper=styled.div`
     border-radius: 50%;
     background-color: #175DF9;
 }
-img{
-    position:absolute;
-    top:16%;
-    left:12%;
-}
+
 
 `;
 const ContentWrapper=styled.div`
 margin-left:13px;
 `;
 const TopWrapper = styled.div`
+margin-top:30px;
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     align-self: center;
     margin-bottom:15px;
+    padding: 0 40px 0 30px;
 `;
 const Number = styled.div`
     color: white;
@@ -179,7 +176,7 @@ const SelectBox = styled.div`
         height: 8px;
     }
     select {
-        width: 45px;
+        width: 75px;
         padding: 0.8em 0.5em;
         font-size: 13px;
         color: #175df9;

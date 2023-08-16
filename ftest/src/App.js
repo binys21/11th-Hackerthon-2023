@@ -26,16 +26,20 @@ import CategoryPage from "./pages/common/CategoryPage";
 import SurgeryDetail from "./pages/Patient/SurgeryDetail";
 import NftRenewalPage from "./pages/common/NftRenewalPage";
 import MediInfoPage from "./pages/Patient/MediInfoPage";
-import DocterMediInfo from "./pages/Doctor/DocterMediInfo";
 import AgreePop from "./components/NFT_comp/AgreeNft";
+
 import DocterCategory from "./pages/Doctor/DocterCategory";
+import DocterMediInfo from "./pages/Doctor/DocterMediInfo";
 import MyQuestion from "./pages/Patient/MyQuestion";
-import MyPage from "./pages/Patient/MyPage";
-import DocterQuestion from "./pages/Doctor/DocterQuestion";
-import DocterMypage from "./pages/Doctor/DocterMypage";
-import MakeQuestion from "./pages/Patient/MakeQuestion";
-import WrittenQuestion from "./pages/Patient/WrittenQuestion";
-import NoQuestion from "./pages/Patient/NoQuestion";
+
+import MyPage from './pages/Patient/MyPage';
+import DocterQuestion from './pages/Doctor/DocterQuestion';
+import DocterMypage from './pages/Doctor/DocterMypage';
+import MakeQuestion from './pages/Patient/MakeQuestion';
+import WrittenQuestion from './pages/Patient/WrittenQuestion';
+import NoQuestion from './pages/Patient/NoQuestion';
+import Reply from './pages/Patient/Reply';
+
 
 function App() {
     return (
@@ -66,28 +70,26 @@ function App() {
                     <Route path="/nftrenewal" element={<NftRenewalPage />} />
                     <Route path="/medicalinfo" element={<MediInfoPage />} />
 
-                    <Route path="/myquestion" element={<MyQuestion />} />
-                    <Route path="/mypage" element={<MyPage />} />
-                    <Route path="/makequestion" element={<MakeQuestion />} />
-                    <Route
-                        path="/writtenquestion"
-                        element={<WrittenQuestion />}
-                    />
-                    <Route path="/noquestion" element={<NoQuestion />} />
 
-                    <Route
-                        path="/doctermediinfo"
-                        element={<DocterMediInfo />}
-                    />
+                    <Route path='/myquestion' element={<MyQuestion/>}/>
+                    <Route path='/mypage' element={<MyPage/>}/>
+                    <Route path='/makequestion' element={<MakeQuestion/> }/>
+                    <Route path='/writtenquestion' element={<WrittenQuestion/>}/>
+                    <Route path='/reply' element={<Reply/>}/>
+
+                    <Route path='/noquestion' element={<NoQuestion/>}/>
+
+
+                    <Route path="/doctermediinfo" element={<DocterMediInfo />}/>
                     <Route
                         path="/doctercategory"
                         element={<DocterCategory />}
                     />
-                    <Route
-                        path="/docterquestion"
-                        element={<DocterQuestion />}
-                    />
+
                     <Route path="/docmypage" element={<DocterMypage />} />
+                     <Route path='/docterquestion' element={<DocterQuestion/>}/>
+                     <Route path='/docmypage' element={<DocterMypage/>}/>
+
                 </Routes>
             </Router>
         </>

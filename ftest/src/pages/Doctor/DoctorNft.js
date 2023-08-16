@@ -7,7 +7,7 @@ import NavigateBarDoc from "../../components/NavigateBarDoc";
 import goArrow2 from "../images/goArrow2.png";
 import greenbox1 from "../images/greenbox1.png";
 import greenbox2 from "../images/greenbox2.png";
-import chatIcon from "../images/chatIcon.png";
+import chatIcon from "../../pages/images/chatIcon.png";
 
 const DoctorNft = () => {
     const navigate = useNavigate();
