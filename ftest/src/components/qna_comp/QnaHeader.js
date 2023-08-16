@@ -34,6 +34,7 @@ border-radius: 30px;
 padding-top:0.01px;
 background: #15181D;
 margin-top:10px;
+
 hr{
     
     top:5px;
