@@ -19,7 +19,7 @@ const Reply=()=>{
         <Wrapper>
             <QnaHeader title="답글 작성하기"/>
         <Container>
-            <hr></hr>
+
             <Question>
                 <ImgWrapper>
                 <img src={doctoruser} width={40}></img>

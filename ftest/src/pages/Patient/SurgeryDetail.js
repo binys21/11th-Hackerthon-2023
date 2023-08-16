@@ -5,7 +5,12 @@ import { useLocation } from "react-router-dom";
 import Header from '../../components/Header';
 import Hospital from '../../components/category_comp/Hospital';
 import Surgery from '../../components/category_comp/Surgery';
-
+//image
+import s1 from '../../pages/images/surimages/s1.png';
+import s2 from '../../pages/images/surimages/s2.png';
+import s3 from '../../pages/images/surimages/s3.png';
+import s4 from '../../pages/images/surimages/s4.png';
+import s5 from '../../pages/images/surimages/s5.png';
 
 const SurgeryDetail=()=>{
     const location = useLocation();     //useLocation으로 hospital 상태 정보 가져옴 
