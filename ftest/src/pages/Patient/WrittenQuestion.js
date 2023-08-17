@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import userPatient from "../../pages/images/userPatient.png";
-import QnaHeader from '../../components/qna_comp/QnaHeader';
-import ReplyCard from '../../components/qna_comp/ReplyCard';
-import select_btn from "../../pages/images/select_btn.png";
-//Q&A_환자 내가 남긴 질문 
-const WrittenQuestion=()=>{
+import QnaHeaderWrite from "../../components/qna_comp/QnaHeaderWrite";
+import ReplyCard from "../../components/qna_comp/ReplyCard";
+import select_btn_white from "../images/select_btn_white.png";
+//Q&A_환자 내가 남긴 질문
+const WrittenQuestion = () => {
     const [comment, setComment] = useState("");
 
     return (
         <>
-        <Wrapper>
-            <QnaHeader title="내가 남긴 질문"/>
-        <Container>
-        
-            <TopWrapper>
+            <Back>
+                <Wrapper>
+                    <QnaHeaderWrite title="내가 남긴 질문" />
+                    <Container>
+                        <TopWrapper>
                             <Number>총 3건</Number>
                             <SelectBox>
                                 <select>
@@ -25,141 +25,151 @@ const WrittenQuestion=()=>{
                                         오래된순
                                     </option>
                                 </select>
-                                <img src={select_btn} />
+                                <img src={select_btn_white} />
                             </SelectBox>
                         </TopWrapper>
-            <Question>
-                <ImgWrapper>
-                <img src={userPatient} width={40}></img> 
-                </ImgWrapper>
+                        <Question>
+                            <ImgWrapper>
+                                <img src={userPatient} width={40}></img>
+                            </ImgWrapper>
 
-                <ContentWrapper>
-                <div className='title'>남긴 질문 게시글의 제목?</div>
-                <div className='date'>2023.08.13 22:08 작성</div>
-                <hr></hr>
-                <Content>본문의 내용이 두줄정도 뜨게 된다.본문의 내용이 두줄정도 뜨게 된다. 
-                    본문의 내용이 두줄정도 뜨게 된다.본문의 내용이 두줄정도 뜨게 된다. 
-                    본문의 내용이 두줄정도 뜨게 된다.본문의 내용이 두줄정도 뜨게 된다. </Content>
-                </ContentWrapper>
-                <InputWrapper>
-            <input
-                type="text"
-                placeholder="답글 작성하기"
-                value={comment}
-                ></input>
-            </InputWrapper>
-            </Question>
-                {/* 답글 컴포넌트 추가 */}
-                <CardWrapper>
-
-                <ReplyCard/>
-                <ReplyCard/>
-                </CardWrapper>
-
-
-        </Container>
-
-        </Wrapper>
+                            <ContentWrapper>
+                                <div className="title">
+                                    남긴 질문 게시글의 제목?
+                                </div>
+                                <div className="date">
+                                    2023.08.13 22:08 작성
+                                </div>
+                                <hr></hr>
+                                <Content>
+                                    본문의 내용이 두줄정도 뜨게 된다.본문의
+                                    내용이 두줄정도 뜨게 된다. 본문의 내용이
+                                    두줄정도 뜨게 된다.본문의 내용이 두줄정도
+                                    뜨게 된다. 본문의 내용이 두줄정도 뜨게
+                                    된다.본문의 내용이 두줄정도 뜨게 된다.{" "}
+                                </Content>
+                            </ContentWrapper>
+                            <InputWrapper>
+                                <input
+                                    type="text"
+                                    placeholder="답글 작성하기"
+                                    value={comment}
+                                ></input>
+                            </InputWrapper>
+                        </Question>
+                        {/* 답글 컴포넌트 추가 */}
+                        <CardWrapper>
+                            <ReplyCard />
+                            <ReplyCard />
+                        </CardWrapper>
+                    </Container>
+                </Wrapper>
+            </Back>
         </>
     );
-
 };
 
 export default WrittenQuestion;
-const Wrapper = styled.div`
-height: 893px;
-background: #15181D;
-color:white;
+const Back = styled.div`
+    height: 100vh;
+    width: 100vh;
+    display: flex;
+    background-color: black;
 `;
-const CardWrapper=styled.div`
-width:100px;
+const Wrapper = styled.div`
+    position: absolute;
+    bottom: 0;
+    height: 90vh;
+    width: 100%;
+    background: #15181d;
+    color: white;
+    box-shadow: 0px 4px 120px rgba(134, 197, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+`;
+const CardWrapper = styled.div`
+    width: 100px;
 `;
 const Container = styled.div`
-hr{
-    width: 400px;
-    height: 0px;
-    flex-shrink: 0;
-    stroke-width: 1px;
-    stroke: #FFF;
-    opacity: 0.08;
-}
-
-    
-`;
-const Question=styled.div`
-padding:20px;
-margin-left:10px;
-display:flex;
-.title{
-    font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-}
-.date{
-    opacity: 0.4;
-    font-size: 13px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-}
-`;
-const Content=styled.div`
-color: #FFF;
-font-size: 13px;
-font-weight: 400;
-line-height: normal;
-letter-spacing: -0.13px;
-opacity: 0.8;
-margin-right:130px;
-
-`;
-const InputWrapper=styled.div`
-margin-left:20px;
-margin-top:20px;
-hr{
-    width: 393px;
-height: 0px;
-flex-shrink: 0;
-opacity: 0.08;
-}
-input {
-    border:none;
-    width:200px;
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    padding-left: 7%;
-    background: transparent;
-    color: black;
-    &::placeholder {
-        color: #aeaeae;
+    hr {
+        width: 400px;
+        height: 0px;
+        flex-shrink: 0;
+        stroke-width: 1px;
+        stroke: #fff;
+        opacity: 0.08;
     }
-}
+`;
+const Question = styled.div`
+    padding: 20px;
+    margin-left: 10px;
+    display: flex;
+    .title {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    .date {
+        opacity: 0.4;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+`;
+const Content = styled.div`
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.13px;
+    opacity: 0.8;
+    margin-right: 130px;
+`;
+const InputWrapper = styled.div`
+    margin-left: 20px;
+    margin-top: 20px;
+    hr {
+        width: 393px;
+        height: 0px;
+        flex-shrink: 0;
+        opacity: 0.08;
+    }
+    input {
+        border: none;
+        width: 200px;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        padding-left: 7%;
+        background: transparent;
+        color: black;
+        &::placeholder {
+            color: #aeaeae;
+        }
+    }
 `;
 
-const ImgWrapper=styled.div`
-.circle {
-
-    width : 40px;
-    height : 40px;
-    border-radius: 50%;
-    background-color: #175DF9;
-}
-
-
+const ImgWrapper = styled.div`
+    .circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #175df9;
+    }
 `;
-const ContentWrapper=styled.div`
-margin-left:13px;
+const ContentWrapper = styled.div`
+    margin-left: 13px;
 `;
 const TopWrapper = styled.div`
-margin-top:30px;
+    margin-top: 30px;
     display: flex;
     width: 330px;
     justify-content: space-between;
     align-items: center;
     align-self: center;
-    margin-bottom:15px;
+    margin-bottom: 15px;
     padding: 0 40px 0 30px;
 `;
 const Number = styled.div`
@@ -178,10 +188,10 @@ const SelectBox = styled.div`
     select {
         width: 45px;
         font-size: 13px;
-        color: #175df9;
+        color: white;
         border: none;
         background-color: transparent;
-        background: "url(${select_btn})" no-repeat 95% 50%;
+        background: "url(${select_btn_white})" no-repeat 95% 50%;
         -o-appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -191,4 +201,4 @@ const SelectBox = styled.div`
     select::-ms-expand {
         display: none;
     }
-    `;
+`;

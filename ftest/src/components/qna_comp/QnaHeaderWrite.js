@@ -48,13 +48,13 @@ const HeaderWrapper = styled.div`
         font-size: 14px;
         font-weight: 500;
         margin-left: 150px;
+        width: 1200px;
     }
     div {
         font-size: 12px;
-        color: blue;
-
+        color: #3572f9;
         width: 100vh;
-        margin-left: 50px;
+        margin-left: 60px;
     }
 `;
 const Line = styled.div`
