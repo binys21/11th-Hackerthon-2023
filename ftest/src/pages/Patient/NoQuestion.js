@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import docteruser from "../../pages/images/docteruser.png";
+//component
 import QnaHeader from "../../components/qna_comp/QnaHeader";
 import QnaHeaderWrite from "../../components/qna_comp/QnaHeaderWrite";
 //image
 import noQ from "../../pages/images/noQ.png";
 import qmark from "../../pages/images/qmark.png";
+import docteruser from "../../pages/images/docteruser.png";
 //Q&A_환자 질문 없을 때
 const NoQuestion = () => {
     return (

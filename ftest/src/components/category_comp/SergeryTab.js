@@ -66,12 +66,13 @@ font-size:14px;
 font-weight:700;
 `;
 const DocName=styled.div`
+width:50px;
 font-size:9px;
 font-weight:600;
 color:#868C8C;
 margin-bottom:8px;
 hr{
-    width:185px;
+    width:50px;
     height:0.5px;
     border:1px;
     background-color:#868C8C;
@@ -80,7 +81,7 @@ hr{
 `;
 
 const BtnWrapper=styled.div`
-margin-left:49px;
+margin-left:100px;
 margin-top:25px;
 button{
   border: 0;
