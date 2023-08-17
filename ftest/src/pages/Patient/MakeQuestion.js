@@ -1,18 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router";
 import docteruser from "../../pages/images/docteruser.png";
 import QnaHeader from "../../components/qna_comp/QnaHeader";
 //Q&A_환자 답글 작성하기
-const MakeQuestion = () => {
-    const [title, setTitle] = useState("");
-    const [content, setContent] = useState("");
+const MakeQuestion = (props) => {
+    const { posts, setPosts } = props;
+    const navigate = useNavigate();
+    //새로운 게시글을 저장할 useState
+    // (제목과 내용 2가지 값을 1개의 useState에서 객체 형식으로 관리)
+    const [newPost, setNewPost] = useState({
+        // id: posts.length + 1,
+        title: "",
+        content: "",
+    });
+    //제목과 내용을 구조분해할당으로 풀어쓰기
+    const { title, content } = newPost;
 
-    const changeTitle = (e) => {
-        setTitle(e.target.value);
+    const onChange = (e) => {
+        const { name, value } = e.target;
+        //새로운 게시글에 input값 반영
+        //키 이름은 name, 값은 value로
+        setNewPost({ ...newPost, [name]: value });
     };
-    const changeContent = (e) => {
-        setContent(e.target.value);
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        if (!content) alert("본문을 입력해주세요");
+        else {
+            setPosts([...posts, newPost]);
+            navigate("/writtenquestion");
+        }
     };
+
+    // const [title, setTitle] = useState("");
+    // const [content, setContent] = useState("");
+    // const changeTitle = (e) => {
+    //     setTitle(e.target.value);
+    // };
+    // const changeContent = (e) => {
+    //     setContent(e.target.value);
+    // };
 
     return (
         <>
@@ -22,19 +50,22 @@ const MakeQuestion = () => {
                     <Container>
                         <InputWrapper>
                             <input
-                                type="text"
                                 placeholder="제목을 입력해주세요"
+                                name="title"
                                 value={title}
-                                onChange={changeTitle}
+                                onChange={onChange}
                             ></input>
                             <hr></hr>
-                            <input
-                                class="content"
-                                type="text"
-                                placeholder="본문을 입력해주세요"
-                                value={content}
-                                onChange={changeContent}
-                            ></input>
+                            <form onSubmit={onSubmit}>
+                                <input
+                                    class="content"
+                                    placeholder="본문을 입력해주세요"
+                                    name="content"
+                                    value={content}
+                                    onChange={onChange}
+                                ></input>
+                                <button type="submit">질문하기</button>
+                            </form>
                         </InputWrapper>
                     </Container>
                 </Wrapper>
@@ -99,5 +130,9 @@ const InputWrapper = styled.div`
     .content {
         width: 300px;
         color: white;
+    }
+    button {
+        margin-top: 20px;
+        border: 0;
     }
 `;

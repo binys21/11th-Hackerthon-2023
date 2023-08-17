@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router";
 import userPatient from "../../pages/images/userPatient.png";
 import QnaHeaderWrite from "../../components/qna_comp/QnaHeaderWrite";
 import ReplyCard from "../../components/qna_comp/ReplyCard";
 import select_btn_white from "../images/select_btn_white.png";
+import MakeQuestion from "./MakeQuestion";
+import Post from "../../components/qna_comp/Posts";
 //Q&A_환자 내가 남긴 질문
-const WrittenQuestion = () => {
-    const [comment, setComment] = useState("");
+const WrittenQuestion = (props) => {
+    const { posts } = props;
 
     return (
         <>
@@ -28,25 +31,31 @@ const WrittenQuestion = () => {
                                 <img src={select_btn_white} />
                             </SelectBox>
                         </TopWrapper>
-                        <Question>
+                        {posts.map((item) => (
+                            <Post
+                                posts={item}
+                                title={item.title}
+                                content={item.content}
+                            />
+                        ))}
+                        {/* <Question>
                             <ImgWrapper>
                                 <img src={userPatient} width={40}></img>
                             </ImgWrapper>
-
                             <ContentWrapper>
                                 <div className="title">
-                                    남긴 질문 게시글의 제목?
+                                    제 부상병 중에 혈어증에 대해서 알고 싶어요.
                                 </div>
                                 <div className="date">
                                     2023.08.13 22:08 작성
                                 </div>
                                 <hr></hr>
                                 <Content>
-                                    본문의 내용이 두줄정도 뜨게 된다.본문의
-                                    내용이 두줄정도 뜨게 된다. 본문의 내용이
-                                    두줄정도 뜨게 된다.본문의 내용이 두줄정도
-                                    뜨게 된다. 본문의 내용이 두줄정도 뜨게
-                                    된다.본문의 내용이 두줄정도 뜨게 된다.{" "}
+                                안녕하세요! 제 부상병인 혈어증과 관련해
+                                    궁금한 부분이 있습니다. 혈액질환의 종류와
+                                    증상, 예방법에 대해 알고 싶습니다. 또한
+                                    혈액검사의 중요성과 정기적인 검사 주기도
+                                    궁금합니다.{" "}
                                 </Content>
                             </ContentWrapper>
                             <InputWrapper>
@@ -56,12 +65,12 @@ const WrittenQuestion = () => {
                                     value={comment}
                                 ></input>
                             </InputWrapper>
-                        </Question>
+                        </Question> */}
                         {/* 답글 컴포넌트 추가 */}
-                        <CardWrapper>
+                        {/* <CardWrapper>
                             <ReplyCard />
                             <ReplyCard />
-                        </CardWrapper>
+                        </CardWrapper> */}
                     </Container>
                 </Wrapper>
             </Back>
@@ -101,11 +110,11 @@ const Container = styled.div`
     }
 `;
 const Question = styled.div`
-    padding: 20px;
+    padding: 10px;
     margin-left: 10px;
     display: flex;
     .title {
-        font-size: 16px;
+        font-size: 15px;
         font-style: normal;
         font-weight: 600;
         line-height: normal;
