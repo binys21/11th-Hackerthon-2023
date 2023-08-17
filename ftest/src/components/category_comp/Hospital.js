@@ -64,15 +64,20 @@ const BoxWrapper = styled.div`
     border-radius: 8px;
 `;
 const TypeWrapper = styled.div`
+
     background-color: #2273ec;
     color: white;
-    width: 28px;
-    height: 18px;
+
+    width: max-content;
+    padding:4px;
+    height: 11px;
     border-radius: 7px;
+
     font-size: 9px;
     text-align: center;
-    margin-left: 22px;
+    margin-left: 21px;
     margin-top: 6px;
+
 `;
 const ImgWrapper = styled.div``;
 const NameWrapper = styled.div`

@@ -104,7 +104,7 @@ export default CategoryPage;
 const Back = styled.div`
     background: #202329;
     width: 100%;
-    height: 100vh;
+    height: 145vh;
     display: flex;
     justify-content: center;
 `;
