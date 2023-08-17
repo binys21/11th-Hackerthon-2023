@@ -2,21 +2,42 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router";
 
-import Post from "../../components/qna_comp/Posts";
 import doctoruser from "../../pages/images/doctoruser.png";
 import QnaHeader from "../../components/qna_comp/QnaHeader";
-//Q&A_환자 답글 작성하기
-const Reply = (props) => {
-    const { posts } = props;
 
-    // const [title, setTitle] = useState("");
-    // const [content, setContent] = useState("");
-    // const changeTitle = (e) => {
-    //     setTitle(e.target.value);
-    // };
-    // const changeContent = (e) => {
-    //     setContent(e.target.value);
-    // };
+import Post from "../../components/qna_comp/Posts";
+import Replies from "../../components/qna_comp/Replies";
+
+//Q&A_환자 답글 작성하기
+const ReplyPage = (props) => {
+    const { selectedPostId, posts, replies, setReplies } = props;
+    const navigate = useNavigate();
+
+    const [newReply, setNewReply] = useState({
+        retitle: "",
+        recontent: "",
+    });
+    const { retitle, recontent } = newReply;
+
+    const onChange = (e) => {
+        const { name, value } = e.target;
+        setNewReply({ ...newReply, [name]: value });
+    };
+    const onSubmit = (e) => {
+        e.preventDefault();
+        if (!recontent) alert("본문을 입력해주세요");
+        else {
+            const newReplyWithId = { ...newReply, id: Date.now() };
+            const updatedReplies = replies.map((reply) =>
+                reply.id === selectedPostId
+                    ? { ...reply, replies: [...reply.replies, newReplyWithId] }
+                    : reply
+            );
+            setReplies(updatedReplies);
+            navigate("/writtenquestion");
+        }
+    };
+    const selectedPost = posts.find((post) => post.id === selectedPostId);
 
     return (
         <>
@@ -24,49 +45,48 @@ const Reply = (props) => {
                 <Wrapper>
                     <QnaHeader title="답글 작성하기" />
                     <Container>
-                        {posts.map((item) => (
+                        {selectedPost && (
+                            <Post
+                                title={selectedPost.title}
+                                content={selectedPost.content}
+                            />
+                        )}
+                        {/* <Post
+                            posts={selectedPostId} // Pass the selected post data
+                            title={selectedPostId ? selectedPostId.title : ""}
+                            content={
+                                selectedPostId ? selectedPostId.content : ""
+                            }
+                        /> */}
+                        {/* {posts.map((item) => (
                             <Post
                                 posts={item}
                                 title={item.title}
                                 content={item.content}
                             />
-                        ))}
-                        {/* <Question>
-                            <ImgWrapper>
-                                <img src={doctoruser} width={40}></img>
-                            </ImgWrapper>
-                            <ContentWrapper>
-                                <div className="title">
-                                    남긴 질문 게시글의 제목
-                                </div>
-                                <div className="date">
-                                    2023.08.13 22:08 작성
-                                </div>
-                                <hr></hr>
-                                <Content>
-                                    본문의 내용이 두줄정도 뜨게 된다.본문의
-                                    내용이 두줄정도 뜨게 된다. 본문의 내용이
-                                    두줄정도 뜨게 된다.본문의 내용이 두줄정도
-                                    뜨게 된다. 본문의 내용이 두줄정도 뜨게
-                                    된다.본문의 내용이 두줄정도 뜨게 된다.{" "}
-                                </Content>
-                            </ContentWrapper>
-                            <hr></hr>
-                        </Question> */}
+                        ))} */}
                         <hr></hr>
                         <InputWrapper>
                             <input
                                 class="reTitle"
                                 type="text"
                                 placeholder="제목을 입력해주세요"
+                                name="retitle"
+                                value={retitle}
+                                onChange={onChange}
                             ></input>
                             <hr></hr>
-                            <input
-                                class="reContent"
-                                type="text"
-                                placeholder="본문을 입력해주세요"
-                            ></input>
-                            <button>답글 달기</button>
+                            <form onSubmit={onSubmit}>
+                                <input
+                                    class="reContent"
+                                    type="text"
+                                    placeholder="본문을 입력해주세요"
+                                    name="recontent"
+                                    value={recontent}
+                                    onChange={onChange}
+                                ></input>
+                                <button>답글 달기</button>
+                            </form>
                         </InputWrapper>
                     </Container>
                 </Wrapper>
@@ -75,7 +95,7 @@ const Reply = (props) => {
     );
 };
 
-export default Reply;
+export default ReplyPage;
 const Back = styled.div`
     height: 100vh;
     width: 100vh;

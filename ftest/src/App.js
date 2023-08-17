@@ -38,15 +38,23 @@ import DocterMypage from "./pages/Doctor/DocterMypage";
 import MakeQuestion from "./pages/Patient/MakeQuestion";
 import WrittenQuestion from "./pages/Patient/WrittenQuestion";
 import NoQuestion from "./pages/Patient/NoQuestion";
-import Reply from "./pages/Patient/Reply";
+import ReplyPage from "./pages/Patient/ReplyPage";
 
 function App() {
     const [posts, setPosts] = useState([
         {
-            // id: 1,
+            id: 1,
             title: "제 부상병 중에 혈어증에 대해서 알고 싶어요.",
             content:
                 "안녕하세요! 제 부상병인 혈어증과 관련해 궁금한 부분이 있습니다. 혈액질환의 종류와 증상, 예방법에 대해 알고 싶습니다. 또한 혈액검사의 중요성과 정기적인 검사 주기도 궁금합니다.",
+        },
+    ]);
+    const [replies, setReplies] = useState([
+        {
+            id: 1,
+            retitle: "질병 관련 증상과 권장 사항입니다.",
+            recontent:
+                "답변드립니다. 혈액관련 질환은 다양한 종류가 있으며, 빈혈, 혈소판 감소 등이 있을 수 있습니다. 증상은 피로, 두통 등이 나타날 수 있으며, 건강한 식습관과 충분한 수면, 운동으로 예방할 수 있습니다. 정기 검사를 받는 걸 권장합니다.",
         },
     ]);
 
@@ -88,9 +96,20 @@ function App() {
                     />
                     <Route
                         path="/writtenquestion"
-                        element={<WrittenQuestion posts={posts} />}
+                        element={
+                            <WrittenQuestion posts={posts} replies={replies} />
+                        }
                     />
-                    <Route path="/reply" element={<Reply posts={posts} />} />
+                    <Route
+                        path="/replypage"
+                        element={
+                            <ReplyPage
+                                posts={posts}
+                                replies={replies}
+                                setReplies={setReplies}
+                            />
+                        }
+                    />
                     <Route path="/noquestion" element={<NoQuestion />} />
                     <Route
                         path="/doctermediinfo"
