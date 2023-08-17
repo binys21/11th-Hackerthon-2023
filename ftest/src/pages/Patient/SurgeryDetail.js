@@ -134,6 +134,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top:10px;
+    margin-bottom:40px;
     
 `;
 const ImgWrapper=styled.div`

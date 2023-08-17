@@ -7,6 +7,7 @@ import Header from '../../components/Header';
 //componenet
 import DrugCard from '../../components/detail_comp/DrugCard';
 import Hospital from '../../components/category_comp/Hospital';
+import Pharmacy from '../../components/category_comp/Pharmacy';
 import DrugCard2 from '../../components/detail_comp/DrugCard2';
 
 const DrugDetail=()=>{
@@ -19,11 +20,13 @@ const DrugDetail=()=>{
         <Header title="상세보기"/>
         <Container>
             <br></br>
-            <Hospital hospital={{ date: "조제일자 2023-07-29 | 연결 진단서 1건",
-            type:"의원",
-            name: "독수리약국",
-            addr: "서울 서대문구 연세로 36 독수리빌딩",
-            doctor: "권한민 약사" }} />
+            <Pharmacy hospital={{ 
+            date: hospital.date,
+            type:hospital.type,
+            name: hospital.name,
+            doctor: hospital.doctor,
+            addr: hospital.addr,
+            }} />
 
             <DrugCard/>
             <br></br>
