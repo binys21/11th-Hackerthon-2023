@@ -26,48 +26,22 @@ const Reply = () => {
                                 <img src={doctoruser} width={40}></img>
                             </ImgWrapper>
 
-
-        <Wrapper>
-            <QnaHeader title="답글 작성하기"/>
-        <Container>
-
-            <Question>
-                <ImgWrapper>
-                <img src={doctoruser} width={40}></img>
-                </ImgWrapper>
-
-                <ContentWrapper>
-                <div className='title'>남긴 질문 게시글의 제목</div>
-                <div className='date'>2023.08.13 22:08 작성</div>
-                <hr></hr>
-                <Content>본문의 내용이 두줄정도 뜨게 된다.본문의 내용이 두줄정도 뜨게 된다. 
-                    본문의 내용이 두줄정도 뜨게 된다.본문의 내용이 두줄정도 뜨게 된다. 
-                    본문의 내용이 두줄정도 뜨게 된다.본문의 내용이 두줄정도 뜨게 된다. </Content>
-                </ContentWrapper>
-                <hr></hr>
-            </Question>
-<hr></hr>
-            <InputWrapper>
-            <input
-                type="text"
-                placeholder="제목을 입력해주세요"
-                value={title}
-                onChange={changeTitle}
-                ></input>
-            <hr></hr>
-            <input
-                type="text"
-                placeholder="본문을 입력해주세요"
-                value={content}
-                onChange={changeContent}
-                ></input>
-            </InputWrapper>
-
-
-                        <ContentWrapper>
-                            <div className="title">남긴 질문 게시글의 제목</div>
-                            <div className="date">2023.08.13 22:08 작성</div>
-
+                            <ContentWrapper>
+                                <div className="title">
+                                    남긴 질문 게시글의 제목
+                                </div>
+                                <div className="date">
+                                    2023.08.13 22:08 작성
+                                </div>
+                                <hr></hr>
+                                <Content>
+                                    본문의 내용이 두줄정도 뜨게 된다.본문의
+                                    내용이 두줄정도 뜨게 된다. 본문의 내용이
+                                    두줄정도 뜨게 된다.본문의 내용이 두줄정도
+                                    뜨게 된다. 본문의 내용이 두줄정도 뜨게
+                                    된다.본문의 내용이 두줄정도 뜨게 된다.{" "}
+                                </Content>
+                            </ContentWrapper>
                             <hr></hr>
                         </Question>
                         <hr></hr>
