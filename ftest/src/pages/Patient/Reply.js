@@ -25,7 +25,6 @@ const Reply = () => {
                             <ImgWrapper>
                                 <img src={doctoruser} width={40}></img>
                             </ImgWrapper>
-
                             <ContentWrapper>
                                 <div className="title">
                                     남긴 질문 게시글의 제목

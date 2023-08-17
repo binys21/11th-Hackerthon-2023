@@ -29,10 +29,13 @@ const Wrapper = styled.div`
     padding-top: 0.01px;
     background: #15181d;
     margin-top: 10px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     hr {
         top: 5px;
-        margin-top: 20px;
+        margin-top: 10px;
         width: 117px;
         height: 4px;
         flex-shrink: 0;
@@ -43,8 +46,9 @@ const Wrapper = styled.div`
 `;
 const HeaderWrapper = styled.div`
     width: 370px;
-    margin-left: 70px;
+    margin-left: 125px;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     padding-top: 5%;
     .pageTitle {
