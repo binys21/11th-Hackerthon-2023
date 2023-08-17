@@ -5,7 +5,12 @@ import { useLocation } from "react-router-dom";
 import Header from '../../components/Header';
 import Hospital from '../../components/category_comp/Hospital';
 import Surgery from '../../components/category_comp/Surgery';
-
+//image
+import s1 from '../../pages/images/surimages/s1.png';
+import s2 from '../../pages/images/surimages/s2.png';
+import s3 from '../../pages/images/surimages/s3.png';
+import s4 from '../../pages/images/surimages/s4.png';
+import s5 from '../../pages/images/surimages/s5.png';
 
 const SurgeryDetail=()=>{
     const location = useLocation();     //useLocation으로 hospital 상태 정보 가져옴 
@@ -25,7 +30,13 @@ const SurgeryDetail=()=>{
             addr: "서울 서대문구 연세로 36 독수리빌딩",
             doctor: "권한민 약사" }} />
 
-        <PatientBox>
+        <ImgWrapper>
+        <img src={s2} width={330} height={110}></img>
+        <img src={s3} width={330} height={164}></img>
+        <img src={s4} width={330} height={330}></img>
+        <img src={s5} width={330} height={330}></img>
+        </ImgWrapper>
+        {/* <PatientBox>
             <Top>
             <div className='date'>2023.06.03 수술 | 1차 수술 <br></br>
             연세세브란스
@@ -96,7 +107,7 @@ const SurgeryDetail=()=>{
             <div>무</div> 
             </Bottom>
         </SurgeryBox>
-
+ */}
 
 
         </Container>
@@ -124,6 +135,12 @@ const Container = styled.div`
     align-items: center;
     margin-top:10px;
     
+`;
+const ImgWrapper=styled.div`
+img{
+    border-radius:10px;
+    margin-top:15px;
+}
 `;
 const InfoWrapper=styled.div`
     font-size:10px;
