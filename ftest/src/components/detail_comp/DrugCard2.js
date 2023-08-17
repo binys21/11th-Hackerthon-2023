@@ -57,6 +57,7 @@ width:333px;
 height:270px;
 color:white;
 border-radius:10px;
+margin-bottom:30px;
 `;
 const ContentWrapper=styled.div`
 font-size:12px;

@@ -35,7 +35,7 @@ export const hospitalData = [
       name: "참좋은약국",
       date:"조제일자 2023.02.21",
       doctor:"권오문 약사",
-      addr:""
+      addr:"부산 동구 고관로 29-1"
     },
     {
       id: 5,
