@@ -138,7 +138,7 @@ const InputWrapper = styled.div`
         margin-bottom: 15px;
         padding-left: 7%;
         background: transparent;
-        color: black;
+        color: white;
         &::placeholder {
             color: #aeaeae;
         }
