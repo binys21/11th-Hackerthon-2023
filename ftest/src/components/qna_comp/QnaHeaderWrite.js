@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import btnX from "../images_comp/btnX.png";
 
-const QnaHeader = (props) => {
+const QnaHeaderWrite = (props) => {
     const { title } = props;
 
     const path = window.location.pathname;
@@ -12,7 +11,7 @@ const QnaHeader = (props) => {
                 <hr></hr>
                 <HeaderWrapper>
                     <div class="pageTitle">{title}</div>
-                    <img src={btnX} />
+                    <div>작성하기</div>
                 </HeaderWrapper>
                 <Line>
                     <hr></hr>
@@ -22,14 +21,12 @@ const QnaHeader = (props) => {
     );
 };
 
-export default QnaHeader;
+export default QnaHeaderWrite;
 const Wrapper = styled.div`
-    width: 374px;
+    width: 100%;
     border-radius: 30px;
-    padding-top: 0.01px;
     background: #15181d;
     margin-top: 10px;
-
     hr {
         top: 5px;
         margin-top: 20px;
@@ -42,8 +39,7 @@ const Wrapper = styled.div`
     }
 `;
 const HeaderWrapper = styled.div`
-    width: 370px;
-    margin-left: 70px;
+    width: 100%;
     display: flex;
     justify-content: center;
     padding-top: 5%;
@@ -51,12 +47,14 @@ const HeaderWrapper = styled.div`
         color: white;
         font-size: 14px;
         font-weight: 500;
+        margin-left: 150px;
     }
-    img {
-        width: 20px;
-        height: 20px;
-        margin-left: 100px;
-        margin-bottom: 5px;
+    div {
+        font-size: 12px;
+        color: blue;
+
+        width: 100vh;
+        margin-left: 50px;
     }
 `;
 const Line = styled.div`
