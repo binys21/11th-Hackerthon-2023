@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router";
 import chatFooterBar from "../../pages/images/chatFooterBar.png";
 import chatArrow from "../../pages/images/chatArrow.png";
 
 const ChatFooter = () => {
+    const navigate = useNavigate();
+    const gotoChat = () => {
+        navigate("/reply");
+    };
+
     return (
         <>
             <Wrapper>
                 <Container>
                     <img class="bar" src={chatFooterBar} />
                     <div class="myQ">내가 남긴 질문</div>
-                    <img class="arrow" src={chatArrow} />
+                    <img onClick={gotoChat} class="arrow" src={chatArrow} />
                 </Container>
             </Wrapper>
         </>

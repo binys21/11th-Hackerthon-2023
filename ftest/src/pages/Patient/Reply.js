@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import doctoruser from "../../pages/images/doctoruser.png";
-
-import QnaHeader from '../../components/qna_comp/QnaHeader';
-
+import QnaHeader from "../../components/qna_comp/QnaHeader";
 //Q&A_환자 답글 작성하기
 const Reply = () => {
     const [title, setTitle] = useState("");
@@ -18,85 +16,74 @@ const Reply = () => {
 
     return (
         <>
+            <Back>
+                <Wrapper>
+                    <QnaHeader title="답글 작성하기" />
+                    <Container>
+                        <hr></hr>
+                        <Question>
+                            <ImgWrapper>
+                                <img src={doctoruser} width={40}></img>
+                            </ImgWrapper>
 
-        <Wrapper>
-            <QnaHeader title="답글 작성하기"/>
-        <Container>
-            <hr></hr>
-            <Question>
-                <ImgWrapper>
-                <img src={doctoruser} width={40}></img>
-                </ImgWrapper>
-
-                <ContentWrapper>
-                <div className='title'>남긴 질문 게시글의 제목</div>
-                <div className='date'>2023.08.13 22:08 작성</div>
-                <hr></hr>
-                <Content>본문의 내용이 두줄정도 뜨게 된다.본문의 내용이 두줄정도 뜨게 된다. 
-                    본문의 내용이 두줄정도 뜨게 된다.본문의 내용이 두줄정도 뜨게 된다. 
-                    본문의 내용이 두줄정도 뜨게 된다.본문의 내용이 두줄정도 뜨게 된다. </Content>
-                </ContentWrapper>
-                <hr></hr>
-            </Question>
-<hr></hr>
-            <InputWrapper>
-            <input
-                type="text"
-                placeholder="제목을 입력해주세요"
-                value={title}
-                onChange={changeTitle}
-                ></input>
-            <hr></hr>
-            <input
-                type="text"
-                placeholder="본문을 입력해주세요"
-                value={content}
-                onChange={changeContent}
-                ></input>
-            </InputWrapper>
-
-
-                        <ContentWrapper>
-                            <div className="title">남긴 질문 게시글의 제목</div>
-                            <div className="date">2023.08.13 22:08 작성</div>
+                            <ContentWrapper>
+                                <div className="title">
+                                    남긴 질문 게시글의 제목
+                                </div>
+                                <div className="date">
+                                    2023.08.13 22:08 작성
+                                </div>
+                                <hr></hr>
+                                <Content>
+                                    본문의 내용이 두줄정도 뜨게 된다.본문의
+                                    내용이 두줄정도 뜨게 된다. 본문의 내용이
+                                    두줄정도 뜨게 된다.본문의 내용이 두줄정도
+                                    뜨게 된다. 본문의 내용이 두줄정도 뜨게
+                                    된다.본문의 내용이 두줄정도 뜨게 된다.{" "}
+                                </Content>
+                            </ContentWrapper>
                             <hr></hr>
-                            <Content>
-                                본문의 내용이 두줄정도 뜨게 된다.본문의 내용이
-                                두줄정도 뜨게 된다. 본문의 내용이 두줄정도 뜨게
-                                된다.본문의 내용이 두줄정도 뜨게 된다. 본문의
-                                내용이 두줄정도 뜨게 된다.본문의 내용이 두줄정도
-                                뜨게 된다.{" "}
-                            </Content>
-                        </ContentWrapper>
+                        </Question>
                         <hr></hr>
-                    </Question>
-                    <hr></hr>
-                    <InputWrapper>
-                        <input
-                            type="text"
-                            placeholder="제목을 입력해주세요"
-                            value={title}
-                            onChange={changeTitle}
-                        ></input>
-                        <hr></hr>
-                        <input
-                            type="text"
-                            placeholder="본문을 입력해주세요"
-                            value={content}
-                            onChange={changeContent}
-                        ></input>
-                    </InputWrapper>
-                </Container>
-            </Wrapper>
+                        <InputWrapper>
+                            <input
+                                type="text"
+                                placeholder="제목을 입력해주세요"
+                                value={title}
+                                onChange={changeTitle}
+                            ></input>
+                            <hr></hr>
+                            <input
+                                type="text"
+                                placeholder="본문을 입력해주세요"
+                                value={content}
+                                onChange={changeContent}
+                            ></input>
+                        </InputWrapper>
+                    </Container>
+                </Wrapper>
+            </Back>
         </>
     );
 };
 
 export default Reply;
+const Back = styled.div`
+    height: 100vh;
+    width: 100vh;
+    display: flex;
+    background-color: black;
+`;
 const Wrapper = styled.div`
-    height: 893px;
+    position: absolute;
+    bottom: 0;
+    height: 90vh;
+    width: 100%;
     background: #15181d;
     color: white;
+    box-shadow: 0px 4px 120px rgba(134, 197, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
 `;
 const Container = styled.div`
     hr {
@@ -159,15 +146,13 @@ const InputWrapper = styled.div`
     }
 `;
 
-
-const ImgWrapper=styled.div`
-.circle {
-
-    width : 40px;
-    height : 40px;
-    border-radius: 50%;
-    background-color: #10C38E;
-}
+const ImgWrapper = styled.div`
+    .circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #10c38e;
+    }
 `;
 const ContentWrapper = styled.div`
     margin-left: 13px;
