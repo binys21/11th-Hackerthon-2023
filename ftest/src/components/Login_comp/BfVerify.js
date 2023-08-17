@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-
+import axios from 'axios';
 import Header from "../Header";
 
 import mainLogo from "../images_comp/mainLogo.png";
@@ -13,7 +13,54 @@ const BfVerify = () => {
     const [id, setID] = useState();
     const [pw, setPW] = useState("");
     const [pw_re, setPW_re] = useState("");
+    const [username, setUsername] = useState('');
     const [usertype, setUsertype] = useState();
+
+    const BASE_URL = "silverjek.pythonanywhere.com";
+
+    const handleOnClick=()=>{
+        if(!id){
+            alert(`아이디를 입력해주세요.`);
+            return;
+        }else if(!pw){
+            alert(`비밀번호를 입력해주세요.`);
+            return;
+        }else if(!pw_re){
+            alert(`비밀번호가 일치하지 않습니다. 올바르게 입력해주세요.`);
+            return;
+        }
+
+    }
+    const handleSignup = async (e) => {
+        e.preventDefault();
+    
+          try {
+            const formData = new FormData();
+            formData.append('userId', id);
+            formData.append('username', username);
+            formData.append('password', pw);
+    
+            const response = await axios.post(
+              `${BASE_URL}account/signup/`,
+              formData,
+              {
+                headers: {
+                  'Content-Type': 'multipart/form-data',
+                },
+              }
+            );
+    
+            // 회원가입 성공 시 처리
+            navigate(`/home`);
+            console.log(response);
+          } catch (error) {
+            // 오류 처리
+            console.error(error);
+          }
+        }
+      
+
+    
 
     const handleChange = (e) => {
         setID(e.target.value);
@@ -84,7 +131,7 @@ const BfVerify = () => {
                     <input
                         type="text"
                         placeholder="성명 입력"
-                        value={id}
+                        value={username}
                         onChange={handleChange}
                     ></input>
 
