@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router";
 import userPatient from "../../pages/images/userPatient.png";
@@ -6,10 +6,14 @@ import QnaHeaderWrite from "../../components/qna_comp/QnaHeaderWrite";
 import ReplyCard from "../../components/qna_comp/ReplyCard";
 import select_btn_white from "../images/select_btn_white.png";
 import MakeQuestion from "./MakeQuestion";
+
 import Post from "../../components/qna_comp/Posts";
+import Replies from "../../components/qna_comp/Replies";
+
 //Q&A_환자 내가 남긴 질문
 const WrittenQuestion = (props) => {
-    const { posts } = props;
+    const { posts, replies, setReplies } = props;
+    const [selectedPostId, setSelectedPostId] = useState(null);
 
     return (
         <>
@@ -18,7 +22,7 @@ const WrittenQuestion = (props) => {
                     <QnaHeaderWrite title="내가 남긴 질문" />
                     <Container>
                         <TopWrapper>
-                            <Number>총 3건</Number>
+                            <Number>총 {`${posts.length}`}건</Number>
                             <SelectBox>
                                 <select>
                                     <option key="latest" value="latest">
@@ -32,55 +36,31 @@ const WrittenQuestion = (props) => {
                             </SelectBox>
                         </TopWrapper>
                         {posts.map((item) => (
-                            <Post
-                                posts={item}
-                                title={item.title}
-                                content={item.content}
-                            />
+                            <div key={item.id}>
+                                <Post
+                                    posts={item}
+                                    title={item.title}
+                                    content={item.content}
+                                    onClick={() => setSelectedPostId(item.id)}
+                                />
+                                {selectedPostId === item.id && (
+                                    <Replies
+                                        selectedPostId={selectedPostId}
+                                        replies={replies}
+                                        setReplies={setReplies}
+                                    />
+                                )}
+                            </div>
                         ))}
-                        {/* <Question>
-                            <ImgWrapper>
-                                <img src={userPatient} width={40}></img>
-                            </ImgWrapper>
-                            <ContentWrapper>
-                                <div className="title">
-                                    제 부상병 중에 혈어증에 대해서 알고 싶어요.
-                                </div>
-                                <div className="date">
-                                    2023.08.13 22:08 작성
-                                </div>
-                                <hr></hr>
-                                <Content>
-                                안녕하세요! 제 부상병인 혈어증과 관련해
-                                    궁금한 부분이 있습니다. 혈액질환의 종류와
-                                    증상, 예방법에 대해 알고 싶습니다. 또한
-                                    혈액검사의 중요성과 정기적인 검사 주기도
-                                    궁금합니다.{" "}
-                                </Content>
-                            </ContentWrapper>
-                            <InputWrapper>
-                                <input
-                                    type="text"
-                                    placeholder="답글 작성하기"
-                                    value={comment}
-                                ></input>
-                            </InputWrapper>
-                        </Question> */}
-                        {/* 답글 컴포넌트 추가 */}
-                        {/* <CardWrapper>
-                            <ReplyCard />
-                            <ReplyCard />
-                        </CardWrapper> */}
                     </Container>
                 </Wrapper>
             </Back>
         </>
     );
 };
-
 export default WrittenQuestion;
 const Back = styled.div`
-    height: 100vh;
+    height: 300vh;
     width: 100vh;
     display: flex;
     background-color: black;

@@ -9,8 +9,27 @@ import Header from "../../components/Header";
 // import user from '../../pages/images/user.png';
 import userPatient from "../../pages/images/userPatient.png";
 import NavigateBar from "../../components/NavigateBar";
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const MyPage = () => {
+        const [userId,setUserId]=useState("");
+        const navigate=useNavigate();
+
+        const getUserInfo=()=>{
+            axios({
+                method:"GET",
+                url:"silverjek.pythonanywhere.com//mypage/1/",
+            })
+            .then((response)=>{
+                console.log(response);
+            })
+            .catch((error)=>{
+                console.log(error);
+                throw new Error(error);
+            });
+        };
+
     return (
         <>
             <Wrapper>
