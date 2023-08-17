@@ -110,7 +110,7 @@ const Container = styled.div`
     }
 `;
 const Question = styled.div`
-    padding: 20px;
+    padding: 10px;
     margin-left: 10px;
     display: flex;
     .title {
