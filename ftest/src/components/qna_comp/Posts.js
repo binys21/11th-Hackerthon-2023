@@ -1,22 +1,32 @@
 import styled from "styled-components";
 import userPatient from "../../pages/images/userPatient.png";
+import { useNavigate } from "react-router";
 
 const Post = (props) => {
     const { title, content } = props.posts;
+    const navigate = useNavigate();
+    const gotoReply = () => {
+        navigate("/reply");
+    };
     return (
         <Question>
             <ImgWrapper>
                 <img src={userPatient} width={40}></img>
             </ImgWrapper>
-            <ContentWrapper>
-                <div className="title">{title}</div>
-                <div className="date">2023.08.13 22:08 작성</div>
-                <hr></hr>
-                <Content>{content}</Content>
-            </ContentWrapper>
-            <InputWrapper>
-                <input type="text" placeholder="답글 작성하기"></input>
-            </InputWrapper>
+            <Wrapper>
+                <ContentWrapper>
+                    <div className="title">{title}</div>
+                    <div className="date">2023.08.13 22:08 작성</div>
+                    <hr></hr>
+                    <Content>{content}</Content>
+                </ContentWrapper>
+                <InputWrapper>
+                    <div onClick={gotoReply} class="reply">
+                        답글 작성하기
+                    </div>
+                    <div class="reply">수정ㅣ삭제</div>
+                </InputWrapper>
+            </Wrapper>
         </Question>
     );
 };
@@ -25,13 +35,14 @@ export default Post;
 
 const Question = styled.div`
     padding: 20px;
-    margin-left: 10px;
     display: flex;
+
     .title {
         font-size: 15px;
         font-style: normal;
         font-weight: 600;
         line-height: normal;
+        margin-bottom: 10px;
     }
     .date {
         opacity: 0.4;
@@ -40,6 +51,10 @@ const Question = styled.div`
         font-weight: 400;
         line-height: normal;
     }
+`;
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
 `;
 const Content = styled.div`
     color: #fff;
@@ -51,26 +66,17 @@ const Content = styled.div`
     margin-right: 130px;
 `;
 const InputWrapper = styled.div`
-    margin-left: 20px;
-    margin-top: 20px;
-    hr {
-        width: 393px;
-        height: 0px;
-        flex-shrink: 0;
-        opacity: 0.08;
-    }
-    input {
+    width: 102%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    .reply {
         border: none;
         width: 200px;
-        font-size: 16px;
-        font-weight: 600;
-        margin-bottom: 15px;
-        padding-left: 7%;
-        background: transparent;
-        color: black;
-        &::placeholder {
-            color: #aeaeae;
-        }
+        font-size: 12px;
+        color: #aeaeae;
+        padding: 13px;
     }
 `;
 

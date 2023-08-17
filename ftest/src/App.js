@@ -90,7 +90,7 @@ function App() {
                         path="/writtenquestion"
                         element={<WrittenQuestion posts={posts} />}
                     />
-                    <Route path="/reply" element={<Reply />} />
+                    <Route path="/reply" element={<Reply posts={posts} />} />
                     <Route path="/noquestion" element={<NoQuestion />} />
                     <Route
                         path="/doctermediinfo"
