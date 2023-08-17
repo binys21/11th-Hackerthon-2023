@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import LoginPage from "./pages/Login/LoginPage";
@@ -41,6 +41,15 @@ import NoQuestion from "./pages/Patient/NoQuestion";
 import Reply from "./pages/Patient/Reply";
 
 function App() {
+    const [posts, setPosts] = useState([
+        {
+            // id: 1,
+            title: "제 부상병 중에 혈어증에 대해서 알고 싶어요.",
+            content:
+                "안녕하세요! 제 부상병인 혈어증과 관련해 궁금한 부분이 있습니다. 혈액질환의 종류와 증상, 예방법에 대해 알고 싶습니다. 또한 혈액검사의 중요성과 정기적인 검사 주기도 궁금합니다.",
+        },
+    ]);
+
     return (
         <>
             <Router>
@@ -71,10 +80,15 @@ function App() {
 
                     <Route path="/myquestion" element={<MyQuestion />} />
                     <Route path="/mypage" element={<MyPage />} />
-                    <Route path="/makequestion" element={<MakeQuestion />} />
+                    <Route
+                        path="/makequestion"
+                        element={
+                            <MakeQuestion posts={posts} setPosts={setPosts} />
+                        }
+                    />
                     <Route
                         path="/writtenquestion"
-                        element={<WrittenQuestion />}
+                        element={<WrittenQuestion posts={posts} />}
                     />
                     <Route path="/reply" element={<Reply />} />
                     <Route path="/noquestion" element={<NoQuestion />} />

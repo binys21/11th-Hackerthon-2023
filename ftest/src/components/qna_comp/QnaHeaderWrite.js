@@ -1,8 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router";
 
 const QnaHeaderWrite = (props) => {
     const { title } = props;
+    const navigate = useNavigate();
+    const gotoMakeQuestion = () => {
+        navigate("/makequestion");
+    };
 
     const path = window.location.pathname;
     return (
@@ -11,7 +16,7 @@ const QnaHeaderWrite = (props) => {
                 <hr></hr>
                 <HeaderWrapper>
                     <div class="pageTitle">{title}</div>
-                    <div>작성하기</div>
+                    <div onClick={gotoMakeQuestion}>작성하기</div>
                 </HeaderWrapper>
                 <Line>
                     <hr></hr>
