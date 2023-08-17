@@ -10,7 +10,7 @@ const MakeQuestion = (props) => {
     //새로운 게시글을 저장할 useState
     // (제목과 내용 2가지 값을 1개의 useState에서 객체 형식으로 관리)
     const [newPost, setNewPost] = useState({
-        // id: posts.length + 1,
+        id: posts.length + 1,
         title: "",
         content: "",
     });

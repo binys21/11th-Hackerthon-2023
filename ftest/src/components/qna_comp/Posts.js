@@ -6,7 +6,7 @@ const Post = (props) => {
     const { title, content } = props.posts;
     const navigate = useNavigate();
     const gotoReply = () => {
-        navigate("/reply");
+        navigate("/replypage");
     };
     return (
         <Question>
