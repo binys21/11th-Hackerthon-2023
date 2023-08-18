@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 //image
 import lowbtn from "../../pages/images/lowbtn.png";
-import { MedicalInfoComponent } from '../../api/medical';
+import { MedicalInfoComponent } from "../../api/medical";
 
 const MyInfoCard = () => {
     const [isBlur, setIsBlur] = useState(true);
@@ -26,7 +26,7 @@ const MyInfoCard = () => {
                         </button>
                     </BtnWrapper>
                 )}
-                <ContentWrapper blur={isBlur}>
+                {/* <ContentWrapper blur={isBlur}>
                     <NameWrapper>{medicalInfo.medi.patName}</NameWrapper>
                     {medicalInfo.medi.patSex}/{medicalInfo.medi.patBirth}
                     <br></br>
@@ -39,7 +39,7 @@ const MyInfoCard = () => {
                     {medicalInfo.medi.patPhone}
                     <br></br>
                     {medicalInfo.medi.patAddress}
-                </ContentWrapper>
+                </ContentWrapper> */}
                 <TitleWrapper blur={isBlur}>
                     이름
                     <br></br>
