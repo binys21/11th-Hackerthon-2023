@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 //component
 import AllegyCard from "../../components/mediInfo_comp/AllegyCard";
+import AllegyCard2 from '../../components/mediInfo_comp/AllegyCard2';
 import FamilyHisCard from "../../components/mediInfo_comp/FamilyHisCard";
 import GardianCard from "../../components/mediInfo_comp/GardianCard";
 import ForDocter from "../../components/mediInfo_comp/ForDocter";
@@ -54,7 +55,7 @@ const DocterMediInfo = () => {
                     <TwoTitleWrapper>알러지 및 부작용</TwoTitleWrapper>
                     <AllegyCard />
                     <br></br>
-                    <AllegyCard />
+                    <AllegyCard2 />
                     <ThirdTitleWrapper>가족력</ThirdTitleWrapper>
                     <FamilyHisCard />
                     <br></br>

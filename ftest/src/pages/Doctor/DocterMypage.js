@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
 //component
 import Header from "../../components/Header";
@@ -10,6 +11,12 @@ import doctoruser from "../images/doctoruser.png";
 import NavigateBarDoc from "../../components/NavigateBarDoc";
 
 const DocterMypage = () => {
+    const navigate=useNavigate();
+    const gotoMyquestion = () => {
+        navigate("/docterquestion");
+    };
+
+
     return (
         <>
             <Wrapper>
@@ -30,7 +37,7 @@ const DocterMypage = () => {
                             <div class="id">doctor1234</div>
                         </div>
                         <hr />
-                        <div class="myQ">내가 받은 질문</div>
+                        <div class="myQ" onClick={gotoMyquestion}>내가 받은 질문</div>
                         <hr />
                         <div class="logout">로그아웃</div>
                     </Infos>
