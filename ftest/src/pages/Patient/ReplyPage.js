@@ -14,6 +14,7 @@ const ReplyPage = (props) => {
     const navigate = useNavigate();
 
     const [newReply, setNewReply] = useState({
+        id: replies.length + 1,
         retitle: "",
         recontent: "",
     });
