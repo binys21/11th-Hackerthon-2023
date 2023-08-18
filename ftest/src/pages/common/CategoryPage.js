@@ -64,7 +64,7 @@ const CategoryPage = () => {
                         <div class="line"></div>
                         <br />
                         <TopWrapper>
-                            <Number>총 {`${filter.id}`}건</Number>
+                            <Number>총 {hospitalList.length}건</Number>
                             <SelectBox>
                                 <select>
                                     <option key="latest" value="latest">
