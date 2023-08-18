@@ -1,49 +1,70 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 import mainLogo from "../images/mainLogo.png";
 
 const LoginPage = () => {
-    const BASE_URL = "silverjek.pythonanywhere.com";
+    const BASE_URL = "https://silverjek.pythonanywhere.com";
+
     const handleLogin = async (e) => {
         e.preventDefault();
-        await axios
-          .post(`${BASE_URL}account/login/`, {
-            id: id,
-            pw: pw,
-          })
-          .then((response) => {
-            //로그인 성공했을 때
+        try {
+            const response = await axios.post(`${BASE_URL}/account/login/`, {
+                username: username,
+                password: password,
+            });
+
+            // Assuming navigate() is used for navigation
             navigate(`/home`);
-    
-            console.log(response.data.data);
-          })
-          .catch((error) => console.log(error, id, pw));
-      };
-    
-    
+            console.log(response.data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    // const handleLogin = async (e) => {
+    //     e.preventDefault();
+    //     axios({
+    //         method: "POST",
+    //         url: `${BASE_URL}/account/login/`,
+    //         data: {
+    //             username: username,
+    //             password: password,
+    //         },
+    //     })
+    //         // await axios
+    //         //     .post(`${BASE_URL}/account/login/`, {
+    //         //         username: username,
+    //         //         password: password,
+    //         //     })
+    //         .then((response) => {
+    //             //로그인 성공했을 때
+    //             navigate(`/home`);
+    //             console.log(response.data);
+    //         })
+    //         .catch((error) => console.log(error, username, password));
+    // };
+
     const navigate = useNavigate();
-    const [id, setID] = useState();
-    const [pw, setPW] = useState();
+    const [username, setID] = useState("");
+    const [password, setPW] = useState("");
 
     //input내 값이 들어오는지 확인 (글자색 회색->검정으로 변경하기 위함)
     const handleChange = (e) => {
         setID(e.target.value);
     };
-
     const handleChange2 = (e) => {
-        setPW(e.target.value);
+        setPW(e.target.value.toString());
     };
 
     //회원가입하기 글자누르면 회원가입 페이지로 이동
     const gotoSignUp = () => {
         navigate("/signUp");
     };
-
-    const gotoHome = () => {
-        navigate("/home");
-    };
+    // const gotoHome = () => {
+    //     navigate("/home");
+    // };
 
     return (
         <>
@@ -61,14 +82,14 @@ const LoginPage = () => {
                         <input
                             type="text"
                             placeholder="아이디 입력"
-                            value={id}
+                            value={username}
                             onChange={handleChange}
                         ></input>
                         <div class="input">비밀번호</div>
                         <input
                             type="password"
                             placeholder="비밀번호 입력"
-                            value={pw}
+                            value={password}
                             onChange={handleChange2}
                         ></input>
                         <button class="btn_login" onClick={handleLogin}>
@@ -83,7 +104,6 @@ const LoginPage = () => {
         </>
     );
 };
-
 export default LoginPage;
 
 const Wrapper = styled.div`

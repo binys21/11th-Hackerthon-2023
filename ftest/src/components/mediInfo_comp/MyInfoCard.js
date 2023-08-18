@@ -13,13 +13,14 @@ const MyInfoCard = () => {
         setIsBlur(!isBlur);
         setIsButtonVisible(!isButtonVisible);
     };
-    const BASE_URL = "https://silverjek.pythonanywhere.com/";
+    const BASE_URL = "https://silverjek.pythonanywhere.com";
+
     const getPatInfo = async () => {
         axios({
             method: "GET",
             url: `${BASE_URL}/landing/patient/main/1/`,
         })
-            .then((respons) => {
+            .then((response) => {
                 console.log(response);
             })
             .catch((error) => {
@@ -41,7 +42,7 @@ const MyInfoCard = () => {
                         </button>
                     </BtnWrapper>
                 )}
-                <ContentWrapper blur={isBlur}>
+                {/* <ContentWrapper blur={isBlur}>
                     <NameWrapper>{medicalInfo.medi.patName}</NameWrapper>
                     {medicalInfo.medi.patSex}/{medicalInfo.medi.patBirth}
                     <br></br>
@@ -55,7 +56,7 @@ const MyInfoCard = () => {
                     {medicalInfo.medi.patPhone}
                     <br></br>
                     {medicalInfo.medi.patAddress}
-                </ContentWrapper>
+                </ContentWrapper> */}
                 <TitleWrapper blur={isBlur}>
                     이름
                     <br></br>
