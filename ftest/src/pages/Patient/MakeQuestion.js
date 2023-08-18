@@ -64,7 +64,7 @@ const MakeQuestion = (props) => {
                                     value={content}
                                     onChange={onChange}
                                 ></input>
-                                <button type="submit">질문하기</button>
+                                <button type="submit">작성완료</button>
                             </form>
                         </InputWrapper>
                     </Container>
@@ -131,8 +131,22 @@ const InputWrapper = styled.div`
         width: 300px;
         color: white;
     }
-    button {
-        margin-top: 20px;
-        border: 0;
+    form {
+        button {
+            width: 100vw;
+            height: 60px;
+            position: absolute;
+            bottom: 0;
+            border-style: none;
+            background-color: #202631;
+            font-size: 13px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+            font-weight: 500;
+        }
     }
 `;
