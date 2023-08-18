@@ -7,7 +7,7 @@ import NavigateBar from "../../components/NavigateBar";
 
 import goArrow from "../images/goArrow.png";
 import goArrow2 from "../images/goArrow2.png";
-import gotoChat from "../images/gotoChat.png";
+import gotoChat from "../../pages/images/gotoChat.png";
 
 import reddot from "../images/reddot.png";
 import bluebox1 from "../images/bluebox1.png";

@@ -6,6 +6,8 @@ import Header from '../../components/Header';
 import DocQuestionCard from '../../components/qna_comp/DocQuestionCard';
 //image
 import select_btn_doc from "../../pages/images/select_btn_doc.png";
+//data
+import { docterCommentData } from '../../_mock/doctercpomments';
 
 
 
@@ -31,10 +33,10 @@ const DocterQuestion=()=>{
                                 <img src={select_btn_doc} />
                             </SelectBox>
                         </TopWrapper>
-                        <DocQuestionCard/>
-                        <DocQuestionCard/>
-                        <DocQuestionCard/>
-                        <DocQuestionCard/>
+                          {/* map 함수를 사용하여 QuestionCard 컴포넌트를 렌더링 */}
+                          {docterCommentData.map(comment => (
+                        <DocQuestionCard key={comment.id} comments={comment} />
+                    ))}
 
         </Container>
         <NavigateBar/>
