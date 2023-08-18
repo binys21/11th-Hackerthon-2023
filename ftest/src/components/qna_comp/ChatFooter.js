@@ -7,7 +7,7 @@ import chatArrow from "../../pages/images/chatArrow.png";
 const ChatFooter = () => {
     const navigate = useNavigate();
     const gotoChat = () => {
-        navigate("/reply");
+        navigate("/writtenquestion");
     };
 
     return (
