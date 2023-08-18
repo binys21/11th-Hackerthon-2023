@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 import doctoruser from "../../pages/images/doctoruser.png";
 import QnaHeader from "../../components/qna_comp/QnaHeader";
@@ -10,11 +10,12 @@ import Replies from "../../components/qna_comp/Replies";
 
 //Q&A_환자 답글 작성하기
 const ReplyPage = (props) => {
-    const { selectedPostId, posts, replies, setReplies } = props;
+    const { posts, replies, setReplies } = props;
+    const { parentId } = useParams();
     const navigate = useNavigate();
 
     const [newReply, setNewReply] = useState({
-        id: replies.length + 1,
+        id: Number(parentId),
         retitle: "",
         recontent: "",
     });
@@ -28,17 +29,17 @@ const ReplyPage = (props) => {
         e.preventDefault();
         if (!recontent) alert("본문을 입력해주세요");
         else {
-            const newReplyWithId = { ...newReply, id: Date.now() };
-            const updatedReplies = replies.map((reply) =>
-                reply.id === selectedPostId
-                    ? { ...reply, replies: [...reply.replies, newReplyWithId] }
-                    : reply
-            );
-            setReplies(updatedReplies);
+            // const newReplyWithId = { ...newReply, id: selectedPostId };
+            // const updatedReplies = replies.map((reply) =>
+            //     reply.id === selectedPostId
+            //         ? { ...reply, replies: [...reply.replies, newReplyWithId] }
+            //         : reply
+            // );
+            setReplies([...replies, newReply]);
             navigate("/writtenquestion");
         }
     };
-    const selectedPost = posts.find((post) => post.id === selectedPostId);
+    const selectedPost = posts.find((post) => post.id === parentId);
 
     return (
         <>

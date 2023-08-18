@@ -8,12 +8,14 @@ import select_btn_white from "../images/select_btn_white.png";
 import MakeQuestion from "./MakeQuestion";
 
 import Post from "../../components/qna_comp/Posts";
-import Replies from '../../components/qna_comp/Replies';
+import Replies from "../../components/qna_comp/Replies";
 
 //Q&A_환자 내가 남긴 질문
 const WrittenQuestion = (props) => {
-    const { posts, replies, setReplies } = props;
-    const [selectedPostId, setSelectedPostId] = useState(null);
+    const { posts, replies, setReplies, selectedPostId, setSelectedPostId } =
+        props;
+
+    console.log(replies);
 
     return (
         <>
@@ -35,23 +37,27 @@ const WrittenQuestion = (props) => {
                                 <img src={select_btn_white} />
                             </SelectBox>
                         </TopWrapper>
-                        {posts.map((item) => (
-                            <div key={item.id}>
-                                <Post
-                                    posts={item}
-                                    title={item.title}
-                                    content={item.content}
-                                    onClick={() => setSelectedPostId(item.id)}
-                                />
-                                {selectedPostId === item.id && (
-                                    <Replies
+
+                        {
+                            // setSelectedPostId &&
+                            posts.map((item) => (
+                                <div key={item.id}>
+                                    <Post
+                                        posts={item}
+                                        title={item.title}
+                                        content={item.content}
+                                        id={item.id}
                                         selectedPostId={selectedPostId}
-                                        replies={replies}
-                                        setReplies={setReplies}
+                                        setSelectedPostId={setSelectedPostId}
                                     />
-                                )}
-                            </div>
-                        ))}
+                                    {replies.map((reply) => {
+                                        console.log(posts, replies);
+                                        if (item.id === reply.id)
+                                            return <Replies reply={reply} />;
+                                    })}
+                                </div>
+                            ))
+                        }
                     </Container>
                 </Wrapper>
             </Back>

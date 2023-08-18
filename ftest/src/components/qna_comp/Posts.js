@@ -3,11 +3,13 @@ import userPatient from "../../pages/images/userPatient.png";
 import { useNavigate } from "react-router";
 
 const Post = (props) => {
-    const { title, content } = props.posts;
+    const { title, content, id, selectedPostId, setSelectedPostId } =
+        props.posts;
     const navigate = useNavigate();
     const gotoReply = () => {
-        navigate("/replypage");
+        navigate(`/replypage/${id}`);
     };
+
     return (
         <Question>
             <ImgWrapper>
