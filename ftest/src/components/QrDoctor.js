@@ -62,9 +62,9 @@ const QrDoctor = (props) => {
                     <img onClick={deleteQr} src={closeQr2} />
                 </QrTitle>
                 <div class="exp">의료인에게 건강 NFT를 스캔받으세요.</div>
-                <div id="#text-area-qr-code-webcam" className={display}>
+                {/* <div id="#text-area-qr-code-webcam" className={display}>
                     <video />
-                </div>
+                </div> */}
                 <div class="webcam">
                     <QrReader
                         delay={delay}
@@ -97,7 +97,8 @@ const Container = styled.div`
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-
+    justify-content: flex-start;
+    align-items: flex-start;
     background: linear-gradient(to bottom, #10c38e, #000000);
     .exp {
         display: flex;
@@ -107,12 +108,12 @@ const Container = styled.div`
         font-size: 13px;
         font-weight: 500;
         margin-left: 30px;
-        padding-bottom: 20px;
+        margin-bottom: 20px;
     }
     .webcam {
         display: flex;
-        justify-content: center;
         align-self: center;
+        justify-self: flex-start;
     }
 `;
 

@@ -2,30 +2,32 @@ import styled from "styled-components";
 import { useNavigate } from "react-router";
 
 import doctoruser from "../../pages/images/doctoruser.png";
-const Replies = (props) => {
-    const { retitle, recontent } = props.replies;
+const Replies = ({ reply }) => {
     const navigate = useNavigate();
     // const gotoReply = () => {
     //     navigate("/replypage");
     // };
+
     return (
         <>
-            <Wrapper>
-                <Question>
-                    <ImgWrapper>
-                        <img src={doctoruser} width={40}></img>
-                    </ImgWrapper>
-                    <ContentWrapper>
-                        <div className="title">{retitle}</div>
-                        <div className="date">2023.08.13 22:08 작성</div>
-                        <hr></hr>
-                        <Content>{recontent}</Content>
-                    </ContentWrapper>
-                </Question>
-                {/* <InputWrapper>
+            {reply && (
+                <Wrapper>
+                    <Question>
+                        <ImgWrapper>
+                            <img src={doctoruser} width={40}></img>
+                        </ImgWrapper>
+                        <ContentWrapper>
+                            <div className="title">{reply.retitle}</div>
+                            <div className="date">2023.08.13 22:08 작성</div>
+                            <hr></hr>
+                            <Content>{reply.recontent}</Content>
+                        </ContentWrapper>
+                    </Question>
+                    {/* <InputWrapper>
                     <input type="text" placeholder="답글 작성하기"></input>
                 </InputWrapper> */}
-            </Wrapper>
+                </Wrapper>
+            )}
         </>
     );
 };

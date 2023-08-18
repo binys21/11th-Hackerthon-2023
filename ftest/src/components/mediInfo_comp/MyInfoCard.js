@@ -71,7 +71,10 @@ const MyInfoCard = () => {
                         </button>
                     </BtnWrapper>
                 )}
+
                 { medicalInfo && <ContentWrapper blur={isBlur}>
+
+
                     <NameWrapper>{medicalInfo.medi.patName}</NameWrapper>
                     {medicalInfo.medi.patSex}/{medicalInfo.medi.patBirth}
                     <br></br>
@@ -85,6 +88,8 @@ const MyInfoCard = () => {
                     <br></br>
                     {medicalInfo.medi.patAddress}
                 </ContentWrapper>}
+
+
                 <TitleWrapper blur={isBlur}>
                     이름
                     <br></br>
