@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 import Header from "../Header";
 
 import mainLogo from "../images_comp/mainLogo.png";
@@ -13,54 +13,24 @@ const BfVerify = () => {
     const [id, setID] = useState();
     const [pw, setPW] = useState("");
     const [pw_re, setPW_re] = useState("");
-    const [username, setUsername] = useState('');
+    const [username, setUsername] = useState("");
     const [usertype, setUsertype] = useState();
 
     const BASE_URL = "silverjek.pythonanywhere.com";
 
-    const handleOnClick=()=>{
-        if(!id){
+    const handleOnClick = () => {
+        if (!id) {
             alert(`아이디를 입력해주세요.`);
             return;
-        }else if(!pw){
+        } else if (!pw) {
             alert(`비밀번호를 입력해주세요.`);
             return;
-        }else if(!pw_re){
+        } else if (!pw_re) {
             alert(`비밀번호가 일치하지 않습니다. 올바르게 입력해주세요.`);
             return;
         }
+    };
 
-    }
-    const handleSignup = async (e) => {
-        e.preventDefault();
-    
-        try {
-            const formData = new FormData();
-            formData.append('userId', id);
-            formData.append('username', username);
-            formData.append('password', pw);
-            formData.append('userType', usertype); // 사용자 유형 
-    
-            const response = await axios.post(
-                `https://${BASE_URL}/account/signup/`, // https 추가
-                formData,
-                {
-                    headers: {
-                        'Content-Type': 'multipart/form-data',
-                    },
-                }
-            );
-    
-            // 회원가입 성공 시 처리
-            navigate(`/home`);
-            console.log(response);
-        } catch (error) {
-            // 오류 처리
-            console.error(error);
-        }
-    }
-
-    
 
     const handleChange = (e) => {
         setID(e.target.value);
@@ -74,6 +44,9 @@ const BfVerify = () => {
     };
     const handleChange3 = (e) => {
         setPW_re(e.target.value);
+    };
+    const handleChange4 = (e) => {
+        setUsername(e.target.value);
     };
     const handleUsertypeChange = (type) => {
         setUsertype(type);
@@ -132,9 +105,8 @@ const BfVerify = () => {
                         type="text"
                         placeholder="성명 입력"
                         value={username}
-                        onChange={handleChange}
+                        onChange={handleChange4}
                     ></input>
-
                     <GenderAndAge>
                         <Gender>
                             <p class="genderType">성별을 선택하세요.</p>
