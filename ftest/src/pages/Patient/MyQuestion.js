@@ -10,8 +10,8 @@ import select_btn from "../../pages/images/select_btn.png";
 import { commentData } from '../../_mock/comments';
 
 
-const MyQuestion=(props)=>{
-    const {comments}=props;
+const MyQuestion=()=>{
+    
 
     return (
         <>
