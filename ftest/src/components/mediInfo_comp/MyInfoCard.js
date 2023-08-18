@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 //image
 import lowbtn from "../../pages/images/lowbtn.png";
-import { MedicalInfoComponent } from '../../api/medical';
+import { MedicalInfoComponent } from "../../api/medical";
+import axios from "axios";
 
 const MyInfoCard = () => {
     const [isBlur, setIsBlur] = useState(true);
@@ -11,6 +12,20 @@ const MyInfoCard = () => {
     const toggleBlur = () => {
         setIsBlur(!isBlur);
         setIsButtonVisible(!isButtonVisible);
+    };
+    const BASE_URL = "https://silverjek.pythonanywhere.com/";
+    const getPatInfo = async () => {
+        axios({
+            method: "GET",
+            url: `${BASE_URL}/landing/patient/main/1/`,
+        })
+            .then((respons) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.group(error);
+                throw new Error(error);
+            });
     };
 
     return (
@@ -34,7 +49,8 @@ const MyInfoCard = () => {
                     <br></br>
                     {medicalInfo.medi.patBlood}/{medicalInfo.medi.patRH}
                     <br></br>
-                    {medicalInfo.medi.patHeight}cm/{medicalInfo.medi.patWeight}kg
+                    {medicalInfo.medi.patHeight}cm/{medicalInfo.medi.patWeight}
+                    kg
                     <br></br>
                     {medicalInfo.medi.patPhone}
                     <br></br>
