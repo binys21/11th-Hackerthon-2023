@@ -57,6 +57,10 @@ function App() {
                 "답변드립니다. 혈액관련 질환은 다양한 종류가 있으며, 빈혈, 혈소판 감소 등이 있을 수 있습니다. 증상은 피로, 두통 등이 나타날 수 있으며, 건강한 식습관과 충분한 수면, 운동으로 예방할 수 있습니다. 정기 검사를 받는 걸 권장합니다.",
         },
     ]);
+    const [selectedPostId, setSelectedPostId] = useState(null);
+    console.log(posts, replies);
+
+    console.log(selectedPostId);
 
     return (
         <>
@@ -97,16 +101,22 @@ function App() {
                     <Route
                         path="/writtenquestion"
                         element={
-                            <WrittenQuestion posts={posts} replies={replies} />
+                            <WrittenQuestion
+                                posts={posts}
+                                replies={replies}
+                                selectedPostId={selectedPostId}
+                                setSelectedPostId={setSelectedPostId}
+                            />
                         }
                     />
                     <Route
-                        path="/replypage"
+                        path="/replypage/:parentId"
                         element={
                             <ReplyPage
                                 posts={posts}
                                 replies={replies}
                                 setReplies={setReplies}
+                                selectedPostId={selectedPostId}
                             />
                         }
                     />

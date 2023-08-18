@@ -5,47 +5,6 @@ import axios from "axios";
 import mainLogo from "../images/mainLogo.png";
 
 const LoginPage = () => {
-    const BASE_URL = "https://silverjek.pythonanywhere.com";
-
-    const handleLogin = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await axios.post(`${BASE_URL}/account/login/`, {
-                username: username,
-                password: password,
-            });
-
-            // Assuming navigate() is used for navigation
-            navigate(`/home`);
-            console.log(response.data);
-        } catch (error) {
-            console.error(error);
-        }
-    };
-
-    // const handleLogin = async (e) => {
-    //     e.preventDefault();
-    //     axios({
-    //         method: "POST",
-    //         url: `${BASE_URL}/account/login/`,
-    //         data: {
-    //             username: username,
-    //             password: password,
-    //         },
-    //     })
-    //         // await axios
-    //         //     .post(`${BASE_URL}/account/login/`, {
-    //         //         username: username,
-    //         //         password: password,
-    //         //     })
-    //         .then((response) => {
-    //             //로그인 성공했을 때
-    //             navigate(`/home`);
-    //             console.log(response.data);
-    //         })
-    //         .catch((error) => console.log(error, username, password));
-    // };
-
     const navigate = useNavigate();
     const [username, setID] = useState("");
     const [password, setPW] = useState("");
@@ -92,7 +51,7 @@ const LoginPage = () => {
                             value={password}
                             onChange={handleChange2}
                         ></input>
-                        <button class="btn_login" onClick={handleLogin}>
+                        <button class="btn_login" onClick={gotoHome}>
                             로그인
                         </button>
                         <div class="btn_signUp" onClick={gotoSignUp}>
