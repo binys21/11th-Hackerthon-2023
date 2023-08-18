@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 //image
 import lowbtn from "../../pages/images/lowbtn.png";
+import { MedicalInfoComponent } from '../../api/medical';
 
 const MyInfoCard = () => {
     const [isBlur, setIsBlur] = useState(true);
@@ -26,18 +27,18 @@ const MyInfoCard = () => {
                     </BtnWrapper>
                 )}
                 <ContentWrapper blur={isBlur}>
-                    <NameWrapper>정대만</NameWrapper>
-                    남/2000.05.22
+                    <NameWrapper>{medicalInfo.medi.patName}</NameWrapper>
+                    {medicalInfo.medi.patSex}/{medicalInfo.medi.patBirth}
                     <br></br>
-                    000522-3121212
+                    {medicalInfo.medi.patSSN}
                     <br></br>
-                    A형/Rh+
+                    {medicalInfo.medi.patBlood}/{medicalInfo.medi.patRH}
                     <br></br>
-                    184cm/70kg
+                    {medicalInfo.medi.patHeight}cm/{medicalInfo.medi.patWeight}kg
                     <br></br>
-                    000-0000-0000
+                    {medicalInfo.medi.patPhone}
                     <br></br>
-                    서울특별시 서대문구 성산로 508
+                    {medicalInfo.medi.patAddress}
                 </ContentWrapper>
                 <TitleWrapper blur={isBlur}>
                     이름
