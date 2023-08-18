@@ -34,31 +34,31 @@ const BfVerify = () => {
     const handleSignup = async (e) => {
         e.preventDefault();
     
-          try {
+        try {
             const formData = new FormData();
             formData.append('userId', id);
             formData.append('username', username);
             formData.append('password', pw);
+            formData.append('userType', usertype); // 사용자 유형 
     
             const response = await axios.post(
-              `${BASE_URL}account/signup/`,
-              formData,
-              {
-                headers: {
-                  'Content-Type': 'multipart/form-data',
-                },
-              }
+                `https://${BASE_URL}/account/signup/`, // https 추가
+                formData,
+                {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                }
             );
     
             // 회원가입 성공 시 처리
             navigate(`/home`);
             console.log(response);
-          } catch (error) {
+        } catch (error) {
             // 오류 처리
             console.error(error);
-          }
         }
-      
+    }
 
     
 
