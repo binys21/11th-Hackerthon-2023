@@ -33,7 +33,7 @@ const NavigateBar = () => {
 };
 export default NavigateBar;
 const Wrapper = styled.div`
-    width: 100%;
+    width: 95%;
     display: flex;
     position: absolute;
     bottom: 0;
