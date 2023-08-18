@@ -22,6 +22,9 @@ const DoctorNft = () => {
     const gotoCategory = () => {
         navigate("/DocterCategory");
     };
+    const gotoMyQ = () => {
+        navigate("/docterquestion");
+    };
 
     return (
         <>
@@ -33,7 +36,7 @@ const DoctorNft = () => {
                             조회하실 수 있는 내용이에요.
                         </div>
                         <div class="chaticon">
-                            <img src={chatIcon} />
+                            <img onClick={gotoMyQ} src={chatIcon} />
                         </div>
                     </FirstLine>
                     <RenewWrap>
