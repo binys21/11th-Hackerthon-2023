@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 //image
@@ -9,16 +9,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { faExpand } from "@fortawesome/free-solid-svg-icons";
-
+import QrPatient from './QrPatient';
 const NavigateBar = () => {
+    const [qr, setQr] = useState(false);
+    const qrPop = () => {
+        setQr(true);
+    };
+
     return (
         <>
+         {qr ? <QrPatient setQr={setQr} /> : null}
             <Wrapper>
                 <Navbar>
                     <Link className="navbarhomeMenu" to={"/home"}>
                         <FontAwesomeIcon icon={faHome} class="footIcon" /> 홈
                     </Link>
-                    <Link className="navbarMenu" to={"/home"}>
+                    <Link className="navbarMenu" onClick={qrPop}>
                         <FontAwesomeIcon icon={faExpand} class="footIcon" />
                         QR 조회하기
                     </Link>
