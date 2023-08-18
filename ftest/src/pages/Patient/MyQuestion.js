@@ -6,9 +6,12 @@ import Header from '../../components/Header';
 import QuestionCard from '../../components/qna_comp/QuestionCard';
 //image
 import select_btn from "../../pages/images/select_btn.png";
+//data
+import { commentData } from '../../_mock/comments';
 
 
-const MyQuestion=()=>{
+const MyQuestion=(props)=>{
+    const {comments}=props;
 
     return (
         <>
@@ -30,10 +33,10 @@ const MyQuestion=()=>{
                                 <img src={select_btn} />
                             </SelectBox>
                         </TopWrapper>
-        <QuestionCard/>
-        <QuestionCard/>
-        <QuestionCard/>
-        <QuestionCard/>
+                          {/* map 함수를 사용하여 QuestionCard 컴포넌트를 렌더링 */}
+                    {commentData.map(comment => (
+                        <QuestionCard key={comment.id} comments={comment} />
+                    ))}
 
 
         </Container>
