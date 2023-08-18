@@ -52,7 +52,7 @@ const HeaderWrapper = styled.div`
         color: white;
         font-size: 14px;
         font-weight: 500;
-        margin-left: 150px;
+        margin-left: 144px;
         width: 1200px;
     }
     div {

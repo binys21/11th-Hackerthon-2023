@@ -66,15 +66,17 @@ const WrittenQuestion = (props) => {
 };
 export default WrittenQuestion;
 const Back = styled.div`
-    height: 300vh;
-    width: 100vh;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     background-color: black;
+    /* position: absolute; */
 `;
 const Wrapper = styled.div`
-    position: absolute;
+    /* position: absolute; */
+    margin-top: 150px;
     bottom: 0;
-    height: 90vh;
+    height: 90%;
     width: 100%;
     background: #15181d;
     color: white;
@@ -86,6 +88,8 @@ const CardWrapper = styled.div`
     width: 100px;
 `;
 const Container = styled.div`
+    height: 100%;
+
     hr {
         width: 400px;
         height: 0px;

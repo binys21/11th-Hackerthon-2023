@@ -61,14 +61,13 @@ const DoctorHome = (props) => {
 export default DoctorHome;
 
 const Wrapper = styled.div`
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     background: #202329;
-    padding-top: 25%;
-
+    padding-top: 20%;
 `;
 const DoneWrapper = styled.div`
     width: 90%;

@@ -21,9 +21,9 @@ const LoginPage = () => {
     const gotoSignUp = () => {
         navigate("/signUp");
     };
-    // const gotoHome = () => {
-    //     navigate("/home");
-    // };
+    const gotoHome = () => {
+        navigate("/home");
+    };
 
     return (
         <>
