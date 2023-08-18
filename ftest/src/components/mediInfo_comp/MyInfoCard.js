@@ -6,31 +6,48 @@ import { useEffect } from 'react';
 import lowbtn from "../../pages/images/lowbtn.png";
 
 const MyInfoCard = () => {
+    const [pk,setPk]=useState(1);
+    // const [medicalInfo, setMedicalInfo] = useState(null);
+    const [medicalInfo,setMedicalInfo]=useState({
+        "medi": {
+            "id": 1,
+            "user_id": 1,
+            "patName": "김지은",
+            "patSex": "FEMALE",
+            "patBirth": "2002-08-28",
+            "patAge": 0,
+            "patAddress": "서울특별시 서대문구",
+            "patSSN": "020828-0010613",
+            "patBlood": "O",
+            "patRH": "PLUS",
+            "patHeight": 161.7,
+            "patWeight": 7.25,
+            "patPhone": "+821099473977",
+            "updateDate": "2023-08-11T00:04:29.835168+09:00",
+            "doc": "김멋사",
+            "docMaj": "외과 전문의",
+            "Hospital": "멋사 병원"
+        },});
 
-    const [medicalInfo,setMedicalInfo]=useState(null);
 
     useEffect(() => {
-        const fetchMedicalInfo = async () => {
-            try {
-                const response = await axios.get(
-                    `https://silverjek.pythonanywhere.com/medicalinfo/access/${pk}/`,
-                    {
-                        params: {
-                            pk: pk,
-                        },
-                    }
-                );
+        // console.log('here');
+        // fetchMedicalInfo().then(response => console.log(response));
+    }, []);
 
-                // 응답 데이터를 상태에 저장
-                setMedicalInfo(response.data);
-            } catch (error) {
-                console.error(error);
-            }
-        };
+    // const fetchMedicalInfo = async () => {
+    //     try {
+    //         const response = await axios.get(
+    //             `https://silverjek.pythonanywhere.com/medicalinfo/access/${pk}/`,
+    //         );
+    //         return (response);
+    //         // 응답 데이터를 상태에 저장
+    //     } catch (error) {
+    //         return (error);
+    //     }
+    // }
 
-        fetchMedicalInfo();
-    }, [pk]);
-
+    console.log(medicalInfo);
 
     const [isBlur, setIsBlur] = useState(true);
     const [isButtonVisible, setIsButtonVisible] = useState(true);
@@ -54,7 +71,7 @@ const MyInfoCard = () => {
                         </button>
                     </BtnWrapper>
                 )}
-                <ContentWrapper blur={isBlur}>
+                { medicalInfo && <ContentWrapper blur={isBlur}>
                     <NameWrapper>{medicalInfo.medi.patName}</NameWrapper>
                     {medicalInfo.medi.patSex}/{medicalInfo.medi.patBirth}
                     <br></br>
@@ -67,7 +84,7 @@ const MyInfoCard = () => {
                     {medicalInfo.medi.patPhone}
                     <br></br>
                     {medicalInfo.medi.patAddress}
-                </ContentWrapper>
+                </ContentWrapper>}
                 <TitleWrapper blur={isBlur}>
                     이름
                     <br></br>
@@ -118,6 +135,7 @@ const TitleWrapper = styled.div`
     line-height: 3.2;
     text-align: right;
     margin-top: 15px;
+    margin-left:80px;
 `;
 const NameWrapper = styled.div`
     font-size: 22px;
