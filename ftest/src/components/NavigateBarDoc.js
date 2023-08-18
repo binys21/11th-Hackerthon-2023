@@ -30,7 +30,7 @@ const NavigateBarDoc = () => {
                         <FontAwesomeIcon icon={faExpand} class="footIcon" />
                         QR 조회하기
                     </Link>
-                    <Link className="navbarMenu" to={"/mynft"}>
+                    <Link className="navbarMenu" to={"/docmypage"}>
                         <FontAwesomeIcon icon={faCircleUser} class="footIcon" />
                         나의 정보
                     </Link>
@@ -41,7 +41,7 @@ const NavigateBarDoc = () => {
 };
 export default NavigateBarDoc;
 const Wrapper = styled.div`
-    width: 100%;
+    width: 95%;
     display: flex;
     position: absolute;
     bottom: 0;

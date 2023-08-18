@@ -22,7 +22,7 @@ const NavigateBar = () => {
                         <FontAwesomeIcon icon={faExpand} class="footIcon" />
                         QR 조회하기
                     </Link>
-                    <Link className="navbarMenu" to={"/mynft"}>
+                    <Link className="navbarMenu" to={"/mypage"}>
                         <FontAwesomeIcon icon={faCircleUser} class="footIcon" />
                         나의 정보
                     </Link>
@@ -33,7 +33,7 @@ const NavigateBar = () => {
 };
 export default NavigateBar;
 const Wrapper = styled.div`
-    width: 100%;
+    width: 95%;
     display: flex;
     position: absolute;
     bottom: 0;
