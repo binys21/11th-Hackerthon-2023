@@ -30,33 +30,7 @@ const BfVerify = () => {
             return;
         }
     };
-    const handleSignup = async (e) => {
-        e.preventDefault();
 
-        try {
-            const formData = new FormData();
-            formData.append("userId", id);
-            formData.append("username", username);
-            formData.append("password", pw);
-
-            const response = await axios.post(
-                `${BASE_URL}account/signup/`,
-                formData,
-                {
-                    headers: {
-                        "Content-Type": "multipart/form-data",
-                    },
-                }
-            );
-
-            // 회원가입 성공 시 처리
-            navigate(`/home`);
-            console.log(response);
-        } catch (error) {
-            // 오류 처리
-            console.error(error);
-        }
-    };
 
     const handleChange = (e) => {
         setID(e.target.value);

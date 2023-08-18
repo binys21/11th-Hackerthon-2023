@@ -8,7 +8,7 @@ import select_btn_white from "../images/select_btn_white.png";
 import MakeQuestion from "./MakeQuestion";
 
 import Post from "../../components/qna_comp/Posts";
-import Replies from "../../components/qna_comp/Replies";
+import Replies from '../../components/qna_comp/Replies';
 
 //Q&A_환자 내가 남긴 질문
 const WrittenQuestion = (props) => {
