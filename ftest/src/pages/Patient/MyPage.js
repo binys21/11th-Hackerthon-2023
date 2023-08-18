@@ -13,6 +13,9 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const MyPage = () => {
+    const gotoMyquestion = () => {
+        navigate("/myquestion");
+    };
         const [userId,setUserId]=useState("");
         const navigate=useNavigate();
 
@@ -50,7 +53,7 @@ const MyPage = () => {
                             <div class="id">userid1234</div>
                         </div>
                         <hr />
-                        <div class="myQ">내가 남긴 질문</div>
+                        <div class="myQ" onClick={gotoMyquestion} >내가 남긴 질문</div>
                         <hr />
                         <div class="logout">로그아웃</div>
                     </Infos>
