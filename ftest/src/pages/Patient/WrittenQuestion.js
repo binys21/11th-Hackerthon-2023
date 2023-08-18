@@ -66,10 +66,10 @@ const WrittenQuestion = (props) => {
 };
 export default WrittenQuestion;
 const Back = styled.div`
-    height: 300vh;
-    width: 100vh;
-    display: flex;
-    background-color: black;
+height: 100vh;
+width: 100vh;
+display: flex;
+background-color: black;
 `;
 const Wrapper = styled.div`
     position: absolute;

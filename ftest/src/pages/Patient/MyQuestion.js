@@ -6,6 +6,8 @@ import Header from '../../components/Header';
 import QuestionCard from '../../components/qna_comp/QuestionCard';
 //image
 import select_btn from "../../pages/images/select_btn.png";
+//data
+import { commentData } from '../../_mock/comments';
 
 
 const MyQuestion=()=>{
@@ -30,6 +32,12 @@ const MyQuestion=()=>{
                                 <img src={select_btn} />
                             </SelectBox>
                         </TopWrapper>
+
+                        {commentData.map((comments) => (
+                            <QuestionCard comments={comments} />
+                            
+                            ))}
+
         <QuestionCard/>
         <QuestionCard/>
         <QuestionCard/>

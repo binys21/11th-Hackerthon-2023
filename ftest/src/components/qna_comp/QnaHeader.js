@@ -1,9 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import btnX from "../images_comp/btnX.png";
+import { useNavigate } from "react-router-dom";
 
 const QnaHeader = (props) => {
     const { title } = props;
+    const navigate = useNavigate();
+    const goBackBtn = () => {
+        navigate(-1);
+    };
 
     const path = window.location.pathname;
     return (
@@ -12,7 +17,7 @@ const QnaHeader = (props) => {
                 <hr></hr>
                 <HeaderWrapper>
                     <div class="pageTitle">{title}</div>
-                    <img src={btnX} />
+                    <img src={btnX} onClick={goBackBtn} />
                 </HeaderWrapper>
                 <Line>
                     <hr></hr>

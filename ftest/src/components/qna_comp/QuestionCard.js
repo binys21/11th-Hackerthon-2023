@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { commentData } from '../../_mock/comments';
 
 const QuestionCard = () => {
 
@@ -11,15 +11,15 @@ const QuestionCard = () => {
                 <BoxWrapper>
                     <ContentWrapper>
                         <TopWrapper>
-                        <Title>Q. 남긴 질문 게시글의 제목이 뜬...
+                        <Title>{commentData.title}
                      </Title>
                      <ColorBox>나의 의료 정보</ColorBox>
                         </TopWrapper>
 
                    
-                    <Date>2023.08.13 22:08 작성</Date>
+                    <Date>{commentData.date}</Date>
                     <hr></hr>
-                    <Contents>본문의 내용이 두줄정도 뜨게 된다. 본문의 내용이 두줄정도 뜨게 된다. 본문의 내용이 두줄정도 뜨게 된다. 본...</Contents>
+                    <Contents>{commentData.contents}</Contents>
                     </ContentWrapper>
 
                 </BoxWrapper>
