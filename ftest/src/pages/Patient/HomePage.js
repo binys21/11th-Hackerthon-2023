@@ -3,8 +3,12 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 import HomeHeader from "../../components/homeHeader";
+import NavigateBar from "../../components/NavigateBar";
+
 import goArrow from "../images/goArrow.png";
 import goArrow2 from "../images/goArrow2.png";
+import gotoChat from "../images/gotoChat.png";
+
 import reddot from "../images/reddot.png";
 import bluebox1 from "../images/bluebox1.png";
 import bluebox2 from "../images/bluebox2.png";
@@ -29,15 +33,24 @@ const HomePage = () => {
     const gotoCategory = () => {
         navigate("/category");
     };
+    const gotoMyQ = () => {
+        navigate("/myquestion");
+    };
 
     return (
         <>
             <Wrapper>
                 <Container>
                     {qr ? <QrPatient setQr={setQr} /> : null}
-                    <HomeHeader />
                     <Content>
-                        <div class="title">정대만님의 건강 NFT</div>
+                        <TitleWrapper>
+                            <div class="title">
+                                정대만님,
+                                <br />
+                                오늘도 건강한 하루 보내세요 :{")"}
+                            </div>
+                            <img onClick={gotoMyQ} src={gotoChat} />
+                        </TitleWrapper>
                         <Card>
                             <Line1>
                                 <div class="name">정대만</div>
@@ -56,7 +69,9 @@ const HomePage = () => {
                             </Line2>
                             <GoMyNft onClick={gotoMyNFT}>
                                 <div class="wrap">
-                                    <div class="ment_mynft">나의 NFT 조회</div>
+                                    <div class="ment_mynft">
+                                        NFT 요청 · 승인 조회{" "}
+                                    </div>
                                     <img src={reddot} />
                                 </div>
                                 <img src={goArrow} />
@@ -72,7 +87,7 @@ const HomePage = () => {
                     <CardInfo>
                         <BlueBox>
                             <div class="contentTitle">나의 의료 정보</div>
-                            <img src={bluebox1} />
+                            <img class="bluebox1" src={bluebox1} />
                         </BlueBox>
                         <div onClick={gotoMediInfo} class="detailWrapper">
                             <div class="goDetail">
@@ -86,7 +101,7 @@ const HomePage = () => {
                     <CardInfo>
                         <BlueBox>
                             <div class="contentTitle">나의 진료 정보</div>
-                            <img src={bluebox2} />
+                            <img class="bluebox2" src={bluebox2} />
                         </BlueBox>
                         <div onClick={gotoCategory} class="detailWrapper">
                             <div class="goDetail">
@@ -98,6 +113,7 @@ const HomePage = () => {
                         </div>
                     </CardInfo>
                 </Content>
+                <NavigateBar />
             </Wrapper>
         </>
     );
@@ -114,21 +130,33 @@ const Wrapper = styled.div`
     background: #202329;
 `;
 const Container = styled.div`
-    height: 50%;
+    height: 35%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #363b46;
+    background: #171b21;
+`;
+const TitleWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    img {
+        height: 25px;
+    }
 `;
 const Content = styled.div`
+    position: relative;
     width: 90%;
     display: flex;
     flex-direction: column;
+    margin-bottom: 200px;
+    margin-top: 40px;
     .title {
         align-items: flex-start;
         color: white;
-        font-size: 14px;
+        font-size: 18px;
         font-weight: 600;
         padding: 5% 0;
         left: 0;
@@ -142,7 +170,7 @@ const Card = styled.div`
     align-items: center;
     align-self: center;
     border-radius: 10px;
-    background: #202329;
+    background: #1a2334;
 `;
 const Line1 = styled.div`
     display: flex;
@@ -163,7 +191,7 @@ const Line1 = styled.div`
         color: white;
         font-size: 10px;
         font-weight: 500;
-        border: 1px solid white;
+        border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 10px;
         background-color: #363b46;
         padding: 4px;
@@ -183,14 +211,14 @@ const Line2 = styled.div`
         text-decoration: underline;
     }
     .stored {
-        color: white;
+        color: #aeaeae;
         font-size: 10px;
     }
 `;
 const GoMyNft = styled.div`
     width: 100%;
     display: flex;
-    background: #010816;
+    background: linear-gradient(140deg, #175df9 0%, #3e5f95 100%);
     border-radius: 10px;
     justify-content: space-between;
     align-items: center;
@@ -263,5 +291,11 @@ const BlueBox = styled.div`
         width: 200px;
         padding: 7% 0 5% 7%;
         margin-top: 15px;
+    }
+    .bluebox1 {
+        width: 180px;
+    }
+    .bluebox2 {
+        width: 120px;
     }
 `;
