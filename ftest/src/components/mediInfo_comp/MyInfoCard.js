@@ -1,10 +1,37 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import axios from 'axios';
+import { useEffect } from 'react';
 //image
 import lowbtn from "../../pages/images/lowbtn.png";
-import { MedicalInfoComponent } from '../../api/medical';
 
 const MyInfoCard = () => {
+
+    const [medicalInfo,setMedicalInfo]=useState(null);
+
+    useEffect(() => {
+        const fetchMedicalInfo = async () => {
+            try {
+                const response = await axios.get(
+                    `https://silverjek.pythonanywhere.com/medicalinfo/access/${pk}/`,
+                    {
+                        params: {
+                            pk: pk,
+                        },
+                    }
+                );
+
+                // 응답 데이터를 상태에 저장
+                setMedicalInfo(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchMedicalInfo();
+    }, [pk]);
+
+
     const [isBlur, setIsBlur] = useState(true);
     const [isButtonVisible, setIsButtonVisible] = useState(true);
 
@@ -12,6 +39,7 @@ const MyInfoCard = () => {
         setIsBlur(!isBlur);
         setIsButtonVisible(!isButtonVisible);
     };
+        
 
     return (
         <>
@@ -59,6 +87,7 @@ const MyInfoCard = () => {
         </>
     );
 };
+
 export default MyInfoCard;
 
 const BtnWrapper = styled.div`

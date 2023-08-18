@@ -5,24 +5,6 @@ import axios from 'axios';
 import mainLogo from "../images/mainLogo.png";
 
 const LoginPage = () => {
-    const BASE_URL = "silverjek.pythonanywhere.com";
-    const handleLogin = async (e) => {
-        e.preventDefault();
-        await axios
-          .post(`${BASE_URL}account/login/`, {
-            id: id,
-            pw: pw,
-          })
-          .then((response) => {
-            //로그인 성공했을 때
-            navigate(`/home`);
-    
-            console.log(response.data.data);
-          })
-          .catch((error) => console.log(error, id, pw));
-      };
-    
-    
     const navigate = useNavigate();
     const [id, setID] = useState();
     const [pw, setPW] = useState();
@@ -71,7 +53,7 @@ const LoginPage = () => {
                             value={pw}
                             onChange={handleChange2}
                         ></input>
-                        <button class="btn_login" onClick={handleLogin}>
+                        <button class="btn_login" onClick={gotoHome}>
                             로그인
                         </button>
                         <div class="btn_signUp" onClick={gotoSignUp}>
