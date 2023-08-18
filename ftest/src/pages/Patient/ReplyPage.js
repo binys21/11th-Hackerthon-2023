@@ -87,7 +87,7 @@ const ReplyPage = (props) => {
                                     value={recontent}
                                     onChange={onChange}
                                 ></input>
-                                <button>답글 달기</button>
+                                <button>작성완료</button>
                             </form>
                         </InputWrapper>
                     </Container>
@@ -182,12 +182,20 @@ const InputWrapper = styled.div`
         font-size: 15px;
     }
     button {
-        background: transparent;
-        border: none;
+        width: 100vw;
+        height: 60px;
+        position: absolute;
+        bottom: 0;
+        border-style: none;
+        background-color: #202631;
+        font-size: 13px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         color: white;
-        font-size: 14px;
-        margin-top: 200px;
-        margin-left: 280px;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        font-weight: 500;
     }
 `;
 // const ImgWrapper = styled.div`
