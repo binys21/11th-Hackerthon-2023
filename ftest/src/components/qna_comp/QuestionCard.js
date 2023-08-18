@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { commentData } from '../../_mock/comments';
 
-
-const QuestionCard = () => {
+const QuestionCard = (props) => {
+    const { comments } = props; 
 
 
     return (
@@ -11,15 +12,15 @@ const QuestionCard = () => {
                 <BoxWrapper>
                     <ContentWrapper>
                         <TopWrapper>
-                        <Title>Q. 남긴 질문 게시글의 제목이 뜬...
+                        <Title>{comments.title}
                      </Title>
                      <ColorBox>나의 의료 정보</ColorBox>
                         </TopWrapper>
 
                    
-                    <Date>2023.08.13 22:08 작성</Date>
+                    <Date>{comments.date}</Date>
                     <hr></hr>
-                    <Contents>본문의 내용이 두줄정도 뜨게 된다. 본문의 내용이 두줄정도 뜨게 된다. 본문의 내용이 두줄정도 뜨게 된다. 본...</Contents>
+                    <Contents>{comments.contents}</Contents>
                     </ContentWrapper>
 
                 </BoxWrapper>
@@ -33,8 +34,8 @@ const Wrapper = styled.div`
     background-color: none;
 `;
 const BoxWrapper = styled.div`
-width: 343px;
-height: 127px;
+width: 350px;
+height: 135px;
 flex-shrink: 0;
 border-radius: 10px;
 border: 1px solid rgba(255, 255, 255, 0.05);
@@ -42,16 +43,20 @@ background: #363B46;
 margin-bottom:20px;
 `;
 const Title=styled.div`
-margin-left:4px;
+margin-left:3px;
+width:230px;
 color:white;
 font-family: Apple SD Gothic Neo;
 font-size: 16px;
 font-style: normal;
 font-weight: 700;
+
+text-overflow: ellipsis;
+white-space: nowrap;
 `;
 const Date=styled.div`
 margin-top:5px;
-margin-left:26px;
+margin-left:20px;
 color: #FFF;
 font-family: Apple SD Gothic Neo;
 font-size: 13px;
@@ -64,7 +69,7 @@ letter-spacing: -0.13px;
 `;
 const Contents=styled.div`
 margin-top:10px;
-margin-left:20px;
+margin-left:15px;
 color:white;
 font-family: Apple SD Gothic Neo;
 font-size: 13px;
@@ -72,10 +77,16 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 opacity: 0.7;
+
+display: -webkit-box;
+-webkit-line-clamp:  ;
+-webkit-box-orient: vertical;
 `;
+
 const ContentWrapper=styled.div`
 margin-top:20px;
-margin-left:15px;
+padding-right:7px;
+margin-left:10px;
 hr{
     width: 272px;
 height: 0px;

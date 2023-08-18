@@ -66,7 +66,9 @@ const WrittenQuestion = (props) => {
 };
 export default WrittenQuestion;
 const Back = styled.div`
+
     height: 2000px;
+
     width: 100vw;
     display: flex;
     background-color: black;
