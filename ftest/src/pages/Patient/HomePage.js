@@ -160,6 +160,7 @@ const Content = styled.div`
         font-weight: 600;
         padding: 5% 0;
         left: 0;
+        padding-left:13px;
     }
 `;
 const Card = styled.div`

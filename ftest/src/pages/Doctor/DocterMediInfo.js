@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 //component
 import AllegyCard from "../../components/mediInfo_comp/AllegyCard";
-import AllegyCard2 from "../../components/mediInfo_comp/AllegyCard2";
+import AllegyCard2 from '../../components/mediInfo_comp/AllegyCard2';
 import FamilyHisCard from "../../components/mediInfo_comp/FamilyHisCard";
 import GardianCard from "../../components/mediInfo_comp/GardianCard";
 import ForDocter from "../../components/mediInfo_comp/ForDocter";

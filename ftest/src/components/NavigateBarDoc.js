@@ -23,7 +23,7 @@ const NavigateBarDoc = () => {
             ) : null} */}
             <Wrapper>
                 <Navbar>
-                    <Link className="navbarhomeMenu" to={"/home"}>
+                    <Link className="navbarhomeMenu" to={"/doctornft"}>
                         <FontAwesomeIcon icon={faHome} class="footIcon" /> 홈
                     </Link>
                     <Link className="navbarMenu" onClick={qrPop}>

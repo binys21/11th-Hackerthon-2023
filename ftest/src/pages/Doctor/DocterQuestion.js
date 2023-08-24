@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 //coponent
-import NavigateBar from '../../components/NavigateBar';
+import NavigateBarDoc from '../../components/NavigateBarDoc';
 import Header from '../../components/Header';
 import DocQuestionCard from '../../components/qna_comp/DocQuestionCard';
 //image
@@ -39,7 +39,7 @@ const DocterQuestion=()=>{
                     ))}
 
         </Container>
-        <NavigateBar/>
+        <NavigateBarDoc/>
         </Wrapper>
         </>
     );

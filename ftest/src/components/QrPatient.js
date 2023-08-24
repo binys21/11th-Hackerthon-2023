@@ -36,6 +36,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index:10;
 `;
 
 const Container = styled.div`
